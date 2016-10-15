@@ -1,0 +1,6 @@
+force true
+skip_metadata false
+skip_screenshots true
+skip_binary_upload false
+submit_for_review false
+automatic_release false

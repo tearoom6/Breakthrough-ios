@@ -1,0 +1,66 @@
+fastlane_version '1.105.2'
+
+default_platform :ios
+
+# IMPORTANT: set ENV['SLACK_URL'] to post to Slack.
+platform :ios do
+  before_all do
+  end
+
+  desc 'Build a development app'
+  lane :develop do
+    match(type: 'development')
+    version = get_version_number
+    gym(
+      output_name: "Breakthrough_Debug_#{version}",
+      configuration: 'Debug',
+    )
+  end
+
+  desc 'Build an ad_hoc app'
+  lane :ad_hoc do
+    match(type: 'adhoc')
+    version = get_version_number
+    gym(
+      output_name: "Breakthrough_AdHoc_#{version}",
+      configuration: 'AdHoc',
+    )
+  end
+
+  desc 'Submit a new Beta Build to Apple TestFlight'
+  lane :beta do
+    match(type: 'appstore')
+    increment_build_number
+    version = get_version_number
+    gym(
+      output_name: "Breakthrough_Release_#{version}",
+      configuration: 'Release',
+    )
+    pilot(skip_waiting_for_build_processing: true)
+  end
+
+  desc 'Deploy a new version to the App Store'
+  lane :release do
+    match(type: 'appstore')
+    increment_build_number
+    version = get_version_number
+    gym(
+      output_name: "Breakthrough_Release_#{version}",
+      configuration: 'Release',
+    )
+    deliver
+    slack(message: 'Successfully deployed new App Update.')
+  end
+
+  after_all do |lane|
+    slack(message: 'Breakthrough-ios fastlane task succeeded.')
+  end
+
+  error do |lane, exception|
+    slack(
+      message: exception.message,
+      success: false
+    )
+  end
+end
+
