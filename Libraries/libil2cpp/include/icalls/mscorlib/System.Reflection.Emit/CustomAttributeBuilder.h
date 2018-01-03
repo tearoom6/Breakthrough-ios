@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -28,13 +28,11 @@ namespace Reflection
 {
 namespace Emit
 {
-
-class LIBIL2CPP_CODEGEN_API CustomAttributeBuilder
-{
-public:
-	static Il2CppArray* GetBlob (Il2CppAssembly* asmb, void* /* System.Reflection.ConstructorInfo */ con, Il2CppArray* constructorArgs, Il2CppArray* namedProperties, Il2CppArray* propertyValues, Il2CppArray* namedFields, Il2CppArray* fieldValues);
-};
-
+    class LIBIL2CPP_CODEGEN_API CustomAttributeBuilder
+    {
+    public:
+        static Il2CppArray* GetBlob(Il2CppAssembly* asmb, void* /* System.Reflection.ConstructorInfo */ con, Il2CppArray* constructorArgs, Il2CppArray* namedProperties, Il2CppArray* propertyValues, Il2CppArray* namedFields, Il2CppArray* fieldValues);
+    };
 } /* namespace Emit */
 } /* namespace Reflection */
 } /* namespace System */

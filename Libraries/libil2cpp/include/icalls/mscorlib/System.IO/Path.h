@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -26,13 +26,11 @@ namespace System
 {
 namespace IO
 {
-
-class LIBIL2CPP_CODEGEN_API Path
-{
-public:
-	static Il2CppString* get_temp_path ();
-};
-
+    class LIBIL2CPP_CODEGEN_API Path
+    {
+    public:
+        static Il2CppString* get_temp_path();
+    };
 } /* namespace IO */
 } /* namespace System */
 } /* namespace mscorlib */

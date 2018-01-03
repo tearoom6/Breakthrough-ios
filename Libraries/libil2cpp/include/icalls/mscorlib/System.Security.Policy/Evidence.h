@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -28,13 +28,11 @@ namespace Security
 {
 namespace Policy
 {
-
-class LIBIL2CPP_CODEGEN_API Evidence
-{
-public:
-	static bool IsAuthenticodePresent (Il2CppAssembly* a);
-};
-
+    class LIBIL2CPP_CODEGEN_API Evidence
+    {
+    public:
+        static bool IsAuthenticodePresent(Il2CppAssembly* a);
+    };
 } /* namespace Policy */
 } /* namespace Security */
 } /* namespace System */

@@ -13,46 +13,50 @@
 #include <limits>
 #include <assert.h>
 
-
-#include "class-internals.h"
+#include "il2cpp-class-internals.h"
 #include "codegen/il2cpp-codegen.h"
 
 
+
+
+
+
+
+
+
+
 extern const Il2CppMethodPointer g_MethodPointers[];
-extern const Il2CppMethodPointer g_ReversePInvokeWrapperPointers[];
-extern const Il2CppMethodPointer g_DelegateWrappersManagedToNative[];
-extern const Il2CppMarshalingFunctions g_MarshalingFunctions[];
 extern const Il2CppMethodPointer g_Il2CppGenericMethodPointers[];
 extern const InvokerMethod g_Il2CppInvokerPointers[];
 extern const CustomAttributesCacheGenerator g_AttributeGenerators[];
-const Il2CppCodeRegistration g_CodeRegistration = 
+extern const Il2CppMethodPointer g_UnresolvedVirtualMethodPointers[];
+extern Il2CppInteropData g_Il2CppInteropData[];
+extern const Il2CppCodeRegistration g_CodeRegistration = 
 {
-	15809,
+	9607,
 	g_MethodPointers,
-	2,
-	g_ReversePInvokeWrapperPointers,
-	33,
-	g_DelegateWrappersManagedToNative,
-	176,
-	g_MarshalingFunctions,
 	0,
 	NULL,
-	3899,
+	3915,
 	g_Il2CppGenericMethodPointers,
-	1730,
+	1466,
 	g_Il2CppInvokerPointers,
-	2717,
+	2060,
 	g_AttributeGenerators,
-	0,
-	NULL,
+	179,
+	g_UnresolvedVirtualMethodPointers,
+	95,
+	g_Il2CppInteropData,
 };
 extern const Il2CppMetadataRegistration g_MetadataRegistration;
 static const Il2CppCodeGenOptions s_Il2CppCodeGenOptions = 
 {
 	false,
 };
-static void s_Il2CppCodegenRegistration()
+void s_Il2CppCodegenRegistration()
 {
 	il2cpp_codegen_register (&g_CodeRegistration, &g_MetadataRegistration, &s_Il2CppCodeGenOptions);
 }
+#if RUNTIME_IL2CPP
 static il2cpp::utils::RegisterRuntimeInitializeAndCleanup s_Il2CppCodegenRegistrationVariable (&s_Il2CppCodegenRegistration, NULL);
+#endif

@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -28,16 +28,14 @@ namespace Security
 {
 namespace Principal
 {
-
-class LIBIL2CPP_CODEGEN_API WindowsImpersonationContext
-{
-public:
-	static bool RevertToSelf ();
-	static Il2CppIntPtr DuplicateToken (Il2CppIntPtr token);
-	static bool SetCurrentToken (Il2CppIntPtr token);
-	static bool CloseToken (Il2CppIntPtr token);
-};
-
+    class LIBIL2CPP_CODEGEN_API WindowsImpersonationContext
+    {
+    public:
+        static bool RevertToSelf();
+        static intptr_t DuplicateToken(intptr_t token);
+        static bool SetCurrentToken(intptr_t token);
+        static bool CloseToken(intptr_t token);
+    };
 } /* namespace Principal */
 } /* namespace Security */
 } /* namespace System */

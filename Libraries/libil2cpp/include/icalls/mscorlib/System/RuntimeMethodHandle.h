@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 #include "il2cpp-config.h"
 
 struct Il2CppObject;
@@ -24,13 +24,11 @@ namespace mscorlib
 {
 namespace System
 {
-
-class LIBIL2CPP_CODEGEN_API RuntimeMethodHandle
-{
-public:
-	static Il2CppIntPtr GetFunctionPointer (Il2CppIntPtr m);
-};
-
+    class LIBIL2CPP_CODEGEN_API RuntimeMethodHandle
+    {
+    public:
+        static intptr_t GetFunctionPointer(intptr_t m);
+    };
 } /* namespace System */
 } /* namespace mscorlib */
 } /* namespace icalls */

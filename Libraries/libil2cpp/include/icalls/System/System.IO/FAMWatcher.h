@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 #include "il2cpp-config.h"
 
 struct Il2CppObject;
@@ -26,15 +26,13 @@ namespace System
 {
 namespace IO
 {
+    struct FAMConnection;
 
-struct FAMConnection;
-
-class LIBIL2CPP_CODEGEN_API FAMWatcher
-{
-public:
-	static int32_t InternalFAMNextEvent (FAMConnection* fc, Il2CppString** filename, int32_t* code, int32_t* reqnum);
-};
-
+    class LIBIL2CPP_CODEGEN_API FAMWatcher
+    {
+    public:
+        static int32_t InternalFAMNextEvent(FAMConnection* fc, Il2CppString** filename, int32_t* code, int32_t* reqnum);
+    };
 } /* namespace IO */
 } /* namespace System */
 } /* namespace System */

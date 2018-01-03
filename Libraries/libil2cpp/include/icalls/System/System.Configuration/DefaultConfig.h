@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 #include "il2cpp-config.h"
 
 struct Il2CppObject;
@@ -26,14 +26,12 @@ namespace System
 {
 namespace Configuration
 {
-
-class LIBIL2CPP_CODEGEN_API DefaultConfig
-{
-public:
-	static Il2CppString* get_machine_config_path ();
-	static Il2CppString* get_bundled_machine_config ();
-};
-
+    class LIBIL2CPP_CODEGEN_API DefaultConfig
+    {
+    public:
+        static Il2CppString* get_machine_config_path();
+        static Il2CppString* get_bundled_machine_config();
+    };
 } /* namespace Configuration */
 } /* namespace System */
 } /* namespace System */
