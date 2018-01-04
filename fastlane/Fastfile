@@ -13,6 +13,7 @@ platform :ios do
     version = get_version_number
     gym(
       output_name: "Breakthrough_Debug_#{version}",
+      export_method: 'development',
       configuration: 'Debug',
     )
   end
@@ -23,6 +24,7 @@ platform :ios do
     version = get_version_number
     gym(
       output_name: "Breakthrough_AdHoc_#{version}",
+      export_method: 'ad-hoc',
       configuration: 'AdHoc',
     )
   end
@@ -30,10 +32,11 @@ platform :ios do
   desc 'Submit a new Beta Build to Apple TestFlight'
   lane :beta do
     match(type: 'appstore')
-    increment_build_number
+    #increment_build_number
     version = get_version_number
     gym(
       output_name: "Breakthrough_Release_#{version}",
+      export_method: 'app-store',
       configuration: 'Release',
     )
     pilot(skip_waiting_for_build_processing: true)
@@ -42,10 +45,11 @@ platform :ios do
   desc 'Deploy a new version to the App Store'
   lane :release do
     match(type: 'appstore')
-    increment_build_number
+    #increment_build_number
     version = get_version_number
     gym(
       output_name: "Breakthrough_Release_#{version}",
+      export_method: 'app-store',
       configuration: 'Release',
     )
     deliver
