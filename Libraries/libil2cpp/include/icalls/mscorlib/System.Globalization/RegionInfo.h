@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -26,13 +26,11 @@ namespace System
 {
 namespace Globalization
 {
-
-class LIBIL2CPP_CODEGEN_API RegionInfo
-{
-public:
-	static bool construct_internal_region_from_name (void* /* System.Globalization.RegionInfo */ self, Il2CppString* name);
-};
-
+    class LIBIL2CPP_CODEGEN_API RegionInfo
+    {
+    public:
+        static bool construct_internal_region_from_name(Il2CppRegionInfo* regionInfo, Il2CppString* name);
+    };
 } /* namespace Globalization */
 } /* namespace System */
 } /* namespace mscorlib */

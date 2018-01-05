@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 #include "il2cpp-config.h"
 
 struct Il2CppObject;
@@ -26,13 +26,11 @@ namespace System
 {
 namespace IO
 {
-
-class LIBIL2CPP_CODEGEN_API FileSystemWatcher
-{
-public:
-	static int32_t InternalSupportsFSW ();
-};
-
+    class LIBIL2CPP_CODEGEN_API FileSystemWatcher
+    {
+    public:
+        static int32_t InternalSupportsFSW();
+    };
 } /* namespace IO */
 } /* namespace System */
 } /* namespace System */

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Some libraries requires camera access.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -29,9 +27,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.0</string>
+	<string>1.1.1</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -39,13 +37,13 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
 	<key>UILaunchStoryboardName~ipad</key>
 	<string>LaunchScreen-iPad</string>
 	<key>UILaunchStoryboardName~iphone</key>
+	<string>LaunchScreen-iPhone</string>
+	<key>UILaunchStoryboardName~ipod</key>
 	<string>LaunchScreen-iPhone</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
@@ -65,6 +63,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UnityCloudProjectID</key>
+	<string></string>
+	<key>UnityCrashSubmissionURL</key>
+	<string>https://a:b@perf-events.cloud.unity3d.com/symbolicate</string>
 	<key>Unity_LoadingActivityIndicatorStyle</key>
 	<integer>-1</integer>
 </dict>

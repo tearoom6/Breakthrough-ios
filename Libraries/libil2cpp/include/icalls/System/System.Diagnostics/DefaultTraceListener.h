@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -26,13 +26,11 @@ namespace System
 {
 namespace Diagnostics
 {
-
-class LIBIL2CPP_CODEGEN_API DefaultTraceListener
-{
-public:
-	static void WriteWindowsDebugString (Il2CppString* message);
-};
-
+    class LIBIL2CPP_CODEGEN_API DefaultTraceListener
+    {
+    public:
+        static void WriteWindowsDebugString(Il2CppString* message);
+    };
 } /* namespace Diagnostics */
 } /* namespace System */
 } /* namespace System */

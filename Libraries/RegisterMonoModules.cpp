@@ -1,13 +1,17 @@
-#ifndef INIT_SCRIPTING_BACKEND
-extern void RegisterAllClassesIPhone();
+#if !INIT_SCRIPTING_BACKEND
 
+extern void RegisterAllClassesGranular();
 void RegisterAllClasses()
 {
-	// Register classes for unit tests
-	RegisterAllClassesIPhone();
+    // Register classes for unit tests
+    RegisterAllClassesGranular();
 }
 
 void RegisterAllStrippedInternalCalls() {}
-#endif
+
+void InvokeRegisterStaticallyLinkedModuleClasses() {}
+void RegisterStaticallyLinkedModulesGranular() {}
+
+#endif // INIT_SCRIPTING_BACKEND
 
 void RegisterMonoModules() {}

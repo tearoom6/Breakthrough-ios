@@ -2,8 +2,8 @@
 
 #include "LifeCycleListener.h"
 
-struct UnityDisplaySurfaceBase;	// Unity/UnityRendering.h
-struct RenderingSurfaceParams;	// Unity/DisplayManager.h
+struct UnityDisplaySurfaceBase; // Unity/UnityRendering.h
+struct RenderingSurfaceParams;  // Unity/DisplayManager.h
 
 // due to delicate nature of render loop we have just one delegate in app
 // if you need to use several rendering delegates you need to do one of:
@@ -19,13 +19,13 @@ struct RenderingSurfaceParams;	// Unity/DisplayManager.h
 
 @optional
 
-// this will be called before recreating main display surface (from [UnityView recreateGLESSurface])
+// this will be called before recreating main display surface (from [UnityView recreateRenderingSurface])
 // you can tweak params here.
 // use it for enabling CVTextureCache support and the likes
 - (void)onBeforeMainDisplaySurfaceRecreate:(struct RenderingSurfaceParams*)params;
 
-// this will be called right after recreating main display surface (from [UnityView recreateGLESSurface])
-// as [UnityView recreateGLESSurface] is the only place where unity itself will trigger surface recreate
+// this will be called right after recreating main display surface (from [UnityView recreateRenderingSurface])
+// as [UnityView recreateRenderingSurface] is the only place where unity itself will trigger surface recreate
 // you can use this method to update your rendering depending on changes
 - (void)onAfterMainDisplaySurfaceRecreate;
 
@@ -42,7 +42,7 @@ struct RenderingSurfaceParams;	// Unity/DisplayManager.h
 // you can implement protocol directly, but subclassing this will provide some common implementation
 @interface RenderPluginDelegate : NSObject<RenderPluginDelegate>
 {
-	struct UnityDisplaySurfaceBase* mainDisplaySurface;
+    struct UnityDisplaySurfaceBase* mainDisplaySurface;
 }
 - (void)mainDisplayInited:(struct UnityDisplaySurfaceBase*)surface;
 @end
@@ -52,7 +52,7 @@ struct RenderingSurfaceParams;	// Unity/DisplayManager.h
 // be warned that it works in simplest cases only, when there is no interop between delegates
 @interface RenderPluginArrayDelegate : RenderPluginDelegate
 {
-	NSArray* delegateArray;
+    NSArray* delegateArray;
 }
 @property(nonatomic, retain) NSArray* delegateArray;
 - (void)mainDisplayInited:(struct UnityDisplaySurfaceBase*)surface;

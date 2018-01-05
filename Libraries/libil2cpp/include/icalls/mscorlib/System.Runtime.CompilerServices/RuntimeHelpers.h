@@ -1,7 +1,7 @@
 #pragma once
 
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 namespace il2cpp
 {
@@ -15,17 +15,19 @@ namespace Runtime
 {
 namespace CompilerServices
 {
+    class LIBIL2CPP_CODEGEN_API RuntimeHelpers
+    {
+    public:
+        static Il2CppObject* GetObjectValue(Il2CppObject* obj);
+        static void RunClassConstructor(intptr_t type);
+        static void RunModuleConstructor(intptr_t module);
+        static int get_OffsetToStringData(void);
+        static void InitializeArray(Il2CppArray* arr, intptr_t ptr);
 
-class LIBIL2CPP_CODEGEN_API RuntimeHelpers
-{
-public:
-	static Il2CppObject* GetObjectValue (Il2CppObject* obj);
-	static void RunClassConstructor (Il2CppIntPtr type);
-	static void RunModuleConstructor (Il2CppIntPtr module);
-	static int get_OffsetToStringData (void);
-	static void InitializeArray (Il2CppArray* arr,Il2CppIntPtr ptr);
-};
-
+#if NET_4_0
+        static bool SufficientExecutionStack();
+#endif
+    };
 } /* namespace CompilerServices */
 } /* namespace Runtime */
 } /* namespace System */

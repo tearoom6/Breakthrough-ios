@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -26,13 +26,11 @@ namespace System
 {
 namespace Reflection
 {
-
-class LIBIL2CPP_CODEGEN_API MonoGenericMethod
-{
-public:
-	static Il2CppReflectionType* get_ReflectedType (void* /* System.Reflection.MonoGenericMethod */ self);
-};
-
+    class LIBIL2CPP_CODEGEN_API MonoGenericMethod
+    {
+    public:
+        static Il2CppReflectionType* get_ReflectedType(void* /* System.Reflection.MonoGenericMethod */ self);
+    };
 } /* namespace Reflection */
 } /* namespace System */
 } /* namespace mscorlib */
