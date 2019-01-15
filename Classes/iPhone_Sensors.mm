@@ -192,14 +192,11 @@ extern "C" void UnityCoreMotionStart()
 
     if (initMotionManager && sMotionManager.accelerometerAvailable)
     {
-        int frequency = UnityGetAccelerometerFrequency();
+        const int frequency = UnityGetAccelerometerFrequency();
         if (frequency > 0)
         {
-            [sMotionManager startAccelerometerUpdatesToQueue: sMotionQueue withHandler:^(CMAccelerometerData* data, NSError* error) {
-                Vector3f res = UnityReorientVector3(data.acceleration.x, data.acceleration.y, data.acceleration.z);
-                UnityDidAccelerate(res.x, res.y, res.z, data.timestamp);
-            }];
-            [sMotionManager setAccelerometerUpdateInterval: 1.0f / frequency];
+            sMotionManager.accelerometerUpdateInterval = 1.0f / frequency;
+            [sMotionManager startAccelerometerUpdates];
         }
     }
 #endif
@@ -214,6 +211,22 @@ extern "C" void UnityCoreMotionStop()
     {
         [sMotionManager stopGyroUpdates];
         [sMotionManager stopDeviceMotionUpdates];
+        [sMotionManager stopAccelerometerUpdates];
+    }
+#endif
+}
+
+extern "C" void UnityUpdateAccelerometerData()
+{
+#if !PLATFORM_TVOS
+    if (sMotionManager)
+    {
+        CMAccelerometerData* data = sMotionManager.accelerometerData;
+        if (data != nil)
+        {
+            Vector3f res = UnityReorientVector3(data.acceleration.x, data.acceleration.y, data.acceleration.z);
+            UnityDidAccelerate(res.x, res.y, res.z, data.timestamp);
+        }
     }
 #endif
 }
@@ -704,7 +717,7 @@ extern "C" int  UnityGetJoystickCount()
     return count;
 }
 
-static void PrintJoystickIdentifier(int idx, char* buffer, int maxLen, const char* typeString,
+static void FormatJoystickIdentifier(int idx, char* buffer, int maxLen, const char* typeString,
     const char* attachment, const char* vendorName)
 {
     snprintf(buffer, maxLen, "[%s,%s] joystick %d by %s",
@@ -728,7 +741,7 @@ extern "C" void UnityGetJoystickName(int idx, char* buffer, int maxLen)
 
         const char* typeString = [controller extendedGamepad] != nil ? "extended" : "basic";
 
-        PrintJoystickIdentifier(idx, buffer, maxLen, typeString, attached,
+        FormatJoystickIdentifier(idx, buffer, maxLen, typeString, attached,
             [[controller vendorName] UTF8String]);
     }
     else
@@ -736,7 +749,7 @@ extern "C" void UnityGetJoystickName(int idx, char* buffer, int maxLen)
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
         if (idx == [QueryControllerCollection() count])
         {
-            PrintJoystickIdentifier(idx, buffer, maxLen, "basic", "wireless", "Unity");
+            FormatJoystickIdentifier(idx, buffer, maxLen, "basic", "wireless", "Unity");
             return;
         }
 #endif

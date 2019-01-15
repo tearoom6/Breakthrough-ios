@@ -111,7 +111,21 @@ static bool _enableRunLoopAcceptInput = false;
     if (_skipPresent || _didResignActive)
         return;
 
-    [[DisplayManager Instance] present];
+    // metal needs special processing, because in case of airplay we need extra command buffers to present non-main screen drawables
+    if (UnitySelectedRenderingAPI() == apiMetal)
+    {
+    #if UNITY_CAN_USE_METAL
+        [[DisplayManager Instance].mainDisplay present];
+        [[DisplayManager Instance] enumerateNonMainDisplaysWithBlock:^(DisplayConnection* conn) {
+            PreparePresentNonMainScreenMTL((UnityDisplaySurfaceMTL*)conn.surface);
+        }];
+    #endif
+    }
+    else
+    {
+        [[DisplayManager Instance] present];
+    }
+
     Profiler_FramePresent(frameStats);
 }
 
@@ -192,12 +206,6 @@ typedef bool(*CheckSupportedFunc)(int);
 
 static int SelectRenderingAPIImpl()
 {
-#if UNITY_CAN_USE_METAL
-    const bool  canSupportMetal = _ios80orNewer;
-#else
-    const bool  canSupportMetal = false;
-#endif
-
     // Get list of graphics APIs to try from player settings
     const int kMaxAPIs = 3;
     int apis[kMaxAPIs];
@@ -210,11 +218,13 @@ static int SelectRenderingAPIImpl()
         // Metal
         if (api == apiMetal)
         {
-            if (!canSupportMetal)
-                continue;
+#if UNITY_CAN_USE_METAL
             if (!IsMetalSupported(0))
                 continue;
             return api;
+#else
+            continue;
+#endif
         }
         // GLES3
         if (api == apiOpenGLES3)

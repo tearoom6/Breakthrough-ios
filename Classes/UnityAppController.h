@@ -77,6 +77,14 @@
 
 @end
 
+// accessing app controller
+
+extern UnityAppController* _UnityAppController;
+inline UnityAppController* GetAppController()
+{
+    return _UnityAppController;
+}
+
 // Put this into mm file with your subclass implementation
 // pass subclass name to define
 
@@ -94,10 +102,8 @@
 }                                               \
 @end                                            \
 
-inline UnityAppController*  GetAppController()
-{
-    return (UnityAppController*)[UIApplication sharedApplication].delegate;
-}
+
+// plugins
 
 #define APP_CONTROLLER_RENDER_PLUGIN_METHOD(method)                         \
 do {                                                                        \
@@ -135,5 +141,12 @@ void AppController_SendUnityViewControllerNotification(NSString* name);
 // However, tvOS SDK has it already in 10.2, but disabled.
 @interface UIScreen ()
 @property (readonly) NSInteger maximumFramesPerSecond;
+@end
+#endif
+
+#if (PLATFORM_IOS && !UNITY_HAS_IOSSDK_11_0) || (PLATFORM_TVOS && !UNITY_HAS_TVOSSDK_11_0)
+// The safeAreaInsets API is available in the SDKs since 11.0.
+@interface UIView ()
+@property (nonatomic, readonly) UIEdgeInsets safeAreaInsets;
 @end
 #endif

@@ -39,6 +39,9 @@
 #include <unistd.h>
 #include <sys/sysctl.h>
 
+// we assume that app delegate is never changed and we can cache it, instead of re-query UIApplication every time
+UnityAppController* _UnityAppController = nil;
+
 // Standard Gesture Recognizers enabled on all iOS apps absorb touches close to the top and bottom of the screen.
 // This sometimes causes an ~1 second delay before the touch is handled when clicking very close to the edge.
 // You should enable this if you want to avoid that delay. Enabling it should not have any effect on default iOS gestures.
@@ -48,6 +51,7 @@
 bool _ios42orNewer = false, _ios43orNewer = false, _ios50orNewer = false, _ios60orNewer = false, _ios70orNewer = false;
 bool _ios80orNewer = false, _ios81orNewer = false, _ios82orNewer = false, _ios83orNewer = false, _ios90orNewer = false, _ios91orNewer = false;
 bool _ios100orNewer = false, _ios101orNewer = false, _ios102orNewer = false, _ios103orNewer = false;
+bool _ios110orNewer = false, _ios111orNewer = false, _ios112orNewer = false;
 
 // was unity rendering already inited: we should not touch rendering while this is false
 bool    _renderingInited        = false;
@@ -71,6 +75,11 @@ static bool _startUnityScheduled    = false;
 
 bool    _supportsMSAA           = false;
 
+#if UNITY_SUPPORT_ROTATION
+// Required to enable specific orientation for some presentation controllers: see supportedInterfaceOrientationsForWindow below for details
+NSInteger _forceInterfaceOrientationMask = 0;
+#endif
+
 @implementation UnityAppController
 
 @synthesize unityView               = _unityView;
@@ -88,7 +97,7 @@ bool    _supportsMSAA           = false;
 
 - (id)init
 {
-    if ((self = [super init]))
+    if ((self = _UnityAppController = [super init]))
     {
         // due to clang issues with generating warning for overriding deprecated methods
         // we will simply assert if deprecated methods are present
@@ -121,7 +130,7 @@ bool    _supportsMSAA           = false;
     UnityInitApplicationGraphics();
 
     // we make sure that first level gets correct display list and orientation
-    [[DisplayManager Instance] updateDisplayListInUnity];
+    [[DisplayManager Instance] updateDisplayListCacheInUnity];
 
     UnityLoadApplication();
     Profiler_InitProfiler();
@@ -146,13 +155,26 @@ extern "C" void UnityRequestQuit()
         exit(0);
 }
 
-#if !PLATFORM_TVOS
+#if UNITY_SUPPORT_ROTATION
+
 - (NSUInteger)application:(UIApplication*)application supportedInterfaceOrientationsForWindow:(UIWindow*)window
 {
-    // Before it was UIInterfaceOrientationAll because some presentation controllers insisted on being portrait only
-    // (e.g. GameCenter) so we did that do avoid crashes.
-    // As this was fixed in iOS 6.1 we can use exact same set of constraints as root view controller.
-    return [[window rootViewController] supportedInterfaceOrientations];
+    // No rootViewController is set because we are switching from one view controller to another, all orientations should be enabled
+    if ([window rootViewController] == nil)
+        return UIInterfaceOrientationMaskAll;
+
+    // Some presentation controllers (e.g. UIImagePickerController) require portrait orientation and will throw exception if it is not supported.
+    // At the same time enabling all orientations by returning UIInterfaceOrientationMaskAll might cause unwanted orientation change
+    // (e.g. when using UIActivityViewController to "share to" another application, iOS will use supportedInterfaceOrientations to possibly reorient).
+    // So to avoid exception we are returning combination of constraints for root view controller and orientation requested by iOS.
+    // _forceInterfaceOrientationMask is updated in willChangeStatusBarOrientation, which is called if some presentation controller insists on orientation change.
+    return [[window rootViewController] supportedInterfaceOrientations] | _forceInterfaceOrientationMask;
+}
+
+- (void)application:(UIApplication*)application willChangeStatusBarOrientation:(UIInterfaceOrientation)newStatusBarOrientation duration:(NSTimeInterval)duration
+{
+    // Setting orientation mask which is requested by iOS: see supportedInterfaceOrientationsForWindow above for details
+    _forceInterfaceOrientationMask = 1 << newStatusBarOrientation;
 }
 
 #endif
@@ -467,13 +489,15 @@ void UnityInitTrampoline()
 #endif
     InitCrashHandling();
 
-    _ios42orNewer = _ios43orNewer = _ios50orNewer = _ios60orNewer = _ios70orNewer = true;
+    _ios42orNewer = _ios43orNewer = _ios50orNewer = _ios60orNewer = _ios70orNewer = _ios80orNewer = true;
 
     NSString* version = [[UIDevice currentDevice] systemVersion];
 #define CHECK_VER(s) [version compare: s options: NSNumericSearch] != NSOrderedAscending
-    _ios80orNewer  = CHECK_VER(@"8.0"),  _ios81orNewer  = CHECK_VER(@"8.1"),  _ios82orNewer  = CHECK_VER(@"8.2"),  _ios83orNewer  = CHECK_VER(@"8.3");
+    _ios81orNewer  = CHECK_VER(@"8.1"),  _ios82orNewer  = CHECK_VER(@"8.2"),  _ios83orNewer  = CHECK_VER(@"8.3");
     _ios90orNewer  = CHECK_VER(@"9.0"),  _ios91orNewer  = CHECK_VER(@"9.1");
     _ios100orNewer = CHECK_VER(@"10.0"), _ios101orNewer = CHECK_VER(@"10.1"), _ios102orNewer = CHECK_VER(@"10.2"), _ios103orNewer = CHECK_VER(@"10.3");
+    _ios110orNewer = CHECK_VER(@"11.0"), _ios111orNewer = CHECK_VER(@"11.1"), _ios112orNewer = CHECK_VER(@"11.2");
+
 #undef CHECK_VER
 
     AddNewAPIImplIfNeeded();
@@ -512,5 +536,13 @@ static void AddNewAPIImplIfNeeded()
             return 60;
         });
         class_replaceMethod([UIScreen class], @selector(maximumFramesPerSecond), UIScreen_MaximumFramesPerSecond_IMP, UIScreen_maximumFramesPerSecond_Enc);
+    }
+
+    if (![[UIView class] instancesRespondToSelector: @selector(safeAreaInsets)])
+    {
+        IMP UIView_SafeAreaInsets_IMP = imp_implementationWithBlock(^UIEdgeInsets(id _self) {
+            return UIEdgeInsetsZero;
+        });
+        class_replaceMethod([UIView class], @selector(safeAreaInsets), UIView_SafeAreaInsets_IMP, UIView_safeAreaInsets_Enc);
     }
 }

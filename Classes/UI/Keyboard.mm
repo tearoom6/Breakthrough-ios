@@ -1,5 +1,6 @@
 #include "Keyboard.h"
 #include "DisplayManager.h"
+#include "UnityAppController.h"
 #include "UnityForwardDecls.h"
 #include <string>
 
@@ -13,6 +14,7 @@ static KeyboardDelegate*    _keyboard = nil;
 static bool                 _shouldHideInput = false;
 static bool                 _shouldHideInputChanged = false;
 static const unsigned       kToolBarHeight = 40;
+static const unsigned       kSystemButtonsSpace = 2 * 60 + 3 * 18; // empirical value, there is no way to know the exact widths of the system bar buttons
 
 @implementation KeyboardDelegate
 {
@@ -26,6 +28,8 @@ static const unsigned       kToolBarHeight = 40;
 
     UIToolbar*      viewToolbar;
     NSArray*        viewToolbarItems;
+
+    NSLayoutConstraint* widthConstraint;
 #endif
 
     UITextField*    textField;
@@ -40,7 +44,7 @@ static const unsigned       kToolBarHeight = 40;
     // editView is the "root" view for keyboard: UIToolbar [single-line] or UITextView [multi-line]
     UIView*         inputView;
     UIView*         editView;
-
+    KeyboardShowParam cachedKeyboardParam;
 
     CGRect          _area;
     NSString*       initialText;
@@ -51,6 +55,7 @@ static const unsigned       kToolBarHeight = 40;
     BOOL            _inputHidden;
     BOOL            _active;
     KeyboardStatus          _status;
+    int             _characterLimit;
 
     // not pretty but seems like easiest way to keep "we are rotating" status
     BOOL            _rotating;
@@ -105,6 +110,7 @@ static const unsigned       kToolBarHeight = 40;
 
     CGRect srcRect  = [[notification.userInfo objectForKey: UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGRect rect     = [UnityGetGLView() convertRect: srcRect fromView: nil];
+    rect.origin.y = [UnityGetGLView() frame].size.height - rect.size.height; // iPhone X sometimes reports wrong y value for keyboard
 
     [self positionInput: rect x: rect.origin.x y: rect.origin.y];
     _active = YES;
@@ -125,7 +131,10 @@ static const unsigned       kToolBarHeight = 40;
     if (rect.origin.y >= [UnityGetGLView() bounds].size.height)
         [self systemHideKeyboard];
     else
+    {
+        rect.origin.y = [UnityGetGLView() frame].size.height - rect.size.height; // iPhone X sometimes reports wrong y value for keyboard
         [self positionInput: rect x: rect.origin.x y: rect.origin.y];
+    }
 }
 
 #endif
@@ -193,6 +202,11 @@ struct CreateToolbarResult
         textField.font = [UIFont systemFontOfSize: 20.0];
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 
+#if PLATFORM_IOS
+        widthConstraint = [NSLayoutConstraint constraintWithItem: textField attribute: NSLayoutAttributeWidth relatedBy: NSLayoutRelationEqual toItem: nil attribute: NSLayoutAttributeNotAnAttribute multiplier: 1.0 constant: textField.frame.size.width];
+        [textField addConstraint: widthConstraint];
+#endif
+
         #define CREATE_TOOLBAR(t, i, v)                                 \
         do {                                                            \
             CreateToolbarResult res = [self createToolbarWithView:v];   \
@@ -232,10 +246,26 @@ struct CreateToolbarResult
 
 - (void)setKeyboardParams:(KeyboardShowParam)param
 {
+    if (!editView.hidden)
+    {
+        [NSObject cancelPreviousPerformRequestsWithTarget: self];
+        if (cachedKeyboardParam.multiline != param.multiline ||
+            cachedKeyboardParam.secure != param.secure ||
+            cachedKeyboardParam.keyboardType != param.keyboardType ||
+            cachedKeyboardParam.autocorrectionType != param.autocorrectionType ||
+            cachedKeyboardParam.appearance != param.appearance)
+        {
+            [self hideUIDelayed];
+        }
+    }
+    cachedKeyboardParam = param;
+
     if (_active)
         [self hide];
 
     initialText = param.text ? [[NSString alloc] initWithUTF8String: param.text] : @"";
+
+    _characterLimit = param.characterLimit;
 
     UITextAutocapitalizationType capitalization = UITextAutocapitalizationTypeSentences;
     if (param.keyboardType == UIKeyboardTypeURL || param.keyboardType == UIKeyboardTypeEmailAddress || param.keyboardType == UIKeyboardTypeWebSearch)
@@ -289,13 +319,24 @@ struct CreateToolbarResult
 {
     // if we unhide everything now the input will be shown smaller then needed quickly (and resized later)
     // so unhide only when keyboard is actually shown (we will update it when reacting to ios notifications)
-    editView.hidden = YES;
 
-    [UnityGetGLView() addSubview: editView];
-    [inputView becomeFirstResponder];
+    [NSObject cancelPreviousPerformRequestsWithTarget: self];
+    if (!inputView.isFirstResponder)
+    {
+        editView.hidden = YES;
+
+        [UnityGetGLView() addSubview: editView];
+        [inputView becomeFirstResponder];
+    }
 }
 
 - (void)hideUI
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget: self];
+    [self performSelector: @selector(hideUIDelayed) withObject: nil afterDelay: 0.05]; // to avoid unnecessary hiding
+}
+
+- (void)hideUIDelayed
 {
     [inputView resignFirstResponder];
 
@@ -343,20 +384,31 @@ struct CreateToolbarResult
 #if PLATFORM_IOS
 - (void)positionInput:(CGRect)kbRect x:(float)x y:(float)y
 {
+    float safeAreaInsetLeft = [UnityGetGLView() safeAreaInsets].left;
+    float safeAreaInsetRight = [UnityGetGLView() safeAreaInsets].right;
+
     if (_multiline)
     {
         // use smaller area for iphones and bigger one for ipads
         int height = UnityDeviceDPI() > 300 ? 75 : 100;
 
-        editView.frame  = CGRectMake(0, y - height, kbRect.size.width, height);
+        editView.frame  = CGRectMake(safeAreaInsetLeft, y - height, kbRect.size.width - safeAreaInsetLeft - safeAreaInsetRight, height);
     }
     else
     {
         editView.frame  = CGRectMake(0, y - kToolBarHeight, kbRect.size.width, kToolBarHeight);
+
+        // old constraint must be removed, changing value while constraint is active causes conflict when changing inputView.frame
+        [inputView removeConstraint: widthConstraint];
+
         inputView.frame = CGRectMake(inputView.frame.origin.x,
                 inputView.frame.origin.y,
-                kbRect.size.width - 3 * 18 - 2 * 50,
+                kbRect.size.width - safeAreaInsetLeft - safeAreaInsetRight - kSystemButtonsSpace,
                 inputView.frame.size.height);
+
+        // required to avoid auto-resizing on iOS 11 in case if input text is too long
+        widthConstraint.constant = inputView.frame.size.width;
+        [inputView addConstraint: widthConstraint];
     }
 
     _area = CGRectMake(x, y, kbRect.size.width, kbRect.size.height);
@@ -392,6 +444,24 @@ struct CreateToolbarResult
     return NSMakeRange(location, length);
 }
 
+- (void)assignSelection:(NSRange)range
+{
+    UIView<UITextInput>* textInput;
+
+#if PLATFORM_TVOS
+    textInput = textField;
+#else
+    textInput = _multiline ? textView : textField;
+#endif
+
+    UITextPosition* begin = [textInput beginningOfDocument];
+    UITextPosition* caret = [textInput positionFromPosition: begin offset: range.location];
+    UITextPosition* select = [textInput positionFromPosition: caret offset: range.length];
+    UITextRange* textRange = [textInput textRangeFromPosition: caret toPosition: select];
+
+    [textInput setSelectedTextRange: textRange];
+}
+
 + (void)StartReorientation
 {
     if (_keyboard && _keyboard.active)
@@ -418,24 +488,9 @@ struct CreateToolbarResult
     }
 }
 
-- (void)setTextWorkaround:(id<UITextInput>)textInput text:(NSString*)newText
-{
-    UITextPosition* begin = [textInput beginningOfDocument];
-    UITextPosition* end = [textInput endOfDocument];
-    UITextRange* allText = [textInput textRangeFromPosition: begin toPosition: end];
-    [textInput setSelectedTextRange: allText];
-    [textInput insertText: newText];
-}
-
 - (void)setText:(NSString*)newText
 {
 #if PLATFORM_IOS
-    // We can't use setText on iOS7 because it does not update the undo stack.
-    // We still prefer setText on other iOSes, because an undo operation results
-    // in a smaller selection shown on the UI
-    if (_ios70orNewer && !_ios80orNewer)
-        [self setTextWorkaround: (_multiline ? textView : textField) text: newText];
-
     if (_multiline)
         textView.text = newText;
     else
@@ -473,24 +528,75 @@ struct CreateToolbarResult
 static bool StringContainsEmoji(NSString *string);
 - (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string_
 {
-    return !StringContainsEmoji(string_);
+    if (range.length + range.location > textField.text.length)
+        return NO;
+
+    return [self currentText: textField.text shouldChangeInRange: range replacementText: string_] && !StringContainsEmoji(string_);
 }
 
 - (BOOL)textView:(UITextView*)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString*)text_
 {
-    return !StringContainsEmoji(text_);
+    if (range.length + range.location > textView.text.length)
+        return NO;
+
+    return [self currentText: textView.text shouldChangeInRange: range replacementText: text_] && !StringContainsEmoji(text_);
+}
+
+#else
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string_
+{
+    if (range.length + range.location > textField.text.length)
+        return NO;
+
+    return [self currentText: textField.text shouldChangeInRange: range replacementText: string_];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString*)text_
+{
+    if (range.length + range.location > textView.text.length)
+        return NO;
+
+    return [self currentText: textView.text shouldChangeInRange: range replacementText: text_];
 }
 
 #endif // FILTER_EMOJIS_IOS_KEYBOARD
 
-@end
+- (BOOL)currentText:(NSString*)currentText shouldChangeInRange:(NSRange)range  replacementText:(NSString*)text_
+{
+    NSUInteger newLength = currentText.length + (text_.length - range.length);
+    if (newLength > _characterLimit && _characterLimit != 0 && newLength >= currentText.length)
+    {
+        NSString* newReplacementText = @"";
+        if ((currentText.length - range.length) < _characterLimit)
+            newReplacementText = [text_ substringWithRange: NSMakeRange(0, _characterLimit - (currentText.length - range.length))];
 
+        NSString* newText = [currentText stringByReplacingCharactersInRange: range withString: newReplacementText];
+
+#if PLATFORM_IOS
+        if (_multiline)
+            [textView setText: newText];
+        else
+            [textField setText: newText];
+#else
+        [textField setText: newText];
+#endif
+
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
+
+@end
 
 //==============================================================================
 //
 //  Unity Interface:
 
-extern "C" void UnityKeyboard_Create(unsigned keyboardType, int autocorrection, int multiline, int secure, int alert, const char* text, const char* placeholder)
+extern "C" void UnityKeyboard_Create(unsigned keyboardType, int autocorrection, int multiline, int secure, int alert, const char* text, const char* placeholder, int characterLimit)
 {
 #if PLATFORM_TVOS
     // Not supported. The API for showing keyboard for editing multi-line text
@@ -531,7 +637,8 @@ extern "C" void UnityKeyboard_Create(unsigned keyboardType, int autocorrection, 
         keyboardTypes[keyboardType],
         autocorrectionTypes[autocorrection],
         keyboardAppearances[alert],
-        (BOOL)multiline, (BOOL)secure
+        (BOOL)multiline, (BOOL)secure,
+        characterLimit
     };
 
     [[KeyboardDelegate Instance] setKeyboardParams: param];
@@ -572,17 +679,6 @@ extern "C" int UnityKeyboard_IsActive()
     return (_keyboard && _keyboard.active) ? 1 : 0;
 }
 
-extern "C" int UnityKeyboard_IsDone()
-{
-    // Preserving old behaviour where done was always set to true when the keyboard was not visible.
-    return (_keyboard && _keyboard.status != Visible) ? 1 : 0;
-}
-
-extern "C" int UnityKeyboard_WasCanceled()
-{
-    return (_keyboard && _keyboard.status == Canceled) ? 1 : 0;
-}
-
 extern "C" int UnityKeyboard_Status()
 {
     return _keyboard ? _keyboard.status : Canceled;
@@ -618,6 +714,11 @@ extern "C" void UnityKeyboard_GetRect(float* x, float* y, float* w, float* h)
     *h = area.size.height * multY;
 }
 
+extern "C" void UnityKeyboard_SetCharacterLimit(unsigned characterLimit)
+{
+    [KeyboardDelegate Instance].characterLimit = characterLimit;
+}
+
 extern "C" int UnityKeyboard_CanGetSelection()
 {
     return (_keyboard) ? 1 : 0;
@@ -636,6 +737,20 @@ extern "C" void UnityKeyboard_GetSelection(int* location, int* length)
     {
         *location = 0;
         *length = 0;
+    }
+}
+
+extern "C" int UnityKeyboard_CanSetSelection()
+{
+    return (_keyboard) ? 1 : 0;
+}
+
+extern "C" void UnityKeyboard_SetSelection(int location, int length)
+{
+    if (_keyboard)
+    {
+        NSRange range = NSMakeRange(location, length);
+        _keyboard.selection = range;
     }
 }
 

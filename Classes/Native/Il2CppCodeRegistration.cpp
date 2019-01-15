@@ -6,6 +6,7 @@
 # include <malloc.h>
 #endif
 
+
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -33,19 +34,19 @@ extern const Il2CppMethodPointer g_UnresolvedVirtualMethodPointers[];
 extern Il2CppInteropData g_Il2CppInteropData[];
 extern const Il2CppCodeRegistration g_CodeRegistration = 
 {
-	9607,
+	10677,
 	g_MethodPointers,
 	0,
 	NULL,
-	3915,
+	3876,
 	g_Il2CppGenericMethodPointers,
-	1466,
+	1569,
 	g_Il2CppInvokerPointers,
-	2060,
+	2535,
 	g_AttributeGenerators,
-	179,
+	252,
 	g_UnresolvedVirtualMethodPointers,
-	95,
+	104,
 	g_Il2CppInteropData,
 };
 extern const Il2CppMetadataRegistration g_MetadataRegistration;

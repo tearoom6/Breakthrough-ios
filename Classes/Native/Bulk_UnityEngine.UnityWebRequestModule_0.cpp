@@ -6,6 +6,7 @@
 # include <malloc.h>
 #endif
 
+
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -18,6 +19,17 @@
 #include "codegen/il2cpp-codegen.h"
 #include "il2cpp-object-internals.h"
 
+template <typename R, typename T1>
+struct VirtFuncInvoker1
+{
+	typedef R (*Func)(void*, T1, const RuntimeMethod*);
+
+	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		return ((Func)invokeData.methodPtr)(obj, p1, invokeData.method);
+	}
+};
 template <typename R>
 struct VirtFuncInvoker0
 {
@@ -51,17 +63,6 @@ struct VirtActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
-template <typename R, typename T1>
-struct VirtFuncInvoker1
-{
-	typedef R (*Func)(void*, T1, const RuntimeMethod*);
-
-	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1)
-	{
-		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
-		return ((Func)invokeData.methodPtr)(obj, p1, invokeData.method);
-	}
-};
 struct InterfaceActionInvoker0
 {
 	typedef void (*Action)(void*, const RuntimeMethod*);
@@ -73,176 +74,196 @@ struct InterfaceActionInvoker0
 	}
 };
 
-// UnityEngine.Networking.DownloadHandler
-struct DownloadHandler_t2937767557;
-// System.String
-struct String_t;
-// System.Byte[]
-struct ByteU5BU5D_t4116647657;
-// System.Text.Encoding
-struct Encoding_t1523322056;
-// System.Char[]
-struct CharU5BU5D_t3528271667;
-// UnityEngine.Networking.DownloadHandlerBuffer
-struct DownloadHandlerBuffer_t2928496527;
-// UnityEngine.Networking.UploadHandler
-struct UploadHandler_t2993558019;
-// UnityEngine.Networking.UnityWebRequest
-struct UnityWebRequest_t463507806;
-// UnityEngine.Networking.UnityWebRequestAsyncOperation
-struct UnityWebRequestAsyncOperation_t3852015985;
-// System.InvalidOperationException
-struct InvalidOperationException_t56020091;
+// System.Action`1<UnityEngine.AsyncOperation>
+struct Action_1_t1617499438;
 // System.ArgumentException
 struct ArgumentException_t132251570;
-// UnityEngine.AsyncOperation
-struct AsyncOperation_t1445031843;
-// UnityEngine.Networking.UploadHandlerRaw
-struct UploadHandlerRaw_t25761545;
-// System.IO.MemoryStream
-struct MemoryStream_t94973147;
-// System.Uri
-struct Uri_t100236324;
-// System.Text.RegularExpressions.Regex
-struct Regex_t3657309853;
-// System.IntPtr[]
-struct IntPtrU5BU5D_t4013366056;
-// System.Collections.IDictionary
-struct IDictionary_t1363984059;
-// System.Uri/UriScheme[]
-struct UriSchemeU5BU5D_t2082808316;
-// System.UriParser
-struct UriParser_t3890150400;
+// System.AsyncCallback
+struct AsyncCallback_t3962456242;
+// System.Byte
+struct Byte_t1134296376;
+// System.Byte[]
+struct ByteU5BU5D_t4116647657;
+// System.Char[]
+struct CharU5BU5D_t3528271667;
+// System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>
+struct Dictionary_2_t1839659084;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t2736202052;
+// System.Collections.IDictionary
+struct IDictionary_t1363984059;
+// System.DelegateData
+struct DelegateData_t1677132599;
+// System.Double
+struct Double_t594665363;
+// System.IAsyncResult
+struct IAsyncResult_t767004451;
+// System.IO.MemoryStream
+struct MemoryStream_t94973147;
+// System.Int32[]
+struct Int32U5BU5D_t385246372;
+// System.IntPtr[]
+struct IntPtrU5BU5D_t4013366056;
+// System.InvalidOperationException
+struct InvalidOperationException_t56020091;
+// System.Object[]
+struct ObjectU5BU5D_t2843939325;
+// System.Reflection.Assembly
+struct Assembly_t;
+// System.Reflection.MethodInfo
+struct MethodInfo_t;
+// System.String
+struct String_t;
+// System.String[]
+struct StringU5BU5D_t1281789340;
 // System.Text.DecoderFallback
 struct DecoderFallback_t3123823036;
 // System.Text.EncoderFallback
 struct EncoderFallback_t1188251036;
-// System.Reflection.Assembly
-struct Assembly_t;
-// System.Object[]
-struct ObjectU5BU5D_t2843939325;
-// System.Void
-struct Void_t1185182177;
-// System.Byte
-struct Byte_t1134296376;
-// System.Double
-struct Double_t594665363;
-// System.UInt16
-struct UInt16_t2177724958;
-// System.Reflection.MethodInfo
-struct MethodInfo_t;
-// System.DelegateData
-struct DelegateData_t1677132599;
-// System.Action`1<UnityEngine.AsyncOperation>
-struct Action_1_t1617499438;
+// System.Text.Encoding
+struct Encoding_t1523322056;
 // System.Text.RegularExpressions.FactoryCache
 struct FactoryCache_t2327118887;
 // System.Text.RegularExpressions.IMachineFactory
 struct IMachineFactory_t1209798546;
-// System.String[]
-struct StringU5BU5D_t1281789340;
-// System.Int32[]
-struct Int32U5BU5D_t385246372;
-// System.IAsyncResult
-struct IAsyncResult_t767004451;
-// System.AsyncCallback
-struct AsyncCallback_t3962456242;
+// System.Text.RegularExpressions.Regex
+struct Regex_t3657309853;
+// System.Text.StringBuilder
+struct StringBuilder_t;
+// System.UInt16
+struct UInt16_t2177724958;
+// System.Uri
+struct Uri_t100236324;
+// System.Uri/UriScheme[]
+struct UriSchemeU5BU5D_t2082808316;
+// System.UriParser
+struct UriParser_t3890150400;
+// System.Void
+struct Void_t1185182177;
+// UnityEngine.AsyncOperation
+struct AsyncOperation_t1445031843;
+// UnityEngine.Networking.CertificateHandler
+struct CertificateHandler_t2739891000;
+// UnityEngine.Networking.DownloadHandler
+struct DownloadHandler_t2937767557;
+// UnityEngine.Networking.DownloadHandlerBuffer
+struct DownloadHandlerBuffer_t2928496527;
+// UnityEngine.Networking.UnityWebRequest
+struct UnityWebRequest_t463507806;
+// UnityEngine.Networking.UnityWebRequestAsyncOperation
+struct UnityWebRequestAsyncOperation_t3852015985;
+// UnityEngine.Networking.UploadHandler
+struct UploadHandler_t2993558019;
+// UnityEngine.Networking.UploadHandlerRaw
+struct UploadHandlerRaw_t25761545;
 
-extern RuntimeClass* IntPtr_t_il2cpp_TypeInfo_var;
-extern const uint32_t DownloadHandler_Dispose_m2747726581_MetadataUsageId;
-extern String_t* _stringLiteral757602046;
-extern const uint32_t DownloadHandler_GetText_m600283602_MetadataUsageId;
-extern RuntimeClass* String_t_il2cpp_TypeInfo_var;
-extern RuntimeClass* CharU5BU5D_t3528271667_il2cpp_TypeInfo_var;
-extern RuntimeClass* Encoding_t1523322056_il2cpp_TypeInfo_var;
 extern RuntimeClass* ArgumentException_t132251570_il2cpp_TypeInfo_var;
+extern RuntimeClass* ByteU5BU5D_t4116647657_il2cpp_TypeInfo_var;
+extern RuntimeClass* CharU5BU5D_t3528271667_il2cpp_TypeInfo_var;
+extern RuntimeClass* Char_t3634460470_il2cpp_TypeInfo_var;
 extern RuntimeClass* Debug_t3317548046_il2cpp_TypeInfo_var;
+extern RuntimeClass* Encoding_t1523322056_il2cpp_TypeInfo_var;
+extern RuntimeClass* FormatException_t154580423_il2cpp_TypeInfo_var;
+extern RuntimeClass* IDisposable_t3640265483_il2cpp_TypeInfo_var;
+extern RuntimeClass* IntPtr_t_il2cpp_TypeInfo_var;
+extern RuntimeClass* InvalidOperationException_t56020091_il2cpp_TypeInfo_var;
+extern RuntimeClass* MemoryStream_t94973147_il2cpp_TypeInfo_var;
+extern RuntimeClass* Regex_t3657309853_il2cpp_TypeInfo_var;
+extern RuntimeClass* StringBuilder_t_il2cpp_TypeInfo_var;
+extern RuntimeClass* String_t_il2cpp_TypeInfo_var;
+extern RuntimeClass* Uri_t100236324_il2cpp_TypeInfo_var;
+extern RuntimeClass* WWWTranscoder_t272523958_il2cpp_TypeInfo_var;
+extern RuntimeClass* WebRequestUtils_t3541624225_il2cpp_TypeInfo_var;
+extern String_t* _stringLiteral1057238085;
+extern String_t* _stringLiteral1130393535;
+extern String_t* _stringLiteral1131442134;
+extern String_t* _stringLiteral1153672764;
+extern String_t* _stringLiteral1287409439;
+extern String_t* _stringLiteral1361828523;
+extern String_t* _stringLiteral1390680534;
+extern String_t* _stringLiteral1510198755;
+extern String_t* _stringLiteral2024966745;
+extern String_t* _stringLiteral2530579871;
+extern String_t* _stringLiteral3074512661;
+extern String_t* _stringLiteral314995292;
+extern String_t* _stringLiteral3211556917;
+extern String_t* _stringLiteral3256060902;
+extern String_t* _stringLiteral3272455574;
+extern String_t* _stringLiteral3445932352;
+extern String_t* _stringLiteral3452614523;
+extern String_t* _stringLiteral3514720613;
 extern String_t* _stringLiteral3515428721;
+extern String_t* _stringLiteral3767907038;
+extern String_t* _stringLiteral4054833267;
+extern String_t* _stringLiteral4274026319;
+extern String_t* _stringLiteral45808443;
 extern String_t* _stringLiteral463295005;
+extern String_t* _stringLiteral598647136;
+extern String_t* _stringLiteral757602046;
+extern String_t* _stringLiteral831347629;
+extern String_t* _stringLiteral97523668;
+extern const RuntimeMethod* UnityWebRequest_InternalSetCustomMethod_m3670745235_RuntimeMethod_var;
+extern const RuntimeMethod* UnityWebRequest_InternalSetMethod_m287631745_RuntimeMethod_var;
+extern const RuntimeMethod* UnityWebRequest_InternalSetUrl_m1036291515_RuntimeMethod_var;
+extern const RuntimeMethod* UnityWebRequest_SetRequestHeader_m2927335855_RuntimeMethod_var;
+extern const RuntimeMethod* UnityWebRequest_set_chunkedTransfer_m1735705240_RuntimeMethod_var;
+extern const RuntimeMethod* UnityWebRequest_set_downloadHandler_m970510352_RuntimeMethod_var;
+extern const RuntimeMethod* UnityWebRequest_set_method_m3969249710_RuntimeMethod_var;
+extern const RuntimeMethod* UnityWebRequest_set_uploadHandler_m54574009_RuntimeMethod_var;
+extern const RuntimeMethod* UploadHandlerRaw__ctor_m1397254157_RuntimeMethod_var;
+extern const RuntimeMethod* WebRequestUtils_MakeInitialUrl_m973728695_RuntimeMethod_var;
+extern const uint32_t CertificateHandler_Dispose_m2100863831_MetadataUsageId;
+extern const uint32_t DownloadHandler_Dispose_m2747726581_MetadataUsageId;
 extern const uint32_t DownloadHandler_GetTextEncoder_m3244408468_MetadataUsageId;
-struct DownloadHandler_t2937767557_marshaled_pinvoke;
+extern const uint32_t DownloadHandler_GetText_m600283602_MetadataUsageId;
+extern const uint32_t UnityWebRequest_InternalDestroy_m2954597795_MetadataUsageId;
+extern const uint32_t UnityWebRequest_InternalSetCustomMethod_m3670745235_MetadataUsageId;
+extern const uint32_t UnityWebRequest_InternalSetMethod_m287631745_MetadataUsageId;
+extern const uint32_t UnityWebRequest_InternalSetUrl_m1036291515_MetadataUsageId;
+extern const uint32_t UnityWebRequest_SetRequestHeader_m2927335855_MetadataUsageId;
+extern const uint32_t UnityWebRequest_set_chunkedTransfer_m1735705240_MetadataUsageId;
+extern const uint32_t UnityWebRequest_set_downloadHandler_m970510352_MetadataUsageId;
+extern const uint32_t UnityWebRequest_set_method_m3969249710_MetadataUsageId;
+extern const uint32_t UnityWebRequest_set_uploadHandler_m54574009_MetadataUsageId;
+extern const uint32_t UnityWebRequest_set_url_m2541992937_MetadataUsageId;
+extern const uint32_t UploadHandlerRaw__ctor_m1397254157_MetadataUsageId;
+extern const uint32_t UploadHandler_Dispose_m3057340132_MetadataUsageId;
+extern const uint32_t WWWForm_get_DefaultEncoding_m4131957975_MetadataUsageId;
+extern const uint32_t WWWTranscoder_Decode_m157051313_MetadataUsageId;
+extern const uint32_t WWWTranscoder_URLDecode_m3587034544_MetadataUsageId;
+extern const uint32_t WWWTranscoder__cctor_m1887474915_MetadataUsageId;
+extern const uint32_t WebRequestUtils_MakeInitialUrl_m973728695_MetadataUsageId;
+extern const uint32_t WebRequestUtils_MakeUriString_m291605890_MetadataUsageId;
+extern const uint32_t WebRequestUtils_RedirectTo_m55747000_MetadataUsageId;
+extern const uint32_t WebRequestUtils_URLDecode_m2727298221_MetadataUsageId;
+extern const uint32_t WebRequestUtils__cctor_m4190982137_MetadataUsageId;
+struct CertificateHandler_t2739891000;;
+struct CertificateHandler_t2739891000_marshaled_com;
+struct CertificateHandler_t2739891000_marshaled_com;;
+struct CertificateHandler_t2739891000_marshaled_pinvoke;
+struct CertificateHandler_t2739891000_marshaled_pinvoke;;
 struct DownloadHandler_t2937767557;;
-struct DownloadHandler_t2937767557_marshaled_pinvoke;;
-struct UploadHandler_t2993558019_marshaled_pinvoke;
-struct UploadHandler_t2993558019;;
-struct UploadHandler_t2993558019_marshaled_pinvoke;;
-extern RuntimeClass* DownloadHandler_t2937767557_il2cpp_TypeInfo_var;
-extern RuntimeClass* UploadHandler_t2993558019_il2cpp_TypeInfo_var;
-extern const uint32_t UnityWebRequest_t463507806_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
 struct DownloadHandler_t2937767557_marshaled_com;
 struct DownloadHandler_t2937767557_marshaled_com;;
-struct UploadHandler_t2993558019_marshaled_com;
-struct UploadHandler_t2993558019_marshaled_com;;
-extern const uint32_t UnityWebRequest_InternalDestroy_m2954597795_MetadataUsageId;
-extern RuntimeClass* InvalidOperationException_t56020091_il2cpp_TypeInfo_var;
-extern String_t* _stringLiteral2024966745;
-extern const uint32_t UnityWebRequest_InternalSetMethod_m287631745_MetadataUsageId;
-extern const uint32_t UnityWebRequest_InternalSetCustomMethod_m3670745235_MetadataUsageId;
-extern String_t* _stringLiteral3514720613;
-extern String_t* _stringLiteral1130393535;
-extern String_t* _stringLiteral45808443;
-extern String_t* _stringLiteral1131442134;
-extern String_t* _stringLiteral831347629;
-extern const uint32_t UnityWebRequest_set_method_m3969249710_MetadataUsageId;
-extern RuntimeClass* WebRequestUtils_t3541624225_il2cpp_TypeInfo_var;
-extern String_t* _stringLiteral2530579871;
-extern const uint32_t UnityWebRequest_set_url_m2541992937_MetadataUsageId;
-extern String_t* _stringLiteral314995292;
-extern const uint32_t UnityWebRequest_InternalSetUrl_m1036291515_MetadataUsageId;
-extern String_t* _stringLiteral3272455574;
-extern String_t* _stringLiteral1361828523;
-extern String_t* _stringLiteral3767907038;
-extern const uint32_t UnityWebRequest_SetRequestHeader_m2927335855_MetadataUsageId;
-extern String_t* _stringLiteral3211556917;
-extern const uint32_t UnityWebRequest_set_uploadHandler_m54574009_MetadataUsageId;
-extern String_t* _stringLiteral1287409439;
-extern const uint32_t UnityWebRequest_set_downloadHandler_m970510352_MetadataUsageId;
-struct UnityWebRequest_t463507806_marshaled_pinvoke;
+struct DownloadHandler_t2937767557_marshaled_pinvoke;
+struct DownloadHandler_t2937767557_marshaled_pinvoke;;
 struct UnityWebRequest_t463507806;;
-struct UnityWebRequest_t463507806_marshaled_pinvoke;;
-extern RuntimeClass* UnityWebRequest_t463507806_il2cpp_TypeInfo_var;
-extern RuntimeClass* Action_1_t1617499438_il2cpp_TypeInfo_var;
-extern const uint32_t UnityWebRequestAsyncOperation_t3852015985_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
 struct UnityWebRequest_t463507806_marshaled_com;
 struct UnityWebRequest_t463507806_marshaled_com;;
-extern const uint32_t UnityWebRequestAsyncOperation_t3852015985_com_FromNativeMethodDefinition_MetadataUsageId;
-extern const uint32_t UploadHandler_Dispose_m3057340132_MetadataUsageId;
-extern String_t* _stringLiteral4274026319;
-extern const uint32_t UploadHandlerRaw__ctor_m1397254157_MetadataUsageId;
-extern const uint32_t WWWForm_get_DefaultEncoding_m4131957975_MetadataUsageId;
-extern RuntimeClass* WWWTranscoder_t272523958_il2cpp_TypeInfo_var;
-extern const uint32_t WWWTranscoder_URLDecode_m3140444198_MetadataUsageId;
-extern RuntimeClass* MemoryStream_t94973147_il2cpp_TypeInfo_var;
-extern RuntimeClass* IDisposable_t3640265483_il2cpp_TypeInfo_var;
-extern const uint32_t WWWTranscoder_Decode_m157051313_MetadataUsageId;
-extern RuntimeClass* ByteU5BU5D_t4116647657_il2cpp_TypeInfo_var;
-extern String_t* _stringLiteral598647136;
-extern String_t* _stringLiteral3445932352;
-extern String_t* _stringLiteral3074512661;
-extern String_t* _stringLiteral1153672764;
-extern String_t* _stringLiteral3256060902;
-extern const uint32_t WWWTranscoder__cctor_m1887474915_MetadataUsageId;
-extern RuntimeClass* Uri_t100236324_il2cpp_TypeInfo_var;
-extern const uint32_t WebRequestUtils_RedirectTo_m55747000_MetadataUsageId;
-extern RuntimeClass* FormatException_t154580423_il2cpp_TypeInfo_var;
-extern String_t* _stringLiteral182697711;
-extern String_t* _stringLiteral3378749104;
-extern String_t* _stringLiteral1057238085;
-extern String_t* _stringLiteral4054833267;
-extern String_t* _stringLiteral3452614523;
-extern const uint32_t WebRequestUtils_MakeInitialUrl_m973728695_MetadataUsageId;
-extern RuntimeClass* Regex_t3657309853_il2cpp_TypeInfo_var;
-extern String_t* _stringLiteral97523668;
-extern const uint32_t WebRequestUtils__cctor_m4190982137_MetadataUsageId;
+struct UnityWebRequest_t463507806_marshaled_pinvoke;
+struct UnityWebRequest_t463507806_marshaled_pinvoke;;
+struct UploadHandler_t2993558019;;
+struct UploadHandler_t2993558019_marshaled_com;
+struct UploadHandler_t2993558019_marshaled_com;;
+struct UploadHandler_t2993558019_marshaled_pinvoke;
+struct UploadHandler_t2993558019_marshaled_pinvoke;;
 
 struct ByteU5BU5D_t4116647657;
 struct CharU5BU5D_t3528271667;
 
 
-#ifndef U3CMODULEU3E_T692745534_H
-#define U3CMODULEU3E_T692745534_H
+#ifndef U3CMODULEU3E_T692745535_H
+#define U3CMODULEU3E_T692745535_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -250,7 +271,7 @@ struct CharU5BU5D_t3528271667;
 #endif
 
 // <Module>
-struct  U3CModuleU3E_t692745534 
+struct  U3CModuleU3E_t692745535 
 {
 public:
 
@@ -260,7 +281,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CMODULEU3E_T692745534_H
+#endif // U3CMODULEU3E_T692745535_H
 #ifndef RUNTIMEOBJECT_H
 #define RUNTIMEOBJECT_H
 #ifdef __clang__
@@ -290,26 +311,6 @@ struct Il2CppArrayBounds;
 #pragma clang diagnostic pop
 #endif
 #endif // RUNTIMEARRAY_H
-#ifndef WWWFORM_T4064702195_H
-#define WWWFORM_T4064702195_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngine.WWWForm
-struct  WWWForm_t4064702195  : public RuntimeObject
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // WWWFORM_T4064702195_H
 #ifndef EXCEPTION_T_H
 #define EXCEPTION_T_H
 #ifdef __clang__
@@ -448,452 +449,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // EXCEPTION_T_H
-#ifndef VALUETYPE_T3640485471_H
-#define VALUETYPE_T3640485471_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.ValueType
-struct  ValueType_t3640485471  : public RuntimeObject
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-// Native definition for P/Invoke marshalling of System.ValueType
-struct ValueType_t3640485471_marshaled_pinvoke
-{
-};
-// Native definition for COM marshalling of System.ValueType
-struct ValueType_t3640485471_marshaled_com
-{
-};
-#endif // VALUETYPE_T3640485471_H
-#ifndef URI_T100236324_H
-#define URI_T100236324_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Uri
-struct  Uri_t100236324  : public RuntimeObject
-{
-public:
-	// System.Boolean System.Uri::isUnixFilePath
-	bool ___isUnixFilePath_0;
-	// System.String System.Uri::source
-	String_t* ___source_1;
-	// System.String System.Uri::scheme
-	String_t* ___scheme_2;
-	// System.String System.Uri::host
-	String_t* ___host_3;
-	// System.Int32 System.Uri::port
-	int32_t ___port_4;
-	// System.String System.Uri::path
-	String_t* ___path_5;
-	// System.String System.Uri::query
-	String_t* ___query_6;
-	// System.String System.Uri::fragment
-	String_t* ___fragment_7;
-	// System.String System.Uri::userinfo
-	String_t* ___userinfo_8;
-	// System.Boolean System.Uri::isUnc
-	bool ___isUnc_9;
-	// System.Boolean System.Uri::isOpaquePart
-	bool ___isOpaquePart_10;
-	// System.Boolean System.Uri::isAbsoluteUri
-	bool ___isAbsoluteUri_11;
-	// System.Boolean System.Uri::userEscaped
-	bool ___userEscaped_12;
-	// System.String System.Uri::cachedAbsoluteUri
-	String_t* ___cachedAbsoluteUri_13;
-	// System.String System.Uri::cachedToString
-	String_t* ___cachedToString_14;
-	// System.Int32 System.Uri::cachedHashCode
-	int32_t ___cachedHashCode_15;
-	// System.UriParser System.Uri::parser
-	UriParser_t3890150400 * ___parser_29;
-
-public:
-	inline static int32_t get_offset_of_isUnixFilePath_0() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isUnixFilePath_0)); }
-	inline bool get_isUnixFilePath_0() const { return ___isUnixFilePath_0; }
-	inline bool* get_address_of_isUnixFilePath_0() { return &___isUnixFilePath_0; }
-	inline void set_isUnixFilePath_0(bool value)
-	{
-		___isUnixFilePath_0 = value;
-	}
-
-	inline static int32_t get_offset_of_source_1() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___source_1)); }
-	inline String_t* get_source_1() const { return ___source_1; }
-	inline String_t** get_address_of_source_1() { return &___source_1; }
-	inline void set_source_1(String_t* value)
-	{
-		___source_1 = value;
-		Il2CppCodeGenWriteBarrier((&___source_1), value);
-	}
-
-	inline static int32_t get_offset_of_scheme_2() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___scheme_2)); }
-	inline String_t* get_scheme_2() const { return ___scheme_2; }
-	inline String_t** get_address_of_scheme_2() { return &___scheme_2; }
-	inline void set_scheme_2(String_t* value)
-	{
-		___scheme_2 = value;
-		Il2CppCodeGenWriteBarrier((&___scheme_2), value);
-	}
-
-	inline static int32_t get_offset_of_host_3() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___host_3)); }
-	inline String_t* get_host_3() const { return ___host_3; }
-	inline String_t** get_address_of_host_3() { return &___host_3; }
-	inline void set_host_3(String_t* value)
-	{
-		___host_3 = value;
-		Il2CppCodeGenWriteBarrier((&___host_3), value);
-	}
-
-	inline static int32_t get_offset_of_port_4() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___port_4)); }
-	inline int32_t get_port_4() const { return ___port_4; }
-	inline int32_t* get_address_of_port_4() { return &___port_4; }
-	inline void set_port_4(int32_t value)
-	{
-		___port_4 = value;
-	}
-
-	inline static int32_t get_offset_of_path_5() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___path_5)); }
-	inline String_t* get_path_5() const { return ___path_5; }
-	inline String_t** get_address_of_path_5() { return &___path_5; }
-	inline void set_path_5(String_t* value)
-	{
-		___path_5 = value;
-		Il2CppCodeGenWriteBarrier((&___path_5), value);
-	}
-
-	inline static int32_t get_offset_of_query_6() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___query_6)); }
-	inline String_t* get_query_6() const { return ___query_6; }
-	inline String_t** get_address_of_query_6() { return &___query_6; }
-	inline void set_query_6(String_t* value)
-	{
-		___query_6 = value;
-		Il2CppCodeGenWriteBarrier((&___query_6), value);
-	}
-
-	inline static int32_t get_offset_of_fragment_7() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___fragment_7)); }
-	inline String_t* get_fragment_7() const { return ___fragment_7; }
-	inline String_t** get_address_of_fragment_7() { return &___fragment_7; }
-	inline void set_fragment_7(String_t* value)
-	{
-		___fragment_7 = value;
-		Il2CppCodeGenWriteBarrier((&___fragment_7), value);
-	}
-
-	inline static int32_t get_offset_of_userinfo_8() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___userinfo_8)); }
-	inline String_t* get_userinfo_8() const { return ___userinfo_8; }
-	inline String_t** get_address_of_userinfo_8() { return &___userinfo_8; }
-	inline void set_userinfo_8(String_t* value)
-	{
-		___userinfo_8 = value;
-		Il2CppCodeGenWriteBarrier((&___userinfo_8), value);
-	}
-
-	inline static int32_t get_offset_of_isUnc_9() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isUnc_9)); }
-	inline bool get_isUnc_9() const { return ___isUnc_9; }
-	inline bool* get_address_of_isUnc_9() { return &___isUnc_9; }
-	inline void set_isUnc_9(bool value)
-	{
-		___isUnc_9 = value;
-	}
-
-	inline static int32_t get_offset_of_isOpaquePart_10() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isOpaquePart_10)); }
-	inline bool get_isOpaquePart_10() const { return ___isOpaquePart_10; }
-	inline bool* get_address_of_isOpaquePart_10() { return &___isOpaquePart_10; }
-	inline void set_isOpaquePart_10(bool value)
-	{
-		___isOpaquePart_10 = value;
-	}
-
-	inline static int32_t get_offset_of_isAbsoluteUri_11() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isAbsoluteUri_11)); }
-	inline bool get_isAbsoluteUri_11() const { return ___isAbsoluteUri_11; }
-	inline bool* get_address_of_isAbsoluteUri_11() { return &___isAbsoluteUri_11; }
-	inline void set_isAbsoluteUri_11(bool value)
-	{
-		___isAbsoluteUri_11 = value;
-	}
-
-	inline static int32_t get_offset_of_userEscaped_12() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___userEscaped_12)); }
-	inline bool get_userEscaped_12() const { return ___userEscaped_12; }
-	inline bool* get_address_of_userEscaped_12() { return &___userEscaped_12; }
-	inline void set_userEscaped_12(bool value)
-	{
-		___userEscaped_12 = value;
-	}
-
-	inline static int32_t get_offset_of_cachedAbsoluteUri_13() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___cachedAbsoluteUri_13)); }
-	inline String_t* get_cachedAbsoluteUri_13() const { return ___cachedAbsoluteUri_13; }
-	inline String_t** get_address_of_cachedAbsoluteUri_13() { return &___cachedAbsoluteUri_13; }
-	inline void set_cachedAbsoluteUri_13(String_t* value)
-	{
-		___cachedAbsoluteUri_13 = value;
-		Il2CppCodeGenWriteBarrier((&___cachedAbsoluteUri_13), value);
-	}
-
-	inline static int32_t get_offset_of_cachedToString_14() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___cachedToString_14)); }
-	inline String_t* get_cachedToString_14() const { return ___cachedToString_14; }
-	inline String_t** get_address_of_cachedToString_14() { return &___cachedToString_14; }
-	inline void set_cachedToString_14(String_t* value)
-	{
-		___cachedToString_14 = value;
-		Il2CppCodeGenWriteBarrier((&___cachedToString_14), value);
-	}
-
-	inline static int32_t get_offset_of_cachedHashCode_15() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___cachedHashCode_15)); }
-	inline int32_t get_cachedHashCode_15() const { return ___cachedHashCode_15; }
-	inline int32_t* get_address_of_cachedHashCode_15() { return &___cachedHashCode_15; }
-	inline void set_cachedHashCode_15(int32_t value)
-	{
-		___cachedHashCode_15 = value;
-	}
-
-	inline static int32_t get_offset_of_parser_29() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___parser_29)); }
-	inline UriParser_t3890150400 * get_parser_29() const { return ___parser_29; }
-	inline UriParser_t3890150400 ** get_address_of_parser_29() { return &___parser_29; }
-	inline void set_parser_29(UriParser_t3890150400 * value)
-	{
-		___parser_29 = value;
-		Il2CppCodeGenWriteBarrier((&___parser_29), value);
-	}
-};
-
-struct Uri_t100236324_StaticFields
-{
-public:
-	// System.String System.Uri::hexUpperChars
-	String_t* ___hexUpperChars_16;
-	// System.String System.Uri::SchemeDelimiter
-	String_t* ___SchemeDelimiter_17;
-	// System.String System.Uri::UriSchemeFile
-	String_t* ___UriSchemeFile_18;
-	// System.String System.Uri::UriSchemeFtp
-	String_t* ___UriSchemeFtp_19;
-	// System.String System.Uri::UriSchemeGopher
-	String_t* ___UriSchemeGopher_20;
-	// System.String System.Uri::UriSchemeHttp
-	String_t* ___UriSchemeHttp_21;
-	// System.String System.Uri::UriSchemeHttps
-	String_t* ___UriSchemeHttps_22;
-	// System.String System.Uri::UriSchemeMailto
-	String_t* ___UriSchemeMailto_23;
-	// System.String System.Uri::UriSchemeNews
-	String_t* ___UriSchemeNews_24;
-	// System.String System.Uri::UriSchemeNntp
-	String_t* ___UriSchemeNntp_25;
-	// System.String System.Uri::UriSchemeNetPipe
-	String_t* ___UriSchemeNetPipe_26;
-	// System.String System.Uri::UriSchemeNetTcp
-	String_t* ___UriSchemeNetTcp_27;
-	// System.Uri/UriScheme[] System.Uri::schemes
-	UriSchemeU5BU5D_t2082808316* ___schemes_28;
-	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map14
-	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map14_30;
-	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map15
-	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map15_31;
-	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map16
-	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map16_32;
-
-public:
-	inline static int32_t get_offset_of_hexUpperChars_16() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___hexUpperChars_16)); }
-	inline String_t* get_hexUpperChars_16() const { return ___hexUpperChars_16; }
-	inline String_t** get_address_of_hexUpperChars_16() { return &___hexUpperChars_16; }
-	inline void set_hexUpperChars_16(String_t* value)
-	{
-		___hexUpperChars_16 = value;
-		Il2CppCodeGenWriteBarrier((&___hexUpperChars_16), value);
-	}
-
-	inline static int32_t get_offset_of_SchemeDelimiter_17() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___SchemeDelimiter_17)); }
-	inline String_t* get_SchemeDelimiter_17() const { return ___SchemeDelimiter_17; }
-	inline String_t** get_address_of_SchemeDelimiter_17() { return &___SchemeDelimiter_17; }
-	inline void set_SchemeDelimiter_17(String_t* value)
-	{
-		___SchemeDelimiter_17 = value;
-		Il2CppCodeGenWriteBarrier((&___SchemeDelimiter_17), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeFile_18() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeFile_18)); }
-	inline String_t* get_UriSchemeFile_18() const { return ___UriSchemeFile_18; }
-	inline String_t** get_address_of_UriSchemeFile_18() { return &___UriSchemeFile_18; }
-	inline void set_UriSchemeFile_18(String_t* value)
-	{
-		___UriSchemeFile_18 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeFile_18), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeFtp_19() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeFtp_19)); }
-	inline String_t* get_UriSchemeFtp_19() const { return ___UriSchemeFtp_19; }
-	inline String_t** get_address_of_UriSchemeFtp_19() { return &___UriSchemeFtp_19; }
-	inline void set_UriSchemeFtp_19(String_t* value)
-	{
-		___UriSchemeFtp_19 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeFtp_19), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeGopher_20() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeGopher_20)); }
-	inline String_t* get_UriSchemeGopher_20() const { return ___UriSchemeGopher_20; }
-	inline String_t** get_address_of_UriSchemeGopher_20() { return &___UriSchemeGopher_20; }
-	inline void set_UriSchemeGopher_20(String_t* value)
-	{
-		___UriSchemeGopher_20 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeGopher_20), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeHttp_21() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeHttp_21)); }
-	inline String_t* get_UriSchemeHttp_21() const { return ___UriSchemeHttp_21; }
-	inline String_t** get_address_of_UriSchemeHttp_21() { return &___UriSchemeHttp_21; }
-	inline void set_UriSchemeHttp_21(String_t* value)
-	{
-		___UriSchemeHttp_21 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeHttp_21), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeHttps_22() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeHttps_22)); }
-	inline String_t* get_UriSchemeHttps_22() const { return ___UriSchemeHttps_22; }
-	inline String_t** get_address_of_UriSchemeHttps_22() { return &___UriSchemeHttps_22; }
-	inline void set_UriSchemeHttps_22(String_t* value)
-	{
-		___UriSchemeHttps_22 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeHttps_22), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeMailto_23() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeMailto_23)); }
-	inline String_t* get_UriSchemeMailto_23() const { return ___UriSchemeMailto_23; }
-	inline String_t** get_address_of_UriSchemeMailto_23() { return &___UriSchemeMailto_23; }
-	inline void set_UriSchemeMailto_23(String_t* value)
-	{
-		___UriSchemeMailto_23 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeMailto_23), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeNews_24() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNews_24)); }
-	inline String_t* get_UriSchemeNews_24() const { return ___UriSchemeNews_24; }
-	inline String_t** get_address_of_UriSchemeNews_24() { return &___UriSchemeNews_24; }
-	inline void set_UriSchemeNews_24(String_t* value)
-	{
-		___UriSchemeNews_24 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeNews_24), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeNntp_25() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNntp_25)); }
-	inline String_t* get_UriSchemeNntp_25() const { return ___UriSchemeNntp_25; }
-	inline String_t** get_address_of_UriSchemeNntp_25() { return &___UriSchemeNntp_25; }
-	inline void set_UriSchemeNntp_25(String_t* value)
-	{
-		___UriSchemeNntp_25 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeNntp_25), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeNetPipe_26() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNetPipe_26)); }
-	inline String_t* get_UriSchemeNetPipe_26() const { return ___UriSchemeNetPipe_26; }
-	inline String_t** get_address_of_UriSchemeNetPipe_26() { return &___UriSchemeNetPipe_26; }
-	inline void set_UriSchemeNetPipe_26(String_t* value)
-	{
-		___UriSchemeNetPipe_26 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeNetPipe_26), value);
-	}
-
-	inline static int32_t get_offset_of_UriSchemeNetTcp_27() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNetTcp_27)); }
-	inline String_t* get_UriSchemeNetTcp_27() const { return ___UriSchemeNetTcp_27; }
-	inline String_t** get_address_of_UriSchemeNetTcp_27() { return &___UriSchemeNetTcp_27; }
-	inline void set_UriSchemeNetTcp_27(String_t* value)
-	{
-		___UriSchemeNetTcp_27 = value;
-		Il2CppCodeGenWriteBarrier((&___UriSchemeNetTcp_27), value);
-	}
-
-	inline static int32_t get_offset_of_schemes_28() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___schemes_28)); }
-	inline UriSchemeU5BU5D_t2082808316* get_schemes_28() const { return ___schemes_28; }
-	inline UriSchemeU5BU5D_t2082808316** get_address_of_schemes_28() { return &___schemes_28; }
-	inline void set_schemes_28(UriSchemeU5BU5D_t2082808316* value)
-	{
-		___schemes_28 = value;
-		Il2CppCodeGenWriteBarrier((&___schemes_28), value);
-	}
-
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map14_30() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map14_30)); }
-	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map14_30() const { return ___U3CU3Ef__switchU24map14_30; }
-	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map14_30() { return &___U3CU3Ef__switchU24map14_30; }
-	inline void set_U3CU3Ef__switchU24map14_30(Dictionary_2_t2736202052 * value)
-	{
-		___U3CU3Ef__switchU24map14_30 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map14_30), value);
-	}
-
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map15_31() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map15_31)); }
-	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map15_31() const { return ___U3CU3Ef__switchU24map15_31; }
-	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map15_31() { return &___U3CU3Ef__switchU24map15_31; }
-	inline void set_U3CU3Ef__switchU24map15_31(Dictionary_2_t2736202052 * value)
-	{
-		___U3CU3Ef__switchU24map15_31 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map15_31), value);
-	}
-
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map16_32() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map16_32)); }
-	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map16_32() const { return ___U3CU3Ef__switchU24map16_32; }
-	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map16_32() { return &___U3CU3Ef__switchU24map16_32; }
-	inline void set_U3CU3Ef__switchU24map16_32(Dictionary_2_t2736202052 * value)
-	{
-		___U3CU3Ef__switchU24map16_32 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map16_32), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // URI_T100236324_H
-#ifndef WEBREQUESTUTILS_T3541624225_H
-#define WEBREQUESTUTILS_T3541624225_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngineInternal.WebRequestUtils
-struct  WebRequestUtils_t3541624225  : public RuntimeObject
-{
-public:
-
-public:
-};
-
-struct WebRequestUtils_t3541624225_StaticFields
-{
-public:
-	// System.Text.RegularExpressions.Regex UnityEngineInternal.WebRequestUtils::domainRegex
-	Regex_t3657309853 * ___domainRegex_0;
-
-public:
-	inline static int32_t get_offset_of_domainRegex_0() { return static_cast<int32_t>(offsetof(WebRequestUtils_t3541624225_StaticFields, ___domainRegex_0)); }
-	inline Regex_t3657309853 * get_domainRegex_0() const { return ___domainRegex_0; }
-	inline Regex_t3657309853 ** get_address_of_domainRegex_0() { return &___domainRegex_0; }
-	inline void set_domainRegex_0(Regex_t3657309853 * value)
-	{
-		___domainRegex_0 = value;
-		Il2CppCodeGenWriteBarrier((&___domainRegex_0), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // WEBREQUESTUTILS_T3541624225_H
 #ifndef STREAM_T1273022909_H
 #define STREAM_T1273022909_H
 #ifdef __clang__
@@ -931,157 +486,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // STREAM_T1273022909_H
-#ifndef WWWTRANSCODER_T272523958_H
-#define WWWTRANSCODER_T272523958_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngine.WWWTranscoder
-struct  WWWTranscoder_t272523958  : public RuntimeObject
-{
-public:
-
-public:
-};
-
-struct WWWTranscoder_t272523958_StaticFields
-{
-public:
-	// System.Byte[] UnityEngine.WWWTranscoder::ucHexChars
-	ByteU5BU5D_t4116647657* ___ucHexChars_0;
-	// System.Byte[] UnityEngine.WWWTranscoder::lcHexChars
-	ByteU5BU5D_t4116647657* ___lcHexChars_1;
-	// System.Byte UnityEngine.WWWTranscoder::urlEscapeChar
-	uint8_t ___urlEscapeChar_2;
-	// System.Byte[] UnityEngine.WWWTranscoder::urlSpace
-	ByteU5BU5D_t4116647657* ___urlSpace_3;
-	// System.Byte[] UnityEngine.WWWTranscoder::dataSpace
-	ByteU5BU5D_t4116647657* ___dataSpace_4;
-	// System.Byte[] UnityEngine.WWWTranscoder::urlForbidden
-	ByteU5BU5D_t4116647657* ___urlForbidden_5;
-	// System.Byte UnityEngine.WWWTranscoder::qpEscapeChar
-	uint8_t ___qpEscapeChar_6;
-	// System.Byte[] UnityEngine.WWWTranscoder::qpSpace
-	ByteU5BU5D_t4116647657* ___qpSpace_7;
-	// System.Byte[] UnityEngine.WWWTranscoder::qpForbidden
-	ByteU5BU5D_t4116647657* ___qpForbidden_8;
-
-public:
-	inline static int32_t get_offset_of_ucHexChars_0() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___ucHexChars_0)); }
-	inline ByteU5BU5D_t4116647657* get_ucHexChars_0() const { return ___ucHexChars_0; }
-	inline ByteU5BU5D_t4116647657** get_address_of_ucHexChars_0() { return &___ucHexChars_0; }
-	inline void set_ucHexChars_0(ByteU5BU5D_t4116647657* value)
-	{
-		___ucHexChars_0 = value;
-		Il2CppCodeGenWriteBarrier((&___ucHexChars_0), value);
-	}
-
-	inline static int32_t get_offset_of_lcHexChars_1() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___lcHexChars_1)); }
-	inline ByteU5BU5D_t4116647657* get_lcHexChars_1() const { return ___lcHexChars_1; }
-	inline ByteU5BU5D_t4116647657** get_address_of_lcHexChars_1() { return &___lcHexChars_1; }
-	inline void set_lcHexChars_1(ByteU5BU5D_t4116647657* value)
-	{
-		___lcHexChars_1 = value;
-		Il2CppCodeGenWriteBarrier((&___lcHexChars_1), value);
-	}
-
-	inline static int32_t get_offset_of_urlEscapeChar_2() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___urlEscapeChar_2)); }
-	inline uint8_t get_urlEscapeChar_2() const { return ___urlEscapeChar_2; }
-	inline uint8_t* get_address_of_urlEscapeChar_2() { return &___urlEscapeChar_2; }
-	inline void set_urlEscapeChar_2(uint8_t value)
-	{
-		___urlEscapeChar_2 = value;
-	}
-
-	inline static int32_t get_offset_of_urlSpace_3() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___urlSpace_3)); }
-	inline ByteU5BU5D_t4116647657* get_urlSpace_3() const { return ___urlSpace_3; }
-	inline ByteU5BU5D_t4116647657** get_address_of_urlSpace_3() { return &___urlSpace_3; }
-	inline void set_urlSpace_3(ByteU5BU5D_t4116647657* value)
-	{
-		___urlSpace_3 = value;
-		Il2CppCodeGenWriteBarrier((&___urlSpace_3), value);
-	}
-
-	inline static int32_t get_offset_of_dataSpace_4() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___dataSpace_4)); }
-	inline ByteU5BU5D_t4116647657* get_dataSpace_4() const { return ___dataSpace_4; }
-	inline ByteU5BU5D_t4116647657** get_address_of_dataSpace_4() { return &___dataSpace_4; }
-	inline void set_dataSpace_4(ByteU5BU5D_t4116647657* value)
-	{
-		___dataSpace_4 = value;
-		Il2CppCodeGenWriteBarrier((&___dataSpace_4), value);
-	}
-
-	inline static int32_t get_offset_of_urlForbidden_5() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___urlForbidden_5)); }
-	inline ByteU5BU5D_t4116647657* get_urlForbidden_5() const { return ___urlForbidden_5; }
-	inline ByteU5BU5D_t4116647657** get_address_of_urlForbidden_5() { return &___urlForbidden_5; }
-	inline void set_urlForbidden_5(ByteU5BU5D_t4116647657* value)
-	{
-		___urlForbidden_5 = value;
-		Il2CppCodeGenWriteBarrier((&___urlForbidden_5), value);
-	}
-
-	inline static int32_t get_offset_of_qpEscapeChar_6() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___qpEscapeChar_6)); }
-	inline uint8_t get_qpEscapeChar_6() const { return ___qpEscapeChar_6; }
-	inline uint8_t* get_address_of_qpEscapeChar_6() { return &___qpEscapeChar_6; }
-	inline void set_qpEscapeChar_6(uint8_t value)
-	{
-		___qpEscapeChar_6 = value;
-	}
-
-	inline static int32_t get_offset_of_qpSpace_7() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___qpSpace_7)); }
-	inline ByteU5BU5D_t4116647657* get_qpSpace_7() const { return ___qpSpace_7; }
-	inline ByteU5BU5D_t4116647657** get_address_of_qpSpace_7() { return &___qpSpace_7; }
-	inline void set_qpSpace_7(ByteU5BU5D_t4116647657* value)
-	{
-		___qpSpace_7 = value;
-		Il2CppCodeGenWriteBarrier((&___qpSpace_7), value);
-	}
-
-	inline static int32_t get_offset_of_qpForbidden_8() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___qpForbidden_8)); }
-	inline ByteU5BU5D_t4116647657* get_qpForbidden_8() const { return ___qpForbidden_8; }
-	inline ByteU5BU5D_t4116647657** get_address_of_qpForbidden_8() { return &___qpForbidden_8; }
-	inline void set_qpForbidden_8(ByteU5BU5D_t4116647657* value)
-	{
-		___qpForbidden_8 = value;
-		Il2CppCodeGenWriteBarrier((&___qpForbidden_8), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // WWWTRANSCODER_T272523958_H
-#ifndef YIELDINSTRUCTION_T403091072_H
-#define YIELDINSTRUCTION_T403091072_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngine.YieldInstruction
-struct  YieldInstruction_t403091072  : public RuntimeObject
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-// Native definition for P/Invoke marshalling of UnityEngine.YieldInstruction
-struct YieldInstruction_t403091072_marshaled_pinvoke
-{
-};
-// Native definition for COM marshalling of UnityEngine.YieldInstruction
-struct YieldInstruction_t403091072_marshaled_com
-{
-};
-#endif // YIELDINSTRUCTION_T403091072_H
 #ifndef STRING_T_H
 #define STRING_T_H
 #ifdef __clang__
@@ -1474,129 +878,964 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // ENCODING_T1523322056_H
-#ifndef INTPTR_T_H
-#define INTPTR_T_H
+#ifndef STRINGBUILDER_T_H
+#define STRINGBUILDER_T_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// System.IntPtr
-struct  IntPtr_t 
+// System.Text.StringBuilder
+struct  StringBuilder_t  : public RuntimeObject
 {
 public:
-	// System.Void* System.IntPtr::m_value
-	void* ___m_value_0;
+	// System.Int32 System.Text.StringBuilder::_length
+	int32_t ____length_1;
+	// System.String System.Text.StringBuilder::_str
+	String_t* ____str_2;
+	// System.String System.Text.StringBuilder::_cached_str
+	String_t* ____cached_str_3;
+	// System.Int32 System.Text.StringBuilder::_maxCapacity
+	int32_t ____maxCapacity_4;
 
 public:
-	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(IntPtr_t, ___m_value_0)); }
-	inline void* get_m_value_0() const { return ___m_value_0; }
-	inline void** get_address_of_m_value_0() { return &___m_value_0; }
-	inline void set_m_value_0(void* value)
+	inline static int32_t get_offset_of__length_1() { return static_cast<int32_t>(offsetof(StringBuilder_t, ____length_1)); }
+	inline int32_t get__length_1() const { return ____length_1; }
+	inline int32_t* get_address_of__length_1() { return &____length_1; }
+	inline void set__length_1(int32_t value)
 	{
-		___m_value_0 = value;
+		____length_1 = value;
 	}
-};
 
-struct IntPtr_t_StaticFields
-{
-public:
-	// System.IntPtr System.IntPtr::Zero
-	intptr_t ___Zero_1;
-
-public:
-	inline static int32_t get_offset_of_Zero_1() { return static_cast<int32_t>(offsetof(IntPtr_t_StaticFields, ___Zero_1)); }
-	inline intptr_t get_Zero_1() const { return ___Zero_1; }
-	inline intptr_t* get_address_of_Zero_1() { return &___Zero_1; }
-	inline void set_Zero_1(intptr_t value)
+	inline static int32_t get_offset_of__str_2() { return static_cast<int32_t>(offsetof(StringBuilder_t, ____str_2)); }
+	inline String_t* get__str_2() const { return ____str_2; }
+	inline String_t** get_address_of__str_2() { return &____str_2; }
+	inline void set__str_2(String_t* value)
 	{
-		___Zero_1 = value;
+		____str_2 = value;
+		Il2CppCodeGenWriteBarrier((&____str_2), value);
+	}
+
+	inline static int32_t get_offset_of__cached_str_3() { return static_cast<int32_t>(offsetof(StringBuilder_t, ____cached_str_3)); }
+	inline String_t* get__cached_str_3() const { return ____cached_str_3; }
+	inline String_t** get_address_of__cached_str_3() { return &____cached_str_3; }
+	inline void set__cached_str_3(String_t* value)
+	{
+		____cached_str_3 = value;
+		Il2CppCodeGenWriteBarrier((&____cached_str_3), value);
+	}
+
+	inline static int32_t get_offset_of__maxCapacity_4() { return static_cast<int32_t>(offsetof(StringBuilder_t, ____maxCapacity_4)); }
+	inline int32_t get__maxCapacity_4() const { return ____maxCapacity_4; }
+	inline int32_t* get_address_of__maxCapacity_4() { return &____maxCapacity_4; }
+	inline void set__maxCapacity_4(int32_t value)
+	{
+		____maxCapacity_4 = value;
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // INTPTR_T_H
-#ifndef VOID_T1185182177_H
-#define VOID_T1185182177_H
+#endif // STRINGBUILDER_T_H
+#ifndef URI_T100236324_H
+#define URI_T100236324_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// System.Void
-struct  Void_t1185182177 
+// System.Uri
+struct  Uri_t100236324  : public RuntimeObject
 {
 public:
+	// System.Boolean System.Uri::isUnixFilePath
+	bool ___isUnixFilePath_1;
+	// System.String System.Uri::source
+	String_t* ___source_2;
+	// System.String System.Uri::scheme
+	String_t* ___scheme_3;
+	// System.String System.Uri::host
+	String_t* ___host_4;
+	// System.Int32 System.Uri::port
+	int32_t ___port_5;
+	// System.String System.Uri::path
+	String_t* ___path_6;
+	// System.String System.Uri::query
+	String_t* ___query_7;
+	// System.String System.Uri::fragment
+	String_t* ___fragment_8;
+	// System.String System.Uri::userinfo
+	String_t* ___userinfo_9;
+	// System.Boolean System.Uri::isUnc
+	bool ___isUnc_10;
+	// System.Boolean System.Uri::isOpaquePart
+	bool ___isOpaquePart_11;
+	// System.Boolean System.Uri::isAbsoluteUri
+	bool ___isAbsoluteUri_12;
+	// System.String[] System.Uri::segments
+	StringU5BU5D_t1281789340* ___segments_13;
+	// System.Boolean System.Uri::userEscaped
+	bool ___userEscaped_14;
+	// System.String System.Uri::cachedAbsoluteUri
+	String_t* ___cachedAbsoluteUri_15;
+	// System.String System.Uri::cachedToString
+	String_t* ___cachedToString_16;
+	// System.String System.Uri::cachedLocalPath
+	String_t* ___cachedLocalPath_17;
+	// System.Int32 System.Uri::cachedHashCode
+	int32_t ___cachedHashCode_18;
+	// System.UriParser System.Uri::parser
+	UriParser_t3890150400 * ___parser_32;
 
 public:
+	inline static int32_t get_offset_of_isUnixFilePath_1() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isUnixFilePath_1)); }
+	inline bool get_isUnixFilePath_1() const { return ___isUnixFilePath_1; }
+	inline bool* get_address_of_isUnixFilePath_1() { return &___isUnixFilePath_1; }
+	inline void set_isUnixFilePath_1(bool value)
+	{
+		___isUnixFilePath_1 = value;
+	}
+
+	inline static int32_t get_offset_of_source_2() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___source_2)); }
+	inline String_t* get_source_2() const { return ___source_2; }
+	inline String_t** get_address_of_source_2() { return &___source_2; }
+	inline void set_source_2(String_t* value)
+	{
+		___source_2 = value;
+		Il2CppCodeGenWriteBarrier((&___source_2), value);
+	}
+
+	inline static int32_t get_offset_of_scheme_3() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___scheme_3)); }
+	inline String_t* get_scheme_3() const { return ___scheme_3; }
+	inline String_t** get_address_of_scheme_3() { return &___scheme_3; }
+	inline void set_scheme_3(String_t* value)
+	{
+		___scheme_3 = value;
+		Il2CppCodeGenWriteBarrier((&___scheme_3), value);
+	}
+
+	inline static int32_t get_offset_of_host_4() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___host_4)); }
+	inline String_t* get_host_4() const { return ___host_4; }
+	inline String_t** get_address_of_host_4() { return &___host_4; }
+	inline void set_host_4(String_t* value)
+	{
+		___host_4 = value;
+		Il2CppCodeGenWriteBarrier((&___host_4), value);
+	}
+
+	inline static int32_t get_offset_of_port_5() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___port_5)); }
+	inline int32_t get_port_5() const { return ___port_5; }
+	inline int32_t* get_address_of_port_5() { return &___port_5; }
+	inline void set_port_5(int32_t value)
+	{
+		___port_5 = value;
+	}
+
+	inline static int32_t get_offset_of_path_6() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___path_6)); }
+	inline String_t* get_path_6() const { return ___path_6; }
+	inline String_t** get_address_of_path_6() { return &___path_6; }
+	inline void set_path_6(String_t* value)
+	{
+		___path_6 = value;
+		Il2CppCodeGenWriteBarrier((&___path_6), value);
+	}
+
+	inline static int32_t get_offset_of_query_7() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___query_7)); }
+	inline String_t* get_query_7() const { return ___query_7; }
+	inline String_t** get_address_of_query_7() { return &___query_7; }
+	inline void set_query_7(String_t* value)
+	{
+		___query_7 = value;
+		Il2CppCodeGenWriteBarrier((&___query_7), value);
+	}
+
+	inline static int32_t get_offset_of_fragment_8() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___fragment_8)); }
+	inline String_t* get_fragment_8() const { return ___fragment_8; }
+	inline String_t** get_address_of_fragment_8() { return &___fragment_8; }
+	inline void set_fragment_8(String_t* value)
+	{
+		___fragment_8 = value;
+		Il2CppCodeGenWriteBarrier((&___fragment_8), value);
+	}
+
+	inline static int32_t get_offset_of_userinfo_9() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___userinfo_9)); }
+	inline String_t* get_userinfo_9() const { return ___userinfo_9; }
+	inline String_t** get_address_of_userinfo_9() { return &___userinfo_9; }
+	inline void set_userinfo_9(String_t* value)
+	{
+		___userinfo_9 = value;
+		Il2CppCodeGenWriteBarrier((&___userinfo_9), value);
+	}
+
+	inline static int32_t get_offset_of_isUnc_10() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isUnc_10)); }
+	inline bool get_isUnc_10() const { return ___isUnc_10; }
+	inline bool* get_address_of_isUnc_10() { return &___isUnc_10; }
+	inline void set_isUnc_10(bool value)
+	{
+		___isUnc_10 = value;
+	}
+
+	inline static int32_t get_offset_of_isOpaquePart_11() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isOpaquePart_11)); }
+	inline bool get_isOpaquePart_11() const { return ___isOpaquePart_11; }
+	inline bool* get_address_of_isOpaquePart_11() { return &___isOpaquePart_11; }
+	inline void set_isOpaquePart_11(bool value)
+	{
+		___isOpaquePart_11 = value;
+	}
+
+	inline static int32_t get_offset_of_isAbsoluteUri_12() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___isAbsoluteUri_12)); }
+	inline bool get_isAbsoluteUri_12() const { return ___isAbsoluteUri_12; }
+	inline bool* get_address_of_isAbsoluteUri_12() { return &___isAbsoluteUri_12; }
+	inline void set_isAbsoluteUri_12(bool value)
+	{
+		___isAbsoluteUri_12 = value;
+	}
+
+	inline static int32_t get_offset_of_segments_13() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___segments_13)); }
+	inline StringU5BU5D_t1281789340* get_segments_13() const { return ___segments_13; }
+	inline StringU5BU5D_t1281789340** get_address_of_segments_13() { return &___segments_13; }
+	inline void set_segments_13(StringU5BU5D_t1281789340* value)
+	{
+		___segments_13 = value;
+		Il2CppCodeGenWriteBarrier((&___segments_13), value);
+	}
+
+	inline static int32_t get_offset_of_userEscaped_14() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___userEscaped_14)); }
+	inline bool get_userEscaped_14() const { return ___userEscaped_14; }
+	inline bool* get_address_of_userEscaped_14() { return &___userEscaped_14; }
+	inline void set_userEscaped_14(bool value)
+	{
+		___userEscaped_14 = value;
+	}
+
+	inline static int32_t get_offset_of_cachedAbsoluteUri_15() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___cachedAbsoluteUri_15)); }
+	inline String_t* get_cachedAbsoluteUri_15() const { return ___cachedAbsoluteUri_15; }
+	inline String_t** get_address_of_cachedAbsoluteUri_15() { return &___cachedAbsoluteUri_15; }
+	inline void set_cachedAbsoluteUri_15(String_t* value)
+	{
+		___cachedAbsoluteUri_15 = value;
+		Il2CppCodeGenWriteBarrier((&___cachedAbsoluteUri_15), value);
+	}
+
+	inline static int32_t get_offset_of_cachedToString_16() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___cachedToString_16)); }
+	inline String_t* get_cachedToString_16() const { return ___cachedToString_16; }
+	inline String_t** get_address_of_cachedToString_16() { return &___cachedToString_16; }
+	inline void set_cachedToString_16(String_t* value)
+	{
+		___cachedToString_16 = value;
+		Il2CppCodeGenWriteBarrier((&___cachedToString_16), value);
+	}
+
+	inline static int32_t get_offset_of_cachedLocalPath_17() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___cachedLocalPath_17)); }
+	inline String_t* get_cachedLocalPath_17() const { return ___cachedLocalPath_17; }
+	inline String_t** get_address_of_cachedLocalPath_17() { return &___cachedLocalPath_17; }
+	inline void set_cachedLocalPath_17(String_t* value)
+	{
+		___cachedLocalPath_17 = value;
+		Il2CppCodeGenWriteBarrier((&___cachedLocalPath_17), value);
+	}
+
+	inline static int32_t get_offset_of_cachedHashCode_18() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___cachedHashCode_18)); }
+	inline int32_t get_cachedHashCode_18() const { return ___cachedHashCode_18; }
+	inline int32_t* get_address_of_cachedHashCode_18() { return &___cachedHashCode_18; }
+	inline void set_cachedHashCode_18(int32_t value)
+	{
+		___cachedHashCode_18 = value;
+	}
+
+	inline static int32_t get_offset_of_parser_32() { return static_cast<int32_t>(offsetof(Uri_t100236324, ___parser_32)); }
+	inline UriParser_t3890150400 * get_parser_32() const { return ___parser_32; }
+	inline UriParser_t3890150400 ** get_address_of_parser_32() { return &___parser_32; }
+	inline void set_parser_32(UriParser_t3890150400 * value)
+	{
+		___parser_32 = value;
+		Il2CppCodeGenWriteBarrier((&___parser_32), value);
+	}
 };
 
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // VOID_T1185182177_H
-#ifndef INT64_T3736567304_H
-#define INT64_T3736567304_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Int64
-struct  Int64_t3736567304 
+struct Uri_t100236324_StaticFields
 {
 public:
-	// System.Int64 System.Int64::m_value
-	int64_t ___m_value_0;
+	// System.String System.Uri::hexUpperChars
+	String_t* ___hexUpperChars_19;
+	// System.String System.Uri::SchemeDelimiter
+	String_t* ___SchemeDelimiter_20;
+	// System.String System.Uri::UriSchemeFile
+	String_t* ___UriSchemeFile_21;
+	// System.String System.Uri::UriSchemeFtp
+	String_t* ___UriSchemeFtp_22;
+	// System.String System.Uri::UriSchemeGopher
+	String_t* ___UriSchemeGopher_23;
+	// System.String System.Uri::UriSchemeHttp
+	String_t* ___UriSchemeHttp_24;
+	// System.String System.Uri::UriSchemeHttps
+	String_t* ___UriSchemeHttps_25;
+	// System.String System.Uri::UriSchemeMailto
+	String_t* ___UriSchemeMailto_26;
+	// System.String System.Uri::UriSchemeNews
+	String_t* ___UriSchemeNews_27;
+	// System.String System.Uri::UriSchemeNntp
+	String_t* ___UriSchemeNntp_28;
+	// System.String System.Uri::UriSchemeNetPipe
+	String_t* ___UriSchemeNetPipe_29;
+	// System.String System.Uri::UriSchemeNetTcp
+	String_t* ___UriSchemeNetTcp_30;
+	// System.Uri/UriScheme[] System.Uri::schemes
+	UriSchemeU5BU5D_t2082808316* ___schemes_31;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map12
+	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map12_33;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map13
+	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map13_34;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map14
+	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map14_35;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map15
+	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map15_36;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map16
+	Dictionary_2_t2736202052 * ___U3CU3Ef__switchU24map16_37;
 
 public:
-	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Int64_t3736567304, ___m_value_0)); }
-	inline int64_t get_m_value_0() const { return ___m_value_0; }
-	inline int64_t* get_address_of_m_value_0() { return &___m_value_0; }
-	inline void set_m_value_0(int64_t value)
+	inline static int32_t get_offset_of_hexUpperChars_19() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___hexUpperChars_19)); }
+	inline String_t* get_hexUpperChars_19() const { return ___hexUpperChars_19; }
+	inline String_t** get_address_of_hexUpperChars_19() { return &___hexUpperChars_19; }
+	inline void set_hexUpperChars_19(String_t* value)
 	{
-		___m_value_0 = value;
+		___hexUpperChars_19 = value;
+		Il2CppCodeGenWriteBarrier((&___hexUpperChars_19), value);
+	}
+
+	inline static int32_t get_offset_of_SchemeDelimiter_20() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___SchemeDelimiter_20)); }
+	inline String_t* get_SchemeDelimiter_20() const { return ___SchemeDelimiter_20; }
+	inline String_t** get_address_of_SchemeDelimiter_20() { return &___SchemeDelimiter_20; }
+	inline void set_SchemeDelimiter_20(String_t* value)
+	{
+		___SchemeDelimiter_20 = value;
+		Il2CppCodeGenWriteBarrier((&___SchemeDelimiter_20), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeFile_21() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeFile_21)); }
+	inline String_t* get_UriSchemeFile_21() const { return ___UriSchemeFile_21; }
+	inline String_t** get_address_of_UriSchemeFile_21() { return &___UriSchemeFile_21; }
+	inline void set_UriSchemeFile_21(String_t* value)
+	{
+		___UriSchemeFile_21 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeFile_21), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeFtp_22() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeFtp_22)); }
+	inline String_t* get_UriSchemeFtp_22() const { return ___UriSchemeFtp_22; }
+	inline String_t** get_address_of_UriSchemeFtp_22() { return &___UriSchemeFtp_22; }
+	inline void set_UriSchemeFtp_22(String_t* value)
+	{
+		___UriSchemeFtp_22 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeFtp_22), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeGopher_23() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeGopher_23)); }
+	inline String_t* get_UriSchemeGopher_23() const { return ___UriSchemeGopher_23; }
+	inline String_t** get_address_of_UriSchemeGopher_23() { return &___UriSchemeGopher_23; }
+	inline void set_UriSchemeGopher_23(String_t* value)
+	{
+		___UriSchemeGopher_23 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeGopher_23), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeHttp_24() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeHttp_24)); }
+	inline String_t* get_UriSchemeHttp_24() const { return ___UriSchemeHttp_24; }
+	inline String_t** get_address_of_UriSchemeHttp_24() { return &___UriSchemeHttp_24; }
+	inline void set_UriSchemeHttp_24(String_t* value)
+	{
+		___UriSchemeHttp_24 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeHttp_24), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeHttps_25() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeHttps_25)); }
+	inline String_t* get_UriSchemeHttps_25() const { return ___UriSchemeHttps_25; }
+	inline String_t** get_address_of_UriSchemeHttps_25() { return &___UriSchemeHttps_25; }
+	inline void set_UriSchemeHttps_25(String_t* value)
+	{
+		___UriSchemeHttps_25 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeHttps_25), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeMailto_26() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeMailto_26)); }
+	inline String_t* get_UriSchemeMailto_26() const { return ___UriSchemeMailto_26; }
+	inline String_t** get_address_of_UriSchemeMailto_26() { return &___UriSchemeMailto_26; }
+	inline void set_UriSchemeMailto_26(String_t* value)
+	{
+		___UriSchemeMailto_26 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeMailto_26), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeNews_27() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNews_27)); }
+	inline String_t* get_UriSchemeNews_27() const { return ___UriSchemeNews_27; }
+	inline String_t** get_address_of_UriSchemeNews_27() { return &___UriSchemeNews_27; }
+	inline void set_UriSchemeNews_27(String_t* value)
+	{
+		___UriSchemeNews_27 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeNews_27), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeNntp_28() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNntp_28)); }
+	inline String_t* get_UriSchemeNntp_28() const { return ___UriSchemeNntp_28; }
+	inline String_t** get_address_of_UriSchemeNntp_28() { return &___UriSchemeNntp_28; }
+	inline void set_UriSchemeNntp_28(String_t* value)
+	{
+		___UriSchemeNntp_28 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeNntp_28), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeNetPipe_29() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNetPipe_29)); }
+	inline String_t* get_UriSchemeNetPipe_29() const { return ___UriSchemeNetPipe_29; }
+	inline String_t** get_address_of_UriSchemeNetPipe_29() { return &___UriSchemeNetPipe_29; }
+	inline void set_UriSchemeNetPipe_29(String_t* value)
+	{
+		___UriSchemeNetPipe_29 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeNetPipe_29), value);
+	}
+
+	inline static int32_t get_offset_of_UriSchemeNetTcp_30() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___UriSchemeNetTcp_30)); }
+	inline String_t* get_UriSchemeNetTcp_30() const { return ___UriSchemeNetTcp_30; }
+	inline String_t** get_address_of_UriSchemeNetTcp_30() { return &___UriSchemeNetTcp_30; }
+	inline void set_UriSchemeNetTcp_30(String_t* value)
+	{
+		___UriSchemeNetTcp_30 = value;
+		Il2CppCodeGenWriteBarrier((&___UriSchemeNetTcp_30), value);
+	}
+
+	inline static int32_t get_offset_of_schemes_31() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___schemes_31)); }
+	inline UriSchemeU5BU5D_t2082808316* get_schemes_31() const { return ___schemes_31; }
+	inline UriSchemeU5BU5D_t2082808316** get_address_of_schemes_31() { return &___schemes_31; }
+	inline void set_schemes_31(UriSchemeU5BU5D_t2082808316* value)
+	{
+		___schemes_31 = value;
+		Il2CppCodeGenWriteBarrier((&___schemes_31), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map12_33() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map12_33)); }
+	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map12_33() const { return ___U3CU3Ef__switchU24map12_33; }
+	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map12_33() { return &___U3CU3Ef__switchU24map12_33; }
+	inline void set_U3CU3Ef__switchU24map12_33(Dictionary_2_t2736202052 * value)
+	{
+		___U3CU3Ef__switchU24map12_33 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map12_33), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map13_34() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map13_34)); }
+	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map13_34() const { return ___U3CU3Ef__switchU24map13_34; }
+	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map13_34() { return &___U3CU3Ef__switchU24map13_34; }
+	inline void set_U3CU3Ef__switchU24map13_34(Dictionary_2_t2736202052 * value)
+	{
+		___U3CU3Ef__switchU24map13_34 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map13_34), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map14_35() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map14_35)); }
+	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map14_35() const { return ___U3CU3Ef__switchU24map14_35; }
+	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map14_35() { return &___U3CU3Ef__switchU24map14_35; }
+	inline void set_U3CU3Ef__switchU24map14_35(Dictionary_2_t2736202052 * value)
+	{
+		___U3CU3Ef__switchU24map14_35 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map14_35), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map15_36() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map15_36)); }
+	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map15_36() const { return ___U3CU3Ef__switchU24map15_36; }
+	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map15_36() { return &___U3CU3Ef__switchU24map15_36; }
+	inline void set_U3CU3Ef__switchU24map15_36(Dictionary_2_t2736202052 * value)
+	{
+		___U3CU3Ef__switchU24map15_36 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map15_36), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map16_37() { return static_cast<int32_t>(offsetof(Uri_t100236324_StaticFields, ___U3CU3Ef__switchU24map16_37)); }
+	inline Dictionary_2_t2736202052 * get_U3CU3Ef__switchU24map16_37() const { return ___U3CU3Ef__switchU24map16_37; }
+	inline Dictionary_2_t2736202052 ** get_address_of_U3CU3Ef__switchU24map16_37() { return &___U3CU3Ef__switchU24map16_37; }
+	inline void set_U3CU3Ef__switchU24map16_37(Dictionary_2_t2736202052 * value)
+	{
+		___U3CU3Ef__switchU24map16_37 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__switchU24map16_37), value);
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // INT64_T3736567304_H
-#ifndef UINT64_T4134040092_H
-#define UINT64_T4134040092_H
+#endif // URI_T100236324_H
+#ifndef VALUETYPE_T3640485471_H
+#define VALUETYPE_T3640485471_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// System.UInt64
-struct  UInt64_t4134040092 
+// System.ValueType
+struct  ValueType_t3640485471  : public RuntimeObject
 {
 public:
-	// System.UInt64 System.UInt64::m_value
-	uint64_t ___m_value_0;
 
 public:
-	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(UInt64_t4134040092, ___m_value_0)); }
-	inline uint64_t get_m_value_0() const { return ___m_value_0; }
-	inline uint64_t* get_address_of_m_value_0() { return &___m_value_0; }
-	inline void set_m_value_0(uint64_t value)
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_com
+{
+};
+#endif // VALUETYPE_T3640485471_H
+#ifndef WWWFORM_T4064702195_H
+#define WWWFORM_T4064702195_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.WWWForm
+struct  WWWForm_t4064702195  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // WWWFORM_T4064702195_H
+#ifndef WWWTRANSCODER_T272523958_H
+#define WWWTRANSCODER_T272523958_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.WWWTranscoder
+struct  WWWTranscoder_t272523958  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+struct WWWTranscoder_t272523958_StaticFields
+{
+public:
+	// System.Byte[] UnityEngine.WWWTranscoder::ucHexChars
+	ByteU5BU5D_t4116647657* ___ucHexChars_0;
+	// System.Byte[] UnityEngine.WWWTranscoder::lcHexChars
+	ByteU5BU5D_t4116647657* ___lcHexChars_1;
+	// System.Byte UnityEngine.WWWTranscoder::urlEscapeChar
+	uint8_t ___urlEscapeChar_2;
+	// System.Byte[] UnityEngine.WWWTranscoder::urlSpace
+	ByteU5BU5D_t4116647657* ___urlSpace_3;
+	// System.Byte[] UnityEngine.WWWTranscoder::dataSpace
+	ByteU5BU5D_t4116647657* ___dataSpace_4;
+	// System.Byte[] UnityEngine.WWWTranscoder::urlForbidden
+	ByteU5BU5D_t4116647657* ___urlForbidden_5;
+	// System.Byte UnityEngine.WWWTranscoder::qpEscapeChar
+	uint8_t ___qpEscapeChar_6;
+	// System.Byte[] UnityEngine.WWWTranscoder::qpSpace
+	ByteU5BU5D_t4116647657* ___qpSpace_7;
+	// System.Byte[] UnityEngine.WWWTranscoder::qpForbidden
+	ByteU5BU5D_t4116647657* ___qpForbidden_8;
+
+public:
+	inline static int32_t get_offset_of_ucHexChars_0() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___ucHexChars_0)); }
+	inline ByteU5BU5D_t4116647657* get_ucHexChars_0() const { return ___ucHexChars_0; }
+	inline ByteU5BU5D_t4116647657** get_address_of_ucHexChars_0() { return &___ucHexChars_0; }
+	inline void set_ucHexChars_0(ByteU5BU5D_t4116647657* value)
 	{
-		___m_value_0 = value;
+		___ucHexChars_0 = value;
+		Il2CppCodeGenWriteBarrier((&___ucHexChars_0), value);
+	}
+
+	inline static int32_t get_offset_of_lcHexChars_1() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___lcHexChars_1)); }
+	inline ByteU5BU5D_t4116647657* get_lcHexChars_1() const { return ___lcHexChars_1; }
+	inline ByteU5BU5D_t4116647657** get_address_of_lcHexChars_1() { return &___lcHexChars_1; }
+	inline void set_lcHexChars_1(ByteU5BU5D_t4116647657* value)
+	{
+		___lcHexChars_1 = value;
+		Il2CppCodeGenWriteBarrier((&___lcHexChars_1), value);
+	}
+
+	inline static int32_t get_offset_of_urlEscapeChar_2() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___urlEscapeChar_2)); }
+	inline uint8_t get_urlEscapeChar_2() const { return ___urlEscapeChar_2; }
+	inline uint8_t* get_address_of_urlEscapeChar_2() { return &___urlEscapeChar_2; }
+	inline void set_urlEscapeChar_2(uint8_t value)
+	{
+		___urlEscapeChar_2 = value;
+	}
+
+	inline static int32_t get_offset_of_urlSpace_3() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___urlSpace_3)); }
+	inline ByteU5BU5D_t4116647657* get_urlSpace_3() const { return ___urlSpace_3; }
+	inline ByteU5BU5D_t4116647657** get_address_of_urlSpace_3() { return &___urlSpace_3; }
+	inline void set_urlSpace_3(ByteU5BU5D_t4116647657* value)
+	{
+		___urlSpace_3 = value;
+		Il2CppCodeGenWriteBarrier((&___urlSpace_3), value);
+	}
+
+	inline static int32_t get_offset_of_dataSpace_4() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___dataSpace_4)); }
+	inline ByteU5BU5D_t4116647657* get_dataSpace_4() const { return ___dataSpace_4; }
+	inline ByteU5BU5D_t4116647657** get_address_of_dataSpace_4() { return &___dataSpace_4; }
+	inline void set_dataSpace_4(ByteU5BU5D_t4116647657* value)
+	{
+		___dataSpace_4 = value;
+		Il2CppCodeGenWriteBarrier((&___dataSpace_4), value);
+	}
+
+	inline static int32_t get_offset_of_urlForbidden_5() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___urlForbidden_5)); }
+	inline ByteU5BU5D_t4116647657* get_urlForbidden_5() const { return ___urlForbidden_5; }
+	inline ByteU5BU5D_t4116647657** get_address_of_urlForbidden_5() { return &___urlForbidden_5; }
+	inline void set_urlForbidden_5(ByteU5BU5D_t4116647657* value)
+	{
+		___urlForbidden_5 = value;
+		Il2CppCodeGenWriteBarrier((&___urlForbidden_5), value);
+	}
+
+	inline static int32_t get_offset_of_qpEscapeChar_6() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___qpEscapeChar_6)); }
+	inline uint8_t get_qpEscapeChar_6() const { return ___qpEscapeChar_6; }
+	inline uint8_t* get_address_of_qpEscapeChar_6() { return &___qpEscapeChar_6; }
+	inline void set_qpEscapeChar_6(uint8_t value)
+	{
+		___qpEscapeChar_6 = value;
+	}
+
+	inline static int32_t get_offset_of_qpSpace_7() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___qpSpace_7)); }
+	inline ByteU5BU5D_t4116647657* get_qpSpace_7() const { return ___qpSpace_7; }
+	inline ByteU5BU5D_t4116647657** get_address_of_qpSpace_7() { return &___qpSpace_7; }
+	inline void set_qpSpace_7(ByteU5BU5D_t4116647657* value)
+	{
+		___qpSpace_7 = value;
+		Il2CppCodeGenWriteBarrier((&___qpSpace_7), value);
+	}
+
+	inline static int32_t get_offset_of_qpForbidden_8() { return static_cast<int32_t>(offsetof(WWWTranscoder_t272523958_StaticFields, ___qpForbidden_8)); }
+	inline ByteU5BU5D_t4116647657* get_qpForbidden_8() const { return ___qpForbidden_8; }
+	inline ByteU5BU5D_t4116647657** get_address_of_qpForbidden_8() { return &___qpForbidden_8; }
+	inline void set_qpForbidden_8(ByteU5BU5D_t4116647657* value)
+	{
+		___qpForbidden_8 = value;
+		Il2CppCodeGenWriteBarrier((&___qpForbidden_8), value);
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // UINT64_T4134040092_H
+#endif // WWWTRANSCODER_T272523958_H
+#ifndef YIELDINSTRUCTION_T403091072_H
+#define YIELDINSTRUCTION_T403091072_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.YieldInstruction
+struct  YieldInstruction_t403091072  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of UnityEngine.YieldInstruction
+struct YieldInstruction_t403091072_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of UnityEngine.YieldInstruction
+struct YieldInstruction_t403091072_marshaled_com
+{
+};
+#endif // YIELDINSTRUCTION_T403091072_H
+#ifndef WEBREQUESTUTILS_T3541624225_H
+#define WEBREQUESTUTILS_T3541624225_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngineInternal.WebRequestUtils
+struct  WebRequestUtils_t3541624225  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+struct WebRequestUtils_t3541624225_StaticFields
+{
+public:
+	// System.Text.RegularExpressions.Regex UnityEngineInternal.WebRequestUtils::domainRegex
+	Regex_t3657309853 * ___domainRegex_0;
+
+public:
+	inline static int32_t get_offset_of_domainRegex_0() { return static_cast<int32_t>(offsetof(WebRequestUtils_t3541624225_StaticFields, ___domainRegex_0)); }
+	inline Regex_t3657309853 * get_domainRegex_0() const { return ___domainRegex_0; }
+	inline Regex_t3657309853 ** get_address_of_domainRegex_0() { return &___domainRegex_0; }
+	inline void set_domainRegex_0(Regex_t3657309853 * value)
+	{
+		___domainRegex_0 = value;
+		Il2CppCodeGenWriteBarrier((&___domainRegex_0), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // WEBREQUESTUTILS_T3541624225_H
+#ifndef BOOLEAN_T97287965_H
+#define BOOLEAN_T97287965_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Boolean
+struct  Boolean_t97287965 
+{
+public:
+	// System.Boolean System.Boolean::m_value
+	bool ___m_value_2;
+
+public:
+	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Boolean_t97287965, ___m_value_2)); }
+	inline bool get_m_value_2() const { return ___m_value_2; }
+	inline bool* get_address_of_m_value_2() { return &___m_value_2; }
+	inline void set_m_value_2(bool value)
+	{
+		___m_value_2 = value;
+	}
+};
+
+struct Boolean_t97287965_StaticFields
+{
+public:
+	// System.String System.Boolean::FalseString
+	String_t* ___FalseString_0;
+	// System.String System.Boolean::TrueString
+	String_t* ___TrueString_1;
+
+public:
+	inline static int32_t get_offset_of_FalseString_0() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___FalseString_0)); }
+	inline String_t* get_FalseString_0() const { return ___FalseString_0; }
+	inline String_t** get_address_of_FalseString_0() { return &___FalseString_0; }
+	inline void set_FalseString_0(String_t* value)
+	{
+		___FalseString_0 = value;
+		Il2CppCodeGenWriteBarrier((&___FalseString_0), value);
+	}
+
+	inline static int32_t get_offset_of_TrueString_1() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___TrueString_1)); }
+	inline String_t* get_TrueString_1() const { return ___TrueString_1; }
+	inline String_t** get_address_of_TrueString_1() { return &___TrueString_1; }
+	inline void set_TrueString_1(String_t* value)
+	{
+		___TrueString_1 = value;
+		Il2CppCodeGenWriteBarrier((&___TrueString_1), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // BOOLEAN_T97287965_H
+#ifndef BYTE_T1134296376_H
+#define BYTE_T1134296376_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Byte
+struct  Byte_t1134296376 
+{
+public:
+	// System.Byte System.Byte::m_value
+	uint8_t ___m_value_2;
+
+public:
+	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Byte_t1134296376, ___m_value_2)); }
+	inline uint8_t get_m_value_2() const { return ___m_value_2; }
+	inline uint8_t* get_address_of_m_value_2() { return &___m_value_2; }
+	inline void set_m_value_2(uint8_t value)
+	{
+		___m_value_2 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // BYTE_T1134296376_H
+#ifndef CHAR_T3634460470_H
+#define CHAR_T3634460470_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Char
+struct  Char_t3634460470 
+{
+public:
+	// System.Char System.Char::m_value
+	Il2CppChar ___m_value_2;
+
+public:
+	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Char_t3634460470, ___m_value_2)); }
+	inline Il2CppChar get_m_value_2() const { return ___m_value_2; }
+	inline Il2CppChar* get_address_of_m_value_2() { return &___m_value_2; }
+	inline void set_m_value_2(Il2CppChar value)
+	{
+		___m_value_2 = value;
+	}
+};
+
+struct Char_t3634460470_StaticFields
+{
+public:
+	// System.Byte* System.Char::category_data
+	uint8_t* ___category_data_3;
+	// System.Byte* System.Char::numeric_data
+	uint8_t* ___numeric_data_4;
+	// System.Double* System.Char::numeric_data_values
+	double* ___numeric_data_values_5;
+	// System.UInt16* System.Char::to_lower_data_low
+	uint16_t* ___to_lower_data_low_6;
+	// System.UInt16* System.Char::to_lower_data_high
+	uint16_t* ___to_lower_data_high_7;
+	// System.UInt16* System.Char::to_upper_data_low
+	uint16_t* ___to_upper_data_low_8;
+	// System.UInt16* System.Char::to_upper_data_high
+	uint16_t* ___to_upper_data_high_9;
+
+public:
+	inline static int32_t get_offset_of_category_data_3() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___category_data_3)); }
+	inline uint8_t* get_category_data_3() const { return ___category_data_3; }
+	inline uint8_t** get_address_of_category_data_3() { return &___category_data_3; }
+	inline void set_category_data_3(uint8_t* value)
+	{
+		___category_data_3 = value;
+	}
+
+	inline static int32_t get_offset_of_numeric_data_4() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___numeric_data_4)); }
+	inline uint8_t* get_numeric_data_4() const { return ___numeric_data_4; }
+	inline uint8_t** get_address_of_numeric_data_4() { return &___numeric_data_4; }
+	inline void set_numeric_data_4(uint8_t* value)
+	{
+		___numeric_data_4 = value;
+	}
+
+	inline static int32_t get_offset_of_numeric_data_values_5() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___numeric_data_values_5)); }
+	inline double* get_numeric_data_values_5() const { return ___numeric_data_values_5; }
+	inline double** get_address_of_numeric_data_values_5() { return &___numeric_data_values_5; }
+	inline void set_numeric_data_values_5(double* value)
+	{
+		___numeric_data_values_5 = value;
+	}
+
+	inline static int32_t get_offset_of_to_lower_data_low_6() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_lower_data_low_6)); }
+	inline uint16_t* get_to_lower_data_low_6() const { return ___to_lower_data_low_6; }
+	inline uint16_t** get_address_of_to_lower_data_low_6() { return &___to_lower_data_low_6; }
+	inline void set_to_lower_data_low_6(uint16_t* value)
+	{
+		___to_lower_data_low_6 = value;
+	}
+
+	inline static int32_t get_offset_of_to_lower_data_high_7() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_lower_data_high_7)); }
+	inline uint16_t* get_to_lower_data_high_7() const { return ___to_lower_data_high_7; }
+	inline uint16_t** get_address_of_to_lower_data_high_7() { return &___to_lower_data_high_7; }
+	inline void set_to_lower_data_high_7(uint16_t* value)
+	{
+		___to_lower_data_high_7 = value;
+	}
+
+	inline static int32_t get_offset_of_to_upper_data_low_8() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_upper_data_low_8)); }
+	inline uint16_t* get_to_upper_data_low_8() const { return ___to_upper_data_low_8; }
+	inline uint16_t** get_address_of_to_upper_data_low_8() { return &___to_upper_data_low_8; }
+	inline void set_to_upper_data_low_8(uint16_t* value)
+	{
+		___to_upper_data_low_8 = value;
+	}
+
+	inline static int32_t get_offset_of_to_upper_data_high_9() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_upper_data_high_9)); }
+	inline uint16_t* get_to_upper_data_high_9() const { return ___to_upper_data_high_9; }
+	inline uint16_t** get_address_of_to_upper_data_high_9() { return &___to_upper_data_high_9; }
+	inline void set_to_upper_data_high_9(uint16_t* value)
+	{
+		___to_upper_data_high_9 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // CHAR_T3634460470_H
+#ifndef ENUM_T4135868527_H
+#define ENUM_T4135868527_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Enum
+struct  Enum_t4135868527  : public ValueType_t3640485471
+{
+public:
+
+public:
+};
+
+struct Enum_t4135868527_StaticFields
+{
+public:
+	// System.Char[] System.Enum::split_char
+	CharU5BU5D_t3528271667* ___split_char_0;
+
+public:
+	inline static int32_t get_offset_of_split_char_0() { return static_cast<int32_t>(offsetof(Enum_t4135868527_StaticFields, ___split_char_0)); }
+	inline CharU5BU5D_t3528271667* get_split_char_0() const { return ___split_char_0; }
+	inline CharU5BU5D_t3528271667** get_address_of_split_char_0() { return &___split_char_0; }
+	inline void set_split_char_0(CharU5BU5D_t3528271667* value)
+	{
+		___split_char_0 = value;
+		Il2CppCodeGenWriteBarrier((&___split_char_0), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of System.Enum
+struct Enum_t4135868527_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.Enum
+struct Enum_t4135868527_marshaled_com
+{
+};
+#endif // ENUM_T4135868527_H
 #ifndef MEMORYSTREAM_T94973147_H
 #define MEMORYSTREAM_T94973147_H
 #ifdef __clang__
@@ -1717,63 +1956,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // MEMORYSTREAM_T94973147_H
-#ifndef BOOLEAN_T97287965_H
-#define BOOLEAN_T97287965_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Boolean
-struct  Boolean_t97287965 
-{
-public:
-	// System.Boolean System.Boolean::m_value
-	bool ___m_value_2;
-
-public:
-	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Boolean_t97287965, ___m_value_2)); }
-	inline bool get_m_value_2() const { return ___m_value_2; }
-	inline bool* get_address_of_m_value_2() { return &___m_value_2; }
-	inline void set_m_value_2(bool value)
-	{
-		___m_value_2 = value;
-	}
-};
-
-struct Boolean_t97287965_StaticFields
-{
-public:
-	// System.String System.Boolean::FalseString
-	String_t* ___FalseString_0;
-	// System.String System.Boolean::TrueString
-	String_t* ___TrueString_1;
-
-public:
-	inline static int32_t get_offset_of_FalseString_0() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___FalseString_0)); }
-	inline String_t* get_FalseString_0() const { return ___FalseString_0; }
-	inline String_t** get_address_of_FalseString_0() { return &___FalseString_0; }
-	inline void set_FalseString_0(String_t* value)
-	{
-		___FalseString_0 = value;
-		Il2CppCodeGenWriteBarrier((&___FalseString_0), value);
-	}
-
-	inline static int32_t get_offset_of_TrueString_1() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___TrueString_1)); }
-	inline String_t* get_TrueString_1() const { return ___TrueString_1; }
-	inline String_t** get_address_of_TrueString_1() { return &___TrueString_1; }
-	inline void set_TrueString_1(String_t* value)
-	{
-		___TrueString_1 = value;
-		Il2CppCodeGenWriteBarrier((&___TrueString_1), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // BOOLEAN_T97287965_H
 #ifndef INT32_T2950945753_H
 #define INT32_T2950945753_H
 #ifdef __clang__
@@ -1803,6 +1985,80 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // INT32_T2950945753_H
+#ifndef INT64_T3736567304_H
+#define INT64_T3736567304_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Int64
+struct  Int64_t3736567304 
+{
+public:
+	// System.Int64 System.Int64::m_value
+	int64_t ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Int64_t3736567304, ___m_value_0)); }
+	inline int64_t get_m_value_0() const { return ___m_value_0; }
+	inline int64_t* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(int64_t value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // INT64_T3736567304_H
+#ifndef INTPTR_T_H
+#define INTPTR_T_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.IntPtr
+struct  IntPtr_t 
+{
+public:
+	// System.Void* System.IntPtr::m_value
+	void* ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(IntPtr_t, ___m_value_0)); }
+	inline void* get_m_value_0() const { return ___m_value_0; }
+	inline void** get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(void* value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+struct IntPtr_t_StaticFields
+{
+public:
+	// System.IntPtr System.IntPtr::Zero
+	intptr_t ___Zero_1;
+
+public:
+	inline static int32_t get_offset_of_Zero_1() { return static_cast<int32_t>(offsetof(IntPtr_t_StaticFields, ___Zero_1)); }
+	inline intptr_t get_Zero_1() const { return ___Zero_1; }
+	inline intptr_t* get_address_of_Zero_1() { return &___Zero_1; }
+	inline void set_Zero_1(intptr_t value)
+	{
+		___Zero_1 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // INTPTR_T_H
 #ifndef SYSTEMEXCEPTION_T176217640_H
 #define SYSTEMEXCEPTION_T176217640_H
 #ifdef __clang__
@@ -1823,195 +2079,45 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SYSTEMEXCEPTION_T176217640_H
-#ifndef BYTE_T1134296376_H
-#define BYTE_T1134296376_H
+#ifndef UINT64_T4134040092_H
+#define UINT64_T4134040092_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// System.Byte
-struct  Byte_t1134296376 
+// System.UInt64
+struct  UInt64_t4134040092 
 {
 public:
-	// System.Byte System.Byte::m_value
-	uint8_t ___m_value_2;
+	// System.UInt64 System.UInt64::m_value
+	uint64_t ___m_value_0;
 
 public:
-	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Byte_t1134296376, ___m_value_2)); }
-	inline uint8_t get_m_value_2() const { return ___m_value_2; }
-	inline uint8_t* get_address_of_m_value_2() { return &___m_value_2; }
-	inline void set_m_value_2(uint8_t value)
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(UInt64_t4134040092, ___m_value_0)); }
+	inline uint64_t get_m_value_0() const { return ___m_value_0; }
+	inline uint64_t* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(uint64_t value)
 	{
-		___m_value_2 = value;
+		___m_value_0 = value;
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // BYTE_T1134296376_H
-#ifndef ENUM_T4135868527_H
-#define ENUM_T4135868527_H
+#endif // UINT64_T4134040092_H
+#ifndef VOID_T1185182177_H
+#define VOID_T1185182177_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// System.Enum
-struct  Enum_t4135868527  : public ValueType_t3640485471
-{
-public:
-
-public:
-};
-
-struct Enum_t4135868527_StaticFields
-{
-public:
-	// System.Char[] System.Enum::split_char
-	CharU5BU5D_t3528271667* ___split_char_0;
-
-public:
-	inline static int32_t get_offset_of_split_char_0() { return static_cast<int32_t>(offsetof(Enum_t4135868527_StaticFields, ___split_char_0)); }
-	inline CharU5BU5D_t3528271667* get_split_char_0() const { return ___split_char_0; }
-	inline CharU5BU5D_t3528271667** get_address_of_split_char_0() { return &___split_char_0; }
-	inline void set_split_char_0(CharU5BU5D_t3528271667* value)
-	{
-		___split_char_0 = value;
-		Il2CppCodeGenWriteBarrier((&___split_char_0), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-// Native definition for P/Invoke marshalling of System.Enum
-struct Enum_t4135868527_marshaled_pinvoke
-{
-};
-// Native definition for COM marshalling of System.Enum
-struct Enum_t4135868527_marshaled_com
-{
-};
-#endif // ENUM_T4135868527_H
-#ifndef CHAR_T3634460470_H
-#define CHAR_T3634460470_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Char
-struct  Char_t3634460470 
-{
-public:
-	// System.Char System.Char::m_value
-	Il2CppChar ___m_value_2;
-
-public:
-	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Char_t3634460470, ___m_value_2)); }
-	inline Il2CppChar get_m_value_2() const { return ___m_value_2; }
-	inline Il2CppChar* get_address_of_m_value_2() { return &___m_value_2; }
-	inline void set_m_value_2(Il2CppChar value)
-	{
-		___m_value_2 = value;
-	}
-};
-
-struct Char_t3634460470_StaticFields
-{
-public:
-	// System.Byte* System.Char::category_data
-	uint8_t* ___category_data_3;
-	// System.Byte* System.Char::numeric_data
-	uint8_t* ___numeric_data_4;
-	// System.Double* System.Char::numeric_data_values
-	double* ___numeric_data_values_5;
-	// System.UInt16* System.Char::to_lower_data_low
-	uint16_t* ___to_lower_data_low_6;
-	// System.UInt16* System.Char::to_lower_data_high
-	uint16_t* ___to_lower_data_high_7;
-	// System.UInt16* System.Char::to_upper_data_low
-	uint16_t* ___to_upper_data_low_8;
-	// System.UInt16* System.Char::to_upper_data_high
-	uint16_t* ___to_upper_data_high_9;
-
-public:
-	inline static int32_t get_offset_of_category_data_3() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___category_data_3)); }
-	inline uint8_t* get_category_data_3() const { return ___category_data_3; }
-	inline uint8_t** get_address_of_category_data_3() { return &___category_data_3; }
-	inline void set_category_data_3(uint8_t* value)
-	{
-		___category_data_3 = value;
-	}
-
-	inline static int32_t get_offset_of_numeric_data_4() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___numeric_data_4)); }
-	inline uint8_t* get_numeric_data_4() const { return ___numeric_data_4; }
-	inline uint8_t** get_address_of_numeric_data_4() { return &___numeric_data_4; }
-	inline void set_numeric_data_4(uint8_t* value)
-	{
-		___numeric_data_4 = value;
-	}
-
-	inline static int32_t get_offset_of_numeric_data_values_5() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___numeric_data_values_5)); }
-	inline double* get_numeric_data_values_5() const { return ___numeric_data_values_5; }
-	inline double** get_address_of_numeric_data_values_5() { return &___numeric_data_values_5; }
-	inline void set_numeric_data_values_5(double* value)
-	{
-		___numeric_data_values_5 = value;
-	}
-
-	inline static int32_t get_offset_of_to_lower_data_low_6() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_lower_data_low_6)); }
-	inline uint16_t* get_to_lower_data_low_6() const { return ___to_lower_data_low_6; }
-	inline uint16_t** get_address_of_to_lower_data_low_6() { return &___to_lower_data_low_6; }
-	inline void set_to_lower_data_low_6(uint16_t* value)
-	{
-		___to_lower_data_low_6 = value;
-	}
-
-	inline static int32_t get_offset_of_to_lower_data_high_7() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_lower_data_high_7)); }
-	inline uint16_t* get_to_lower_data_high_7() const { return ___to_lower_data_high_7; }
-	inline uint16_t** get_address_of_to_lower_data_high_7() { return &___to_lower_data_high_7; }
-	inline void set_to_lower_data_high_7(uint16_t* value)
-	{
-		___to_lower_data_high_7 = value;
-	}
-
-	inline static int32_t get_offset_of_to_upper_data_low_8() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_upper_data_low_8)); }
-	inline uint16_t* get_to_upper_data_low_8() const { return ___to_upper_data_low_8; }
-	inline uint16_t** get_address_of_to_upper_data_low_8() { return &___to_upper_data_low_8; }
-	inline void set_to_upper_data_low_8(uint16_t* value)
-	{
-		___to_upper_data_low_8 = value;
-	}
-
-	inline static int32_t get_offset_of_to_upper_data_high_9() { return static_cast<int32_t>(offsetof(Char_t3634460470_StaticFields, ___to_upper_data_high_9)); }
-	inline uint16_t* get_to_upper_data_high_9() const { return ___to_upper_data_high_9; }
-	inline uint16_t** get_address_of_to_upper_data_high_9() { return &___to_upper_data_high_9; }
-	inline void set_to_upper_data_high_9(uint16_t* value)
-	{
-		___to_upper_data_high_9 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // CHAR_T3634460470_H
-#ifndef FORMATEXCEPTION_T154580423_H
-#define FORMATEXCEPTION_T154580423_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.FormatException
-struct  FormatException_t154580423  : public SystemException_t176217640
+// System.Void
+struct  Void_t1185182177 
 {
 public:
 
@@ -2021,133 +2127,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // FORMATEXCEPTION_T154580423_H
-#ifndef URIKIND_T3816567336_H
-#define URIKIND_T3816567336_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.UriKind
-struct  UriKind_t3816567336 
-{
-public:
-	// System.Int32 System.UriKind::value__
-	int32_t ___value___1;
-
-public:
-	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(UriKind_t3816567336, ___value___1)); }
-	inline int32_t get_value___1() const { return ___value___1; }
-	inline int32_t* get_address_of_value___1() { return &___value___1; }
-	inline void set_value___1(int32_t value)
-	{
-		___value___1 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // URIKIND_T3816567336_H
-#ifndef REGEXOPTIONS_T92845595_H
-#define REGEXOPTIONS_T92845595_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Text.RegularExpressions.RegexOptions
-struct  RegexOptions_t92845595 
-{
-public:
-	// System.Int32 System.Text.RegularExpressions.RegexOptions::value__
-	int32_t ___value___1;
-
-public:
-	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(RegexOptions_t92845595, ___value___1)); }
-	inline int32_t get_value___1() const { return ___value___1; }
-	inline int32_t* get_address_of_value___1() { return &___value___1; }
-	inline void set_value___1(int32_t value)
-	{
-		___value___1 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // REGEXOPTIONS_T92845595_H
-#ifndef DOWNLOADHANDLER_T2937767557_H
-#define DOWNLOADHANDLER_T2937767557_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngine.Networking.DownloadHandler
-struct  DownloadHandler_t2937767557  : public RuntimeObject
-{
-public:
-	// System.IntPtr UnityEngine.Networking.DownloadHandler::m_Ptr
-	intptr_t ___m_Ptr_0;
-
-public:
-	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(DownloadHandler_t2937767557, ___m_Ptr_0)); }
-	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
-	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
-	inline void set_m_Ptr_0(intptr_t value)
-	{
-		___m_Ptr_0 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-// Native definition for P/Invoke marshalling of UnityEngine.Networking.DownloadHandler
-struct DownloadHandler_t2937767557_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr_0;
-};
-// Native definition for COM marshalling of UnityEngine.Networking.DownloadHandler
-struct DownloadHandler_t2937767557_marshaled_com
-{
-	intptr_t ___m_Ptr_0;
-};
-#endif // DOWNLOADHANDLER_T2937767557_H
-#ifndef STRINGCOMPARISON_T3657712135_H
-#define STRINGCOMPARISON_T3657712135_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.StringComparison
-struct  StringComparison_t3657712135 
-{
-public:
-	// System.Int32 System.StringComparison::value__
-	int32_t ___value___1;
-
-public:
-	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(StringComparison_t3657712135, ___value___1)); }
-	inline int32_t get_value___1() const { return ___value___1; }
-	inline int32_t* get_address_of_value___1() { return &___value___1; }
-	inline void set_value___1(int32_t value)
-	{
-		___value___1 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // STRINGCOMPARISON_T3657712135_H
+#endif // VOID_T1185182177_H
 #ifndef ARGUMENTEXCEPTION_T132251570_H
 #define ARGUMENTEXCEPTION_T132251570_H
 #ifdef __clang__
@@ -2178,74 +2158,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // ARGUMENTEXCEPTION_T132251570_H
-#ifndef UPLOADHANDLER_T2993558019_H
-#define UPLOADHANDLER_T2993558019_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngine.Networking.UploadHandler
-struct  UploadHandler_t2993558019  : public RuntimeObject
-{
-public:
-	// System.IntPtr UnityEngine.Networking.UploadHandler::m_Ptr
-	intptr_t ___m_Ptr_0;
-
-public:
-	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(UploadHandler_t2993558019, ___m_Ptr_0)); }
-	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
-	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
-	inline void set_m_Ptr_0(intptr_t value)
-	{
-		___m_Ptr_0 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-// Native definition for P/Invoke marshalling of UnityEngine.Networking.UploadHandler
-struct UploadHandler_t2993558019_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr_0;
-};
-// Native definition for COM marshalling of UnityEngine.Networking.UploadHandler
-struct UploadHandler_t2993558019_marshaled_com
-{
-	intptr_t ___m_Ptr_0;
-};
-#endif // UPLOADHANDLER_T2993558019_H
-#ifndef UNITYWEBREQUESTERROR_T359680823_H
-#define UNITYWEBREQUESTERROR_T359680823_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngine.Networking.UnityWebRequest/UnityWebRequestError
-struct  UnityWebRequestError_t359680823 
-{
-public:
-	// System.Int32 UnityEngine.Networking.UnityWebRequest/UnityWebRequestError::value__
-	int32_t ___value___1;
-
-public:
-	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(UnityWebRequestError_t359680823, ___value___1)); }
-	inline int32_t get_value___1() const { return ___value___1; }
-	inline int32_t* get_address_of_value___1() { return &___value___1; }
-	inline void set_value___1(int32_t value)
-	{
-		___value___1 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // UNITYWEBREQUESTERROR_T359680823_H
 #ifndef DELEGATE_T1188392813_H
 #define DELEGATE_T1188392813_H
 #ifdef __clang__
@@ -2359,35 +2271,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // DELEGATE_T1188392813_H
-#ifndef UNITYWEBREQUESTMETHOD_T1119759680_H
-#define UNITYWEBREQUESTMETHOD_T1119759680_H
+#ifndef FORMATEXCEPTION_T154580423_H
+#define FORMATEXCEPTION_T154580423_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod
-struct  UnityWebRequestMethod_t1119759680 
+// System.FormatException
+struct  FormatException_t154580423  : public SystemException_t176217640
 {
 public:
-	// System.Int32 UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod::value__
-	int32_t ___value___1;
 
 public:
-	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(UnityWebRequestMethod_t1119759680, ___value___1)); }
-	inline int32_t get_value___1() const { return ___value___1; }
-	inline int32_t* get_address_of_value___1() { return &___value___1; }
-	inline void set_value___1(int32_t value)
-	{
-		___value___1 = value;
-	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // UNITYWEBREQUESTMETHOD_T1119759680_H
+#endif // FORMATEXCEPTION_T154580423_H
 #ifndef INVALIDOPERATIONEXCEPTION_T56020091_H
 #define INVALIDOPERATIONEXCEPTION_T56020091_H
 #ifdef __clang__
@@ -2408,6 +2311,93 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // INVALIDOPERATIONEXCEPTION_T56020091_H
+#ifndef STRINGCOMPARISON_T3657712135_H
+#define STRINGCOMPARISON_T3657712135_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.StringComparison
+struct  StringComparison_t3657712135 
+{
+public:
+	// System.Int32 System.StringComparison::value__
+	int32_t ___value___1;
+
+public:
+	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(StringComparison_t3657712135, ___value___1)); }
+	inline int32_t get_value___1() const { return ___value___1; }
+	inline int32_t* get_address_of_value___1() { return &___value___1; }
+	inline void set_value___1(int32_t value)
+	{
+		___value___1 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // STRINGCOMPARISON_T3657712135_H
+#ifndef REGEXOPTIONS_T92845595_H
+#define REGEXOPTIONS_T92845595_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Text.RegularExpressions.RegexOptions
+struct  RegexOptions_t92845595 
+{
+public:
+	// System.Int32 System.Text.RegularExpressions.RegexOptions::value__
+	int32_t ___value___1;
+
+public:
+	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(RegexOptions_t92845595, ___value___1)); }
+	inline int32_t get_value___1() const { return ___value___1; }
+	inline int32_t* get_address_of_value___1() { return &___value___1; }
+	inline void set_value___1(int32_t value)
+	{
+		___value___1 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // REGEXOPTIONS_T92845595_H
+#ifndef URIKIND_T3816567336_H
+#define URIKIND_T3816567336_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.UriKind
+struct  UriKind_t3816567336 
+{
+public:
+	// System.Int32 System.UriKind::value__
+	int32_t ___value___1;
+
+public:
+	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(UriKind_t3816567336, ___value___1)); }
+	inline int32_t get_value___1() const { return ___value___1; }
+	inline int32_t* get_address_of_value___1() { return &___value___1; }
+	inline void set_value___1(int32_t value)
+	{
+		___value___1 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // URIKIND_T3816567336_H
 #ifndef ASYNCOPERATION_T1445031843_H
 #define ASYNCOPERATION_T1445031843_H
 #ifdef __clang__
@@ -2460,34 +2450,181 @@ struct AsyncOperation_t1445031843_marshaled_com : public YieldInstruction_t40309
 	Il2CppMethodPointer ___m_completeCallback_1;
 };
 #endif // ASYNCOPERATION_T1445031843_H
-#ifndef UPLOADHANDLERRAW_T25761545_H
-#define UPLOADHANDLERRAW_T25761545_H
+#ifndef CERTIFICATEHANDLER_T2739891000_H
+#define CERTIFICATEHANDLER_T2739891000_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// UnityEngine.Networking.UploadHandlerRaw
-struct  UploadHandlerRaw_t25761545  : public UploadHandler_t2993558019
+// UnityEngine.Networking.CertificateHandler
+struct  CertificateHandler_t2739891000  : public RuntimeObject
 {
 public:
+	// System.IntPtr UnityEngine.Networking.CertificateHandler::m_Ptr
+	intptr_t ___m_Ptr_0;
 
 public:
+	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(CertificateHandler_t2739891000, ___m_Ptr_0)); }
+	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
+	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
+	inline void set_m_Ptr_0(intptr_t value)
+	{
+		___m_Ptr_0 = value;
+	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Native definition for P/Invoke marshalling of UnityEngine.Networking.UploadHandlerRaw
-struct UploadHandlerRaw_t25761545_marshaled_pinvoke : public UploadHandler_t2993558019_marshaled_pinvoke
+// Native definition for P/Invoke marshalling of UnityEngine.Networking.CertificateHandler
+struct CertificateHandler_t2739891000_marshaled_pinvoke
 {
+	intptr_t ___m_Ptr_0;
 };
-// Native definition for COM marshalling of UnityEngine.Networking.UploadHandlerRaw
-struct UploadHandlerRaw_t25761545_marshaled_com : public UploadHandler_t2993558019_marshaled_com
+// Native definition for COM marshalling of UnityEngine.Networking.CertificateHandler
+struct CertificateHandler_t2739891000_marshaled_com
 {
+	intptr_t ___m_Ptr_0;
 };
-#endif // UPLOADHANDLERRAW_T25761545_H
+#endif // CERTIFICATEHANDLER_T2739891000_H
+#ifndef DOWNLOADHANDLER_T2937767557_H
+#define DOWNLOADHANDLER_T2937767557_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Networking.DownloadHandler
+struct  DownloadHandler_t2937767557  : public RuntimeObject
+{
+public:
+	// System.IntPtr UnityEngine.Networking.DownloadHandler::m_Ptr
+	intptr_t ___m_Ptr_0;
+
+public:
+	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(DownloadHandler_t2937767557, ___m_Ptr_0)); }
+	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
+	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
+	inline void set_m_Ptr_0(intptr_t value)
+	{
+		___m_Ptr_0 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of UnityEngine.Networking.DownloadHandler
+struct DownloadHandler_t2937767557_marshaled_pinvoke
+{
+	intptr_t ___m_Ptr_0;
+};
+// Native definition for COM marshalling of UnityEngine.Networking.DownloadHandler
+struct DownloadHandler_t2937767557_marshaled_com
+{
+	intptr_t ___m_Ptr_0;
+};
+#endif // DOWNLOADHANDLER_T2937767557_H
+#ifndef UNITYWEBREQUESTERROR_T359680823_H
+#define UNITYWEBREQUESTERROR_T359680823_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Networking.UnityWebRequest/UnityWebRequestError
+struct  UnityWebRequestError_t359680823 
+{
+public:
+	// System.Int32 UnityEngine.Networking.UnityWebRequest/UnityWebRequestError::value__
+	int32_t ___value___1;
+
+public:
+	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(UnityWebRequestError_t359680823, ___value___1)); }
+	inline int32_t get_value___1() const { return ___value___1; }
+	inline int32_t* get_address_of_value___1() { return &___value___1; }
+	inline void set_value___1(int32_t value)
+	{
+		___value___1 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // UNITYWEBREQUESTERROR_T359680823_H
+#ifndef UNITYWEBREQUESTMETHOD_T1119759680_H
+#define UNITYWEBREQUESTMETHOD_T1119759680_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod
+struct  UnityWebRequestMethod_t1119759680 
+{
+public:
+	// System.Int32 UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod::value__
+	int32_t ___value___1;
+
+public:
+	inline static int32_t get_offset_of_value___1() { return static_cast<int32_t>(offsetof(UnityWebRequestMethod_t1119759680, ___value___1)); }
+	inline int32_t get_value___1() const { return ___value___1; }
+	inline int32_t* get_address_of_value___1() { return &___value___1; }
+	inline void set_value___1(int32_t value)
+	{
+		___value___1 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // UNITYWEBREQUESTMETHOD_T1119759680_H
+#ifndef UPLOADHANDLER_T2993558019_H
+#define UPLOADHANDLER_T2993558019_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Networking.UploadHandler
+struct  UploadHandler_t2993558019  : public RuntimeObject
+{
+public:
+	// System.IntPtr UnityEngine.Networking.UploadHandler::m_Ptr
+	intptr_t ___m_Ptr_0;
+
+public:
+	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(UploadHandler_t2993558019, ___m_Ptr_0)); }
+	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
+	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
+	inline void set_m_Ptr_0(intptr_t value)
+	{
+		___m_Ptr_0 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of UnityEngine.Networking.UploadHandler
+struct UploadHandler_t2993558019_marshaled_pinvoke
+{
+	intptr_t ___m_Ptr_0;
+};
+// Native definition for COM marshalling of UnityEngine.Networking.UploadHandler
+struct UploadHandler_t2993558019_marshaled_com
+{
+	intptr_t ___m_Ptr_0;
+};
+#endif // UPLOADHANDLER_T2993558019_H
 #ifndef MULTICASTDELEGATE_T_H
 #define MULTICASTDELEGATE_T_H
 #ifdef __clang__
@@ -2529,6 +2666,180 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // MULTICASTDELEGATE_T_H
+#ifndef REGEX_T3657309853_H
+#define REGEX_T3657309853_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Text.RegularExpressions.Regex
+struct  Regex_t3657309853  : public RuntimeObject
+{
+public:
+	// System.Text.RegularExpressions.IMachineFactory System.Text.RegularExpressions.Regex::machineFactory
+	RuntimeObject* ___machineFactory_1;
+	// System.Collections.IDictionary System.Text.RegularExpressions.Regex::mapping
+	RuntimeObject* ___mapping_2;
+	// System.Int32 System.Text.RegularExpressions.Regex::group_count
+	int32_t ___group_count_3;
+	// System.Int32 System.Text.RegularExpressions.Regex::gap
+	int32_t ___gap_4;
+	// System.Boolean System.Text.RegularExpressions.Regex::refsInitialized
+	bool ___refsInitialized_5;
+	// System.String[] System.Text.RegularExpressions.Regex::group_names
+	StringU5BU5D_t1281789340* ___group_names_6;
+	// System.Int32[] System.Text.RegularExpressions.Regex::group_numbers
+	Int32U5BU5D_t385246372* ___group_numbers_7;
+	// System.String System.Text.RegularExpressions.Regex::pattern
+	String_t* ___pattern_8;
+	// System.Text.RegularExpressions.RegexOptions System.Text.RegularExpressions.Regex::roptions
+	int32_t ___roptions_9;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Text.RegularExpressions.Regex::capnames
+	Dictionary_2_t2736202052 * ___capnames_10;
+	// System.Collections.Generic.Dictionary`2<System.Int32,System.Int32> System.Text.RegularExpressions.Regex::caps
+	Dictionary_2_t1839659084 * ___caps_11;
+	// System.Int32 System.Text.RegularExpressions.Regex::capsize
+	int32_t ___capsize_12;
+	// System.String[] System.Text.RegularExpressions.Regex::capslist
+	StringU5BU5D_t1281789340* ___capslist_13;
+
+public:
+	inline static int32_t get_offset_of_machineFactory_1() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___machineFactory_1)); }
+	inline RuntimeObject* get_machineFactory_1() const { return ___machineFactory_1; }
+	inline RuntimeObject** get_address_of_machineFactory_1() { return &___machineFactory_1; }
+	inline void set_machineFactory_1(RuntimeObject* value)
+	{
+		___machineFactory_1 = value;
+		Il2CppCodeGenWriteBarrier((&___machineFactory_1), value);
+	}
+
+	inline static int32_t get_offset_of_mapping_2() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___mapping_2)); }
+	inline RuntimeObject* get_mapping_2() const { return ___mapping_2; }
+	inline RuntimeObject** get_address_of_mapping_2() { return &___mapping_2; }
+	inline void set_mapping_2(RuntimeObject* value)
+	{
+		___mapping_2 = value;
+		Il2CppCodeGenWriteBarrier((&___mapping_2), value);
+	}
+
+	inline static int32_t get_offset_of_group_count_3() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___group_count_3)); }
+	inline int32_t get_group_count_3() const { return ___group_count_3; }
+	inline int32_t* get_address_of_group_count_3() { return &___group_count_3; }
+	inline void set_group_count_3(int32_t value)
+	{
+		___group_count_3 = value;
+	}
+
+	inline static int32_t get_offset_of_gap_4() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___gap_4)); }
+	inline int32_t get_gap_4() const { return ___gap_4; }
+	inline int32_t* get_address_of_gap_4() { return &___gap_4; }
+	inline void set_gap_4(int32_t value)
+	{
+		___gap_4 = value;
+	}
+
+	inline static int32_t get_offset_of_refsInitialized_5() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___refsInitialized_5)); }
+	inline bool get_refsInitialized_5() const { return ___refsInitialized_5; }
+	inline bool* get_address_of_refsInitialized_5() { return &___refsInitialized_5; }
+	inline void set_refsInitialized_5(bool value)
+	{
+		___refsInitialized_5 = value;
+	}
+
+	inline static int32_t get_offset_of_group_names_6() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___group_names_6)); }
+	inline StringU5BU5D_t1281789340* get_group_names_6() const { return ___group_names_6; }
+	inline StringU5BU5D_t1281789340** get_address_of_group_names_6() { return &___group_names_6; }
+	inline void set_group_names_6(StringU5BU5D_t1281789340* value)
+	{
+		___group_names_6 = value;
+		Il2CppCodeGenWriteBarrier((&___group_names_6), value);
+	}
+
+	inline static int32_t get_offset_of_group_numbers_7() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___group_numbers_7)); }
+	inline Int32U5BU5D_t385246372* get_group_numbers_7() const { return ___group_numbers_7; }
+	inline Int32U5BU5D_t385246372** get_address_of_group_numbers_7() { return &___group_numbers_7; }
+	inline void set_group_numbers_7(Int32U5BU5D_t385246372* value)
+	{
+		___group_numbers_7 = value;
+		Il2CppCodeGenWriteBarrier((&___group_numbers_7), value);
+	}
+
+	inline static int32_t get_offset_of_pattern_8() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___pattern_8)); }
+	inline String_t* get_pattern_8() const { return ___pattern_8; }
+	inline String_t** get_address_of_pattern_8() { return &___pattern_8; }
+	inline void set_pattern_8(String_t* value)
+	{
+		___pattern_8 = value;
+		Il2CppCodeGenWriteBarrier((&___pattern_8), value);
+	}
+
+	inline static int32_t get_offset_of_roptions_9() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___roptions_9)); }
+	inline int32_t get_roptions_9() const { return ___roptions_9; }
+	inline int32_t* get_address_of_roptions_9() { return &___roptions_9; }
+	inline void set_roptions_9(int32_t value)
+	{
+		___roptions_9 = value;
+	}
+
+	inline static int32_t get_offset_of_capnames_10() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___capnames_10)); }
+	inline Dictionary_2_t2736202052 * get_capnames_10() const { return ___capnames_10; }
+	inline Dictionary_2_t2736202052 ** get_address_of_capnames_10() { return &___capnames_10; }
+	inline void set_capnames_10(Dictionary_2_t2736202052 * value)
+	{
+		___capnames_10 = value;
+		Il2CppCodeGenWriteBarrier((&___capnames_10), value);
+	}
+
+	inline static int32_t get_offset_of_caps_11() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___caps_11)); }
+	inline Dictionary_2_t1839659084 * get_caps_11() const { return ___caps_11; }
+	inline Dictionary_2_t1839659084 ** get_address_of_caps_11() { return &___caps_11; }
+	inline void set_caps_11(Dictionary_2_t1839659084 * value)
+	{
+		___caps_11 = value;
+		Il2CppCodeGenWriteBarrier((&___caps_11), value);
+	}
+
+	inline static int32_t get_offset_of_capsize_12() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___capsize_12)); }
+	inline int32_t get_capsize_12() const { return ___capsize_12; }
+	inline int32_t* get_address_of_capsize_12() { return &___capsize_12; }
+	inline void set_capsize_12(int32_t value)
+	{
+		___capsize_12 = value;
+	}
+
+	inline static int32_t get_offset_of_capslist_13() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___capslist_13)); }
+	inline StringU5BU5D_t1281789340* get_capslist_13() const { return ___capslist_13; }
+	inline StringU5BU5D_t1281789340** get_address_of_capslist_13() { return &___capslist_13; }
+	inline void set_capslist_13(StringU5BU5D_t1281789340* value)
+	{
+		___capslist_13 = value;
+		Il2CppCodeGenWriteBarrier((&___capslist_13), value);
+	}
+};
+
+struct Regex_t3657309853_StaticFields
+{
+public:
+	// System.Text.RegularExpressions.FactoryCache System.Text.RegularExpressions.Regex::cache
+	FactoryCache_t2327118887 * ___cache_0;
+
+public:
+	inline static int32_t get_offset_of_cache_0() { return static_cast<int32_t>(offsetof(Regex_t3657309853_StaticFields, ___cache_0)); }
+	inline FactoryCache_t2327118887 * get_cache_0() const { return ___cache_0; }
+	inline FactoryCache_t2327118887 ** get_address_of_cache_0() { return &___cache_0; }
+	inline void set_cache_0(FactoryCache_t2327118887 * value)
+	{
+		___cache_0 = value;
+		Il2CppCodeGenWriteBarrier((&___cache_0), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // REGEX_T3657309853_H
 #ifndef DOWNLOADHANDLERBUFFER_T2928496527_H
 #define DOWNLOADHANDLERBUFFER_T2928496527_H
 #ifdef __clang__
@@ -2575,10 +2886,16 @@ public:
 	DownloadHandler_t2937767557 * ___m_DownloadHandler_1;
 	// UnityEngine.Networking.UploadHandler UnityEngine.Networking.UnityWebRequest::m_UploadHandler
 	UploadHandler_t2993558019 * ___m_UploadHandler_2;
+	// UnityEngine.Networking.CertificateHandler UnityEngine.Networking.UnityWebRequest::m_CertificateHandler
+	CertificateHandler_t2739891000 * ___m_CertificateHandler_3;
+	// System.Uri UnityEngine.Networking.UnityWebRequest::m_Uri
+	Uri_t100236324 * ___m_Uri_4;
+	// System.Boolean UnityEngine.Networking.UnityWebRequest::<disposeCertificateHandlerOnDispose>k__BackingField
+	bool ___U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11;
 	// System.Boolean UnityEngine.Networking.UnityWebRequest::<disposeDownloadHandlerOnDispose>k__BackingField
-	bool ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9;
+	bool ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12;
 	// System.Boolean UnityEngine.Networking.UnityWebRequest::<disposeUploadHandlerOnDispose>k__BackingField
-	bool ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10;
+	bool ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13;
 
 public:
 	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___m_Ptr_0)); }
@@ -2607,20 +2924,46 @@ public:
 		Il2CppCodeGenWriteBarrier((&___m_UploadHandler_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9)); }
-	inline bool get_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9() const { return ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9; }
-	inline bool* get_address_of_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9() { return &___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9; }
-	inline void set_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9(bool value)
+	inline static int32_t get_offset_of_m_CertificateHandler_3() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___m_CertificateHandler_3)); }
+	inline CertificateHandler_t2739891000 * get_m_CertificateHandler_3() const { return ___m_CertificateHandler_3; }
+	inline CertificateHandler_t2739891000 ** get_address_of_m_CertificateHandler_3() { return &___m_CertificateHandler_3; }
+	inline void set_m_CertificateHandler_3(CertificateHandler_t2739891000 * value)
 	{
-		___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9 = value;
+		___m_CertificateHandler_3 = value;
+		Il2CppCodeGenWriteBarrier((&___m_CertificateHandler_3), value);
 	}
 
-	inline static int32_t get_offset_of_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10)); }
-	inline bool get_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10() const { return ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10; }
-	inline bool* get_address_of_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10() { return &___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10; }
-	inline void set_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10(bool value)
+	inline static int32_t get_offset_of_m_Uri_4() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___m_Uri_4)); }
+	inline Uri_t100236324 * get_m_Uri_4() const { return ___m_Uri_4; }
+	inline Uri_t100236324 ** get_address_of_m_Uri_4() { return &___m_Uri_4; }
+	inline void set_m_Uri_4(Uri_t100236324 * value)
 	{
-		___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10 = value;
+		___m_Uri_4 = value;
+		Il2CppCodeGenWriteBarrier((&___m_Uri_4), value);
+	}
+
+	inline static int32_t get_offset_of_U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11)); }
+	inline bool get_U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11() const { return ___U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11; }
+	inline bool* get_address_of_U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11() { return &___U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11; }
+	inline void set_U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11(bool value)
+	{
+		___U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12)); }
+	inline bool get_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12() const { return ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12; }
+	inline bool* get_address_of_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12() { return &___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12; }
+	inline void set_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12(bool value)
+	{
+		___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13() { return static_cast<int32_t>(offsetof(UnityWebRequest_t463507806, ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13)); }
+	inline bool get_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13() const { return ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13; }
+	inline bool* get_address_of_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13() { return &___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13; }
+	inline void set_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13(bool value)
+	{
+		___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13 = value;
 	}
 };
 
@@ -2633,8 +2976,11 @@ struct UnityWebRequest_t463507806_marshaled_pinvoke
 	intptr_t ___m_Ptr_0;
 	DownloadHandler_t2937767557_marshaled_pinvoke ___m_DownloadHandler_1;
 	UploadHandler_t2993558019_marshaled_pinvoke ___m_UploadHandler_2;
-	int32_t ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9;
-	int32_t ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10;
+	CertificateHandler_t2739891000_marshaled_pinvoke ___m_CertificateHandler_3;
+	Uri_t100236324 * ___m_Uri_4;
+	int32_t ___U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11;
+	int32_t ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12;
+	int32_t ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13;
 };
 // Native definition for COM marshalling of UnityEngine.Networking.UnityWebRequest
 struct UnityWebRequest_t463507806_marshaled_com
@@ -2642,151 +2988,13 @@ struct UnityWebRequest_t463507806_marshaled_com
 	intptr_t ___m_Ptr_0;
 	DownloadHandler_t2937767557_marshaled_com* ___m_DownloadHandler_1;
 	UploadHandler_t2993558019_marshaled_com* ___m_UploadHandler_2;
-	int32_t ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9;
-	int32_t ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10;
+	CertificateHandler_t2739891000_marshaled_com* ___m_CertificateHandler_3;
+	Uri_t100236324 * ___m_Uri_4;
+	int32_t ___U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11;
+	int32_t ___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12;
+	int32_t ___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13;
 };
 #endif // UNITYWEBREQUEST_T463507806_H
-#ifndef REGEX_T3657309853_H
-#define REGEX_T3657309853_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Text.RegularExpressions.Regex
-struct  Regex_t3657309853  : public RuntimeObject
-{
-public:
-	// System.Text.RegularExpressions.IMachineFactory System.Text.RegularExpressions.Regex::machineFactory
-	RuntimeObject* ___machineFactory_1;
-	// System.Collections.IDictionary System.Text.RegularExpressions.Regex::mapping
-	RuntimeObject* ___mapping_2;
-	// System.Int32 System.Text.RegularExpressions.Regex::group_count
-	int32_t ___group_count_3;
-	// System.Int32 System.Text.RegularExpressions.Regex::gap
-	int32_t ___gap_4;
-	// System.String[] System.Text.RegularExpressions.Regex::group_names
-	StringU5BU5D_t1281789340* ___group_names_5;
-	// System.Int32[] System.Text.RegularExpressions.Regex::group_numbers
-	Int32U5BU5D_t385246372* ___group_numbers_6;
-	// System.String System.Text.RegularExpressions.Regex::pattern
-	String_t* ___pattern_7;
-	// System.Text.RegularExpressions.RegexOptions System.Text.RegularExpressions.Regex::roptions
-	int32_t ___roptions_8;
-
-public:
-	inline static int32_t get_offset_of_machineFactory_1() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___machineFactory_1)); }
-	inline RuntimeObject* get_machineFactory_1() const { return ___machineFactory_1; }
-	inline RuntimeObject** get_address_of_machineFactory_1() { return &___machineFactory_1; }
-	inline void set_machineFactory_1(RuntimeObject* value)
-	{
-		___machineFactory_1 = value;
-		Il2CppCodeGenWriteBarrier((&___machineFactory_1), value);
-	}
-
-	inline static int32_t get_offset_of_mapping_2() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___mapping_2)); }
-	inline RuntimeObject* get_mapping_2() const { return ___mapping_2; }
-	inline RuntimeObject** get_address_of_mapping_2() { return &___mapping_2; }
-	inline void set_mapping_2(RuntimeObject* value)
-	{
-		___mapping_2 = value;
-		Il2CppCodeGenWriteBarrier((&___mapping_2), value);
-	}
-
-	inline static int32_t get_offset_of_group_count_3() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___group_count_3)); }
-	inline int32_t get_group_count_3() const { return ___group_count_3; }
-	inline int32_t* get_address_of_group_count_3() { return &___group_count_3; }
-	inline void set_group_count_3(int32_t value)
-	{
-		___group_count_3 = value;
-	}
-
-	inline static int32_t get_offset_of_gap_4() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___gap_4)); }
-	inline int32_t get_gap_4() const { return ___gap_4; }
-	inline int32_t* get_address_of_gap_4() { return &___gap_4; }
-	inline void set_gap_4(int32_t value)
-	{
-		___gap_4 = value;
-	}
-
-	inline static int32_t get_offset_of_group_names_5() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___group_names_5)); }
-	inline StringU5BU5D_t1281789340* get_group_names_5() const { return ___group_names_5; }
-	inline StringU5BU5D_t1281789340** get_address_of_group_names_5() { return &___group_names_5; }
-	inline void set_group_names_5(StringU5BU5D_t1281789340* value)
-	{
-		___group_names_5 = value;
-		Il2CppCodeGenWriteBarrier((&___group_names_5), value);
-	}
-
-	inline static int32_t get_offset_of_group_numbers_6() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___group_numbers_6)); }
-	inline Int32U5BU5D_t385246372* get_group_numbers_6() const { return ___group_numbers_6; }
-	inline Int32U5BU5D_t385246372** get_address_of_group_numbers_6() { return &___group_numbers_6; }
-	inline void set_group_numbers_6(Int32U5BU5D_t385246372* value)
-	{
-		___group_numbers_6 = value;
-		Il2CppCodeGenWriteBarrier((&___group_numbers_6), value);
-	}
-
-	inline static int32_t get_offset_of_pattern_7() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___pattern_7)); }
-	inline String_t* get_pattern_7() const { return ___pattern_7; }
-	inline String_t** get_address_of_pattern_7() { return &___pattern_7; }
-	inline void set_pattern_7(String_t* value)
-	{
-		___pattern_7 = value;
-		Il2CppCodeGenWriteBarrier((&___pattern_7), value);
-	}
-
-	inline static int32_t get_offset_of_roptions_8() { return static_cast<int32_t>(offsetof(Regex_t3657309853, ___roptions_8)); }
-	inline int32_t get_roptions_8() const { return ___roptions_8; }
-	inline int32_t* get_address_of_roptions_8() { return &___roptions_8; }
-	inline void set_roptions_8(int32_t value)
-	{
-		___roptions_8 = value;
-	}
-};
-
-struct Regex_t3657309853_StaticFields
-{
-public:
-	// System.Text.RegularExpressions.FactoryCache System.Text.RegularExpressions.Regex::cache
-	FactoryCache_t2327118887 * ___cache_0;
-
-public:
-	inline static int32_t get_offset_of_cache_0() { return static_cast<int32_t>(offsetof(Regex_t3657309853_StaticFields, ___cache_0)); }
-	inline FactoryCache_t2327118887 * get_cache_0() const { return ___cache_0; }
-	inline FactoryCache_t2327118887 ** get_address_of_cache_0() { return &___cache_0; }
-	inline void set_cache_0(FactoryCache_t2327118887 * value)
-	{
-		___cache_0 = value;
-		Il2CppCodeGenWriteBarrier((&___cache_0), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // REGEX_T3657309853_H
-#ifndef ACTION_1_T1617499438_H
-#define ACTION_1_T1617499438_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Action`1<UnityEngine.AsyncOperation>
-struct  Action_1_t1617499438  : public MulticastDelegate_t
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // ACTION_1_T1617499438_H
 #ifndef UNITYWEBREQUESTASYNCOPERATION_T3852015985_H
 #define UNITYWEBREQUESTASYNCOPERATION_T3852015985_H
 #ifdef __clang__
@@ -2819,7 +3027,7 @@ public:
 // Native definition for P/Invoke marshalling of UnityEngine.Networking.UnityWebRequestAsyncOperation
 struct UnityWebRequestAsyncOperation_t3852015985_marshaled_pinvoke : public AsyncOperation_t1445031843_marshaled_pinvoke
 {
-	UnityWebRequest_t463507806_marshaled_pinvoke ___U3CwebRequestU3Ek__BackingField_2;
+	UnityWebRequest_t463507806_marshaled_pinvoke* ___U3CwebRequestU3Ek__BackingField_2;
 };
 // Native definition for COM marshalling of UnityEngine.Networking.UnityWebRequestAsyncOperation
 struct UnityWebRequestAsyncOperation_t3852015985_marshaled_com : public AsyncOperation_t1445031843_marshaled_com
@@ -2827,6 +3035,54 @@ struct UnityWebRequestAsyncOperation_t3852015985_marshaled_com : public AsyncOpe
 	UnityWebRequest_t463507806_marshaled_com* ___U3CwebRequestU3Ek__BackingField_2;
 };
 #endif // UNITYWEBREQUESTASYNCOPERATION_T3852015985_H
+#ifndef UPLOADHANDLERRAW_T25761545_H
+#define UPLOADHANDLERRAW_T25761545_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Networking.UploadHandlerRaw
+struct  UploadHandlerRaw_t25761545  : public UploadHandler_t2993558019
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of UnityEngine.Networking.UploadHandlerRaw
+struct UploadHandlerRaw_t25761545_marshaled_pinvoke : public UploadHandler_t2993558019_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of UnityEngine.Networking.UploadHandlerRaw
+struct UploadHandlerRaw_t25761545_marshaled_com : public UploadHandler_t2993558019_marshaled_com
+{
+};
+#endif // UPLOADHANDLERRAW_T25761545_H
+#ifndef ACTION_1_T1617499438_H
+#define ACTION_1_T1617499438_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Action`1<UnityEngine.AsyncOperation>
+struct  Action_1_t1617499438  : public MulticastDelegate_t
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // ACTION_1_T1617499438_H
 // System.Byte[]
 struct ByteU5BU5D_t4116647657  : public RuntimeArray
 {
@@ -2904,12 +3160,18 @@ extern "C" void DownloadHandler_t2937767557_marshal_pinvoke_cleanup(DownloadHand
 extern "C" void UploadHandler_t2993558019_marshal_pinvoke(const UploadHandler_t2993558019& unmarshaled, UploadHandler_t2993558019_marshaled_pinvoke& marshaled);
 extern "C" void UploadHandler_t2993558019_marshal_pinvoke_back(const UploadHandler_t2993558019_marshaled_pinvoke& marshaled, UploadHandler_t2993558019& unmarshaled);
 extern "C" void UploadHandler_t2993558019_marshal_pinvoke_cleanup(UploadHandler_t2993558019_marshaled_pinvoke& marshaled);
+extern "C" void CertificateHandler_t2739891000_marshal_pinvoke(const CertificateHandler_t2739891000& unmarshaled, CertificateHandler_t2739891000_marshaled_pinvoke& marshaled);
+extern "C" void CertificateHandler_t2739891000_marshal_pinvoke_back(const CertificateHandler_t2739891000_marshaled_pinvoke& marshaled, CertificateHandler_t2739891000& unmarshaled);
+extern "C" void CertificateHandler_t2739891000_marshal_pinvoke_cleanup(CertificateHandler_t2739891000_marshaled_pinvoke& marshaled);
 extern "C" void DownloadHandler_t2937767557_marshal_com(const DownloadHandler_t2937767557& unmarshaled, DownloadHandler_t2937767557_marshaled_com& marshaled);
 extern "C" void DownloadHandler_t2937767557_marshal_com_back(const DownloadHandler_t2937767557_marshaled_com& marshaled, DownloadHandler_t2937767557& unmarshaled);
 extern "C" void DownloadHandler_t2937767557_marshal_com_cleanup(DownloadHandler_t2937767557_marshaled_com& marshaled);
 extern "C" void UploadHandler_t2993558019_marshal_com(const UploadHandler_t2993558019& unmarshaled, UploadHandler_t2993558019_marshaled_com& marshaled);
 extern "C" void UploadHandler_t2993558019_marshal_com_back(const UploadHandler_t2993558019_marshaled_com& marshaled, UploadHandler_t2993558019& unmarshaled);
 extern "C" void UploadHandler_t2993558019_marshal_com_cleanup(UploadHandler_t2993558019_marshaled_com& marshaled);
+extern "C" void CertificateHandler_t2739891000_marshal_com(const CertificateHandler_t2739891000& unmarshaled, CertificateHandler_t2739891000_marshaled_com& marshaled);
+extern "C" void CertificateHandler_t2739891000_marshal_com_back(const CertificateHandler_t2739891000_marshaled_com& marshaled, CertificateHandler_t2739891000& unmarshaled);
+extern "C" void CertificateHandler_t2739891000_marshal_com_cleanup(CertificateHandler_t2739891000_marshaled_com& marshaled);
 extern "C" void UnityWebRequest_t463507806_marshal_pinvoke(const UnityWebRequest_t463507806& unmarshaled, UnityWebRequest_t463507806_marshaled_pinvoke& marshaled);
 extern "C" void UnityWebRequest_t463507806_marshal_pinvoke_back(const UnityWebRequest_t463507806_marshaled_pinvoke& marshaled, UnityWebRequest_t463507806& unmarshaled);
 extern "C" void UnityWebRequest_t463507806_marshal_pinvoke_cleanup(UnityWebRequest_t463507806_marshaled_pinvoke& marshaled);
@@ -2918,191 +3180,373 @@ extern "C" void UnityWebRequest_t463507806_marshal_com_back(const UnityWebReques
 extern "C" void UnityWebRequest_t463507806_marshal_com_cleanup(UnityWebRequest_t463507806_marshaled_com& marshaled);
 
 
-// System.Void System.Object::.ctor()
-extern "C"  void Object__ctor_m297566312 (RuntimeObject * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.Networking.DownloadHandler::Dispose()
-extern "C"  void DownloadHandler_Dispose_m2747726581 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Networking.CertificateHandler::Dispose()
+extern "C" IL2CPP_METHOD_ATTR void CertificateHandler_Dispose_m2100863831 (CertificateHandler_t2739891000 * __this, const RuntimeMethod* method);
 // System.Void System.Object::Finalize()
-extern "C"  void Object_Finalize_m3076187857 (RuntimeObject * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void Object_Finalize_m3076187857 (RuntimeObject * __this, const RuntimeMethod* method);
 // System.Boolean System.IntPtr::op_Inequality(System.IntPtr,System.IntPtr)
-extern "C"  bool IntPtr_op_Inequality_m3063970704 (RuntimeObject * __this /* static, unused */, intptr_t p0, intptr_t p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool IntPtr_op_Inequality_m3063970704 (RuntimeObject * __this /* static, unused */, intptr_t p0, intptr_t p1, const RuntimeMethod* method);
+// System.Void UnityEngine.Networking.CertificateHandler::Release()
+extern "C" IL2CPP_METHOD_ATTR void CertificateHandler_Release_m648790222 (CertificateHandler_t2739891000 * __this, const RuntimeMethod* method);
+// System.Void System.Object::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void Object__ctor_m297566312 (RuntimeObject * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Networking.DownloadHandler::Dispose()
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandler_Dispose_m2747726581 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.DownloadHandler::Release()
-extern "C"  void DownloadHandler_Release_m3024555697 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandler_Release_m3024555697 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method);
 // System.Text.Encoding UnityEngine.Networking.DownloadHandler::GetTextEncoder()
-extern "C"  Encoding_t1523322056 * DownloadHandler_GetTextEncoder_m3244408468 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR Encoding_t1523322056 * DownloadHandler_GetTextEncoder_m3244408468 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method);
 // System.String UnityEngine.Networking.DownloadHandler::GetContentType()
-extern "C"  String_t* DownloadHandler_GetContentType_m4249877960 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* DownloadHandler_GetContentType_m4249877960 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method);
 // System.Boolean System.String::IsNullOrEmpty(System.String)
-extern "C"  bool String_IsNullOrEmpty_m2969720369 (RuntimeObject * __this /* static, unused */, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool String_IsNullOrEmpty_m2969720369 (RuntimeObject * __this /* static, unused */, String_t* p0, const RuntimeMethod* method);
 // System.Int32 System.String::IndexOf(System.String,System.StringComparison)
-extern "C"  int32_t String_IndexOf_m1298810678 (String_t* __this, String_t* p0, int32_t p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t String_IndexOf_m1298810678 (String_t* __this, String_t* p0, int32_t p1, const RuntimeMethod* method);
 // System.Int32 System.String::IndexOf(System.Char,System.Int32)
-extern "C"  int32_t String_IndexOf_m2466398549 (String_t* __this, Il2CppChar p0, int32_t p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t String_IndexOf_m2466398549 (String_t* __this, Il2CppChar p0, int32_t p1, const RuntimeMethod* method);
 // System.String System.String::Substring(System.Int32)
-extern "C"  String_t* String_Substring_m2848979100 (String_t* __this, int32_t p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Substring_m2848979100 (String_t* __this, int32_t p0, const RuntimeMethod* method);
 // System.String System.String::Trim()
-extern "C"  String_t* String_Trim_m923598732 (String_t* __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Trim_m923598732 (String_t* __this, const RuntimeMethod* method);
 // System.String System.String::Trim(System.Char[])
-extern "C"  String_t* String_Trim_m3384720403 (String_t* __this, CharU5BU5D_t3528271667* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Trim_m3384720403 (String_t* __this, CharU5BU5D_t3528271667* p0, const RuntimeMethod* method);
 // System.Int32 System.String::IndexOf(System.Char)
-extern "C"  int32_t String_IndexOf_m363431711 (String_t* __this, Il2CppChar p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t String_IndexOf_m363431711 (String_t* __this, Il2CppChar p0, const RuntimeMethod* method);
 // System.String System.String::Substring(System.Int32,System.Int32)
-extern "C"  String_t* String_Substring_m1610150815 (String_t* __this, int32_t p0, int32_t p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Substring_m1610150815 (String_t* __this, int32_t p0, int32_t p1, const RuntimeMethod* method);
 // System.Text.Encoding System.Text.Encoding::GetEncoding(System.String)
-extern "C"  Encoding_t1523322056 * Encoding_GetEncoding_m2599798446 (RuntimeObject * __this /* static, unused */, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR Encoding_t1523322056 * Encoding_GetEncoding_m2599798446 (RuntimeObject * __this /* static, unused */, String_t* p0, const RuntimeMethod* method);
 // System.String System.String::Format(System.String,System.Object,System.Object)
-extern "C"  String_t* String_Format_m2556382932 (RuntimeObject * __this /* static, unused */, String_t* p0, RuntimeObject * p1, RuntimeObject * p2, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Format_m2556382932 (RuntimeObject * __this /* static, unused */, String_t* p0, RuntimeObject * p1, RuntimeObject * p2, const RuntimeMethod* method);
 // System.Void UnityEngine.Debug::LogWarning(System.Object)
-extern "C"  void Debug_LogWarning_m3752629331 (RuntimeObject * __this /* static, unused */, RuntimeObject * p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void Debug_LogWarning_m3752629331 (RuntimeObject * __this /* static, unused */, RuntimeObject * p0, const RuntimeMethod* method);
 // System.Text.Encoding System.Text.Encoding::get_UTF8()
-extern "C"  Encoding_t1523322056 * Encoding_get_UTF8_m1008486739 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR Encoding_t1523322056 * Encoding_get_UTF8_m1008486739 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.DownloadHandler::.ctor()
-extern "C"  void DownloadHandler__ctor_m2126376377 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandler__ctor_m2126376377 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.DownloadHandlerBuffer::InternalCreateBuffer()
-extern "C"  void DownloadHandlerBuffer_InternalCreateBuffer_m301356089 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandlerBuffer_InternalCreateBuffer_m301356089 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method);
 // System.IntPtr UnityEngine.Networking.DownloadHandlerBuffer::Create(UnityEngine.Networking.DownloadHandlerBuffer)
-extern "C"  intptr_t DownloadHandlerBuffer_Create_m1196797347 (RuntimeObject * __this /* static, unused */, DownloadHandlerBuffer_t2928496527 * ___obj0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR intptr_t DownloadHandlerBuffer_Create_m1196797347 (RuntimeObject * __this /* static, unused */, DownloadHandlerBuffer_t2928496527 * ___obj0, const RuntimeMethod* method);
 // System.Byte[] UnityEngine.Networking.DownloadHandlerBuffer::InternalGetData()
-extern "C"  ByteU5BU5D_t4116647657* DownloadHandlerBuffer_InternalGetData_m3771716959 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* DownloadHandlerBuffer_InternalGetData_m3771716959 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method);
 // System.Byte[] UnityEngine.Networking.DownloadHandler::InternalGetByteArray(UnityEngine.Networking.DownloadHandler)
-extern "C"  ByteU5BU5D_t4116647657* DownloadHandler_InternalGetByteArray_m4277508027 (RuntimeObject * __this /* static, unused */, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.Networking.UploadHandler::.ctor()
-extern "C"  void UploadHandler__ctor_m1351468229 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* DownloadHandler_InternalGetByteArray_m4277508027 (RuntimeObject * __this /* static, unused */, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method);
 // System.IntPtr UnityEngine.Networking.UnityWebRequest::Create()
-extern "C"  intptr_t UnityWebRequest_Create_m1328190473 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR intptr_t UnityWebRequest_Create_m1328190473 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetDefaults()
-extern "C"  void UnityWebRequest_InternalSetDefaults_m3669466854 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetDefaults_m3669466854 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::set_url(System.String)
-extern "C"  void UnityWebRequest_set_url_m2541992937 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_url_m2541992937 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::set_method(System.String)
-extern "C"  void UnityWebRequest_set_method_m3969249710 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_method_m3969249710 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::Abort()
-extern "C"  void UnityWebRequest_Abort_m1490033122 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_Abort_m1490033122 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::Release()
-extern "C"  void UnityWebRequest_Release_m2347155176 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_Release_m2347155176 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::set_disposeDownloadHandlerOnDispose(System.Boolean)
-extern "C"  void UnityWebRequest_set_disposeDownloadHandlerOnDispose_m2026832119 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_disposeDownloadHandlerOnDispose_m2026832119 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::set_disposeUploadHandlerOnDispose(System.Boolean)
-extern "C"  void UnityWebRequest_set_disposeUploadHandlerOnDispose_m2753289015 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_disposeUploadHandlerOnDispose_m2753289015 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Networking.UnityWebRequest::set_disposeCertificateHandlerOnDispose(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_disposeCertificateHandlerOnDispose_m4266558538 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::DisposeHandlers()
-extern "C"  void UnityWebRequest_DisposeHandlers_m3575283268 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_DisposeHandlers_m3575283268 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalDestroy()
-extern "C"  void UnityWebRequest_InternalDestroy_m2954597795 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalDestroy_m2954597795 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void System.GC::SuppressFinalize(System.Object)
-extern "C"  void GC_SuppressFinalize_m1177400158 (RuntimeObject * __this /* static, unused */, RuntimeObject * p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void GC_SuppressFinalize_m1177400158 (RuntimeObject * __this /* static, unused */, RuntimeObject * p0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_disposeDownloadHandlerOnDispose()
-extern "C"  bool UnityWebRequest_get_disposeDownloadHandlerOnDispose_m3413606992 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_disposeDownloadHandlerOnDispose_m3413606992 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // UnityEngine.Networking.DownloadHandler UnityEngine.Networking.UnityWebRequest::get_downloadHandler()
-extern "C"  DownloadHandler_t2937767557 * UnityWebRequest_get_downloadHandler_m534911913 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR DownloadHandler_t2937767557 * UnityWebRequest_get_downloadHandler_m534911913 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_disposeUploadHandlerOnDispose()
-extern "C"  bool UnityWebRequest_get_disposeUploadHandlerOnDispose_m2375741633 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_disposeUploadHandlerOnDispose_m2375741633 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // UnityEngine.Networking.UploadHandler UnityEngine.Networking.UnityWebRequest::get_uploadHandler()
-extern "C"  UploadHandler_t2993558019 * UnityWebRequest_get_uploadHandler_m3692520788 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR UploadHandler_t2993558019 * UnityWebRequest_get_uploadHandler_m3692520788 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UploadHandler::Dispose()
-extern "C"  void UploadHandler_Dispose_m3057340132 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler_Dispose_m3057340132 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method);
+// System.Boolean UnityEngine.Networking.UnityWebRequest::get_disposeCertificateHandlerOnDispose()
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_disposeCertificateHandlerOnDispose_m4051074453 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
+// UnityEngine.Networking.CertificateHandler UnityEngine.Networking.UnityWebRequest::get_certificateHandler()
+extern "C" IL2CPP_METHOD_ATTR CertificateHandler_t2739891000 * UnityWebRequest_get_certificateHandler_m3453757623 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequestAsyncOperation UnityEngine.Networking.UnityWebRequest::BeginWebRequest()
-extern "C"  UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_BeginWebRequest_m464964044 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_BeginWebRequest_m464964044 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequestAsyncOperation::set_webRequest(UnityEngine.Networking.UnityWebRequest)
-extern "C"  void UnityWebRequestAsyncOperation_set_webRequest_m3712663211 (UnityWebRequestAsyncOperation_t3852015985 * __this, UnityWebRequest_t463507806 * ___value0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequestAsyncOperation_set_webRequest_m3712663211 (UnityWebRequestAsyncOperation_t3852015985 * __this, UnityWebRequest_t463507806 * ___value0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_isModifiable()
-extern "C"  bool UnityWebRequest_get_isModifiable_m4181352937 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_isModifiable_m4181352937 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Void System.InvalidOperationException::.ctor(System.String)
-extern "C"  void InvalidOperationException__ctor_m237278729 (InvalidOperationException_t56020091 * __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void InvalidOperationException__ctor_m237278729 (InvalidOperationException_t56020091 * __this, String_t* p0, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetMethod(UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod)
-extern "C"  int32_t UnityWebRequest_SetMethod_m3005196532 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetMethod_m3005196532 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method);
 // System.String UnityEngine.Networking.UnityWebRequest::GetWebErrorString(UnityEngine.Networking.UnityWebRequest/UnityWebRequestError)
-extern "C"  String_t* UnityWebRequest_GetWebErrorString_m4076320575 (RuntimeObject * __this /* static, unused */, int32_t ___err0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* UnityWebRequest_GetWebErrorString_m4076320575 (RuntimeObject * __this /* static, unused */, int32_t ___err0, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetCustomMethod(System.String)
-extern "C"  int32_t UnityWebRequest_SetCustomMethod_m305650395 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetCustomMethod_m305650395 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method);
 // System.Void System.ArgumentException::.ctor(System.String)
-extern "C"  void ArgumentException__ctor_m1312628991 (ArgumentException_t132251570 * __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void ArgumentException__ctor_m1312628991 (ArgumentException_t132251570 * __this, String_t* p0, const RuntimeMethod* method);
 // System.String System.String::ToUpper()
-extern "C"  String_t* String_ToUpper_m3324454496 (String_t* __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* String_ToUpper_m3324454496 (String_t* __this, const RuntimeMethod* method);
 // System.Boolean System.String::op_Equality(System.String,System.String)
-extern "C"  bool String_op_Equality_m920492651 (RuntimeObject * __this /* static, unused */, String_t* p0, String_t* p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool String_op_Equality_m920492651 (RuntimeObject * __this /* static, unused */, String_t* p0, String_t* p1, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetMethod(UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod)
-extern "C"  void UnityWebRequest_InternalSetMethod_m287631745 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetMethod_m287631745 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetCustomMethod(System.String)
-extern "C"  void UnityWebRequest_InternalSetCustomMethod_m3670745235 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetCustomMethod_m3670745235 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_isNetworkError()
-extern "C"  bool UnityWebRequest_get_isNetworkError_m1231611882 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_isNetworkError_m1231611882 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_isHttpError()
-extern "C"  bool UnityWebRequest_get_isHttpError_m797082501 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_isHttpError_m797082501 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::GetError()
-extern "C"  int32_t UnityWebRequest_GetError_m1229724170 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_GetError_m1229724170 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.String UnityEngine.Networking.UnityWebRequest::GetUrl()
-extern "C"  String_t* UnityWebRequest_GetUrl_m3419782119 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* UnityWebRequest_GetUrl_m3419782119 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method);
 // System.String UnityEngineInternal.WebRequestUtils::MakeInitialUrl(System.String,System.String)
-extern "C"  String_t* WebRequestUtils_MakeInitialUrl_m973728695 (RuntimeObject * __this /* static, unused */, String_t* ___targetUrl0, String_t* ___localUrl1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestUtils_MakeInitialUrl_m973728695 (RuntimeObject * __this /* static, unused */, String_t* ___targetUrl0, String_t* ___localUrl1, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetUrl(System.String)
-extern "C"  void UnityWebRequest_InternalSetUrl_m1036291515 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetUrl_m1036291515 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetUrl(System.String)
-extern "C"  int32_t UnityWebRequest_SetUrl_m4135786364 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetUrl_m4135786364 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method);
+// UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetChunked(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetChunked_m2819118383 (UnityWebRequest_t463507806 * __this, bool ___chunked0, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::InternalSetRequestHeader(System.String,System.String)
-extern "C"  int32_t UnityWebRequest_InternalSetRequestHeader_m2218760805 (UnityWebRequest_t463507806 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_InternalSetRequestHeader_m2218760805 (UnityWebRequest_t463507806 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetUploadHandler(UnityEngine.Networking.UploadHandler)
-extern "C"  int32_t UnityWebRequest_SetUploadHandler_m2465141380 (UnityWebRequest_t463507806 * __this, UploadHandler_t2993558019 * ___uh0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetUploadHandler_m2465141380 (UnityWebRequest_t463507806 * __this, UploadHandler_t2993558019 * ___uh0, const RuntimeMethod* method);
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetDownloadHandler(UnityEngine.Networking.DownloadHandler)
-extern "C"  int32_t UnityWebRequest_SetDownloadHandler_m2637095256 (UnityWebRequest_t463507806 * __this, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetDownloadHandler_m2637095256 (UnityWebRequest_t463507806 * __this, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method);
 // System.Void UnityEngine.AsyncOperation::.ctor()
-extern "C"  void AsyncOperation__ctor_m410195587 (AsyncOperation_t1445031843 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void AsyncOperation__ctor_m410195587 (AsyncOperation_t1445031843 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UploadHandler::Release()
-extern "C"  void UploadHandler_Release_m2289600429 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler_Release_m2289600429 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Networking.UploadHandler::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler__ctor_m1351468229 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method);
 // System.IntPtr UnityEngine.Networking.UploadHandlerRaw::Create(UnityEngine.Networking.UploadHandlerRaw,System.Byte[])
-extern "C"  intptr_t UploadHandlerRaw_Create_m2571854625 (RuntimeObject * __this /* static, unused */, UploadHandlerRaw_t25761545 * ___self0, ByteU5BU5D_t4116647657* ___data1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR intptr_t UploadHandlerRaw_Create_m2571854625 (RuntimeObject * __this /* static, unused */, UploadHandlerRaw_t25761545 * ___self0, ByteU5BU5D_t4116647657* ___data1, const RuntimeMethod* method);
 // System.Void UnityEngine.Networking.UploadHandlerRaw::InternalSetContentType(System.String)
-extern "C"  void UploadHandlerRaw_InternalSetContentType_m1631554169 (UploadHandlerRaw_t25761545 * __this, String_t* ___newContentType0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void UploadHandlerRaw_InternalSetContentType_m1631554169 (UploadHandlerRaw_t25761545 * __this, String_t* ___newContentType0, const RuntimeMethod* method);
 // System.Text.Encoding System.Text.Encoding::get_ASCII()
-extern "C"  Encoding_t1523322056 * Encoding_get_ASCII_m3595602635 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.Text.Encoding UnityEngine.WWWForm::get_DefaultEncoding()
-extern "C"  Encoding_t1523322056 * WWWForm_get_DefaultEncoding_m4131957975 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR Encoding_t1523322056 * Encoding_get_ASCII_m3595602635 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Byte[] UnityEngine.WWWTranscoder::Decode(System.Byte[],System.Byte,System.Byte[])
-extern "C"  ByteU5BU5D_t4116647657* WWWTranscoder_Decode_m157051313 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___input0, uint8_t ___escapeChar1, ByteU5BU5D_t4116647657* ___space2, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* WWWTranscoder_Decode_m157051313 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___input0, uint8_t ___escapeChar1, ByteU5BU5D_t4116647657* ___space2, const RuntimeMethod* method);
 // System.Void System.IO.MemoryStream::.ctor(System.Int32)
-extern "C"  void MemoryStream__ctor_m2128850779 (MemoryStream_t94973147 * __this, int32_t p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void MemoryStream__ctor_m2128850779 (MemoryStream_t94973147 * __this, int32_t p0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.WWWTranscoder::ByteSubArrayEquals(System.Byte[],System.Int32,System.Byte[])
-extern "C"  bool WWWTranscoder_ByteSubArrayEquals_m2163464440 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___array0, int32_t ___index1, ByteU5BU5D_t4116647657* ___comperand2, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool WWWTranscoder_ByteSubArrayEquals_m2163464440 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___array0, int32_t ___index1, ByteU5BU5D_t4116647657* ___comperand2, const RuntimeMethod* method);
 // System.Byte UnityEngine.WWWTranscoder::Hex2Byte(System.Byte[],System.Int32)
-extern "C"  uint8_t WWWTranscoder_Hex2Byte_m4102152163 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___b0, int32_t ___offset1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR uint8_t WWWTranscoder_Hex2Byte_m4102152163 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___b0, int32_t ___offset1, const RuntimeMethod* method);
+// System.Text.Encoding UnityEngine.WWWForm::get_DefaultEncoding()
+extern "C" IL2CPP_METHOD_ATTR Encoding_t1523322056 * WWWForm_get_DefaultEncoding_m4131957975 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Char System.String::get_Chars(System.Int32)
-extern "C"  Il2CppChar String_get_Chars_m2986988803 (String_t* __this, int32_t p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR Il2CppChar String_get_Chars_m2986988803 (String_t* __this, int32_t p0, const RuntimeMethod* method);
 // System.Void System.Uri::.ctor(System.String,System.UriKind)
-extern "C"  void Uri__ctor_m3040793867 (Uri_t100236324 * __this, String_t* p0, int32_t p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void Uri__ctor_m3040793867 (Uri_t100236324 * __this, String_t* p0, int32_t p1, const RuntimeMethod* method);
 // System.Boolean System.Uri::get_IsAbsoluteUri()
-extern "C"  bool Uri_get_IsAbsoluteUri_m3666899587 (Uri_t100236324 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool Uri_get_IsAbsoluteUri_m3666899587 (Uri_t100236324 * __this, const RuntimeMethod* method);
 // System.String System.Uri::get_AbsoluteUri()
-extern "C"  String_t* Uri_get_AbsoluteUri_m2582056986 (Uri_t100236324 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* Uri_get_AbsoluteUri_m2582056986 (Uri_t100236324 * __this, const RuntimeMethod* method);
 // System.Void System.Uri::.ctor(System.Uri,System.Uri)
-extern "C"  void Uri__ctor_m253204164 (Uri_t100236324 * __this, Uri_t100236324 * p0, Uri_t100236324 * p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.String::StartsWith(System.String)
-extern "C"  bool String_StartsWith_m1759067526 (String_t* __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void Uri__ctor_m253204164 (Uri_t100236324 * __this, Uri_t100236324 * p0, Uri_t100236324 * p1, const RuntimeMethod* method);
 // System.Void System.Uri::.ctor(System.String)
-extern "C"  void Uri__ctor_m800430703 (Uri_t100236324 * __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void Uri__ctor_m800430703 (Uri_t100236324 * __this, String_t* p0, const RuntimeMethod* method);
 // System.Void System.Uri::.ctor(System.Uri,System.String)
-extern "C"  void Uri__ctor_m4293005803 (Uri_t100236324 * __this, Uri_t100236324 * p0, String_t* p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void Uri__ctor_m4293005803 (Uri_t100236324 * __this, Uri_t100236324 * p0, String_t* p1, const RuntimeMethod* method);
 // System.Boolean System.Uri::op_Equality(System.Uri,System.Uri)
-extern "C"  bool Uri_op_Equality_m685520154 (RuntimeObject * __this /* static, unused */, Uri_t100236324 * p0, Uri_t100236324 * p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool Uri_op_Equality_m685520154 (RuntimeObject * __this /* static, unused */, Uri_t100236324 * p0, Uri_t100236324 * p1, const RuntimeMethod* method);
 // System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String)
-extern "C"  bool Regex_IsMatch_m4067478295 (Regex_t3657309853 * __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR bool Regex_IsMatch_m4067478295 (Regex_t3657309853 * __this, String_t* p0, const RuntimeMethod* method);
 // System.String System.Uri::get_Scheme()
-extern "C"  String_t* Uri_get_Scheme_m2109479391 (Uri_t100236324 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* Uri_get_Scheme_m2109479391 (Uri_t100236324 * __this, const RuntimeMethod* method);
 // System.String System.String::Concat(System.String,System.String,System.String)
-extern "C"  String_t* String_Concat_m3755062657 (RuntimeObject * __this /* static, unused */, String_t* p0, String_t* p1, String_t* p2, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.String::StartsWith(System.String,System.StringComparison)
-extern "C"  bool String_StartsWith_m2640722675 (String_t* __this, String_t* p0, int32_t p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.String::Contains(System.String)
-extern "C"  bool String_Contains_m1147431944 (String_t* __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.String UnityEngine.WWWTranscoder::URLDecode(System.String,System.Text.Encoding)
-extern "C"  String_t* WWWTranscoder_URLDecode_m3140444198 (RuntimeObject * __this /* static, unused */, String_t* ___toEncode0, Encoding_t1523322056 * ___e1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m3755062657 (RuntimeObject * __this /* static, unused */, String_t* p0, String_t* p1, String_t* p2, const RuntimeMethod* method);
+// System.String UnityEngineInternal.WebRequestUtils::MakeUriString(System.Uri,System.String,System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestUtils_MakeUriString_m291605890 (RuntimeObject * __this /* static, unused */, Uri_t100236324 * ___targetUri0, String_t* ___targetUrl1, bool ___prependProtocol2, const RuntimeMethod* method);
+// System.Boolean System.Uri::get_IsFile()
+extern "C" IL2CPP_METHOD_ATTR bool Uri_get_IsFile_m2450018824 (Uri_t100236324 * __this, const RuntimeMethod* method);
+// System.Boolean System.Uri::get_IsLoopback()
+extern "C" IL2CPP_METHOD_ATTR bool Uri_get_IsLoopback_m2492530169 (Uri_t100236324 * __this, const RuntimeMethod* method);
 // System.String System.Uri::get_OriginalString()
-extern "C"  String_t* Uri_get_OriginalString_m3715995233 (Uri_t100236324 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR String_t* Uri_get_OriginalString_m3715995233 (Uri_t100236324 * __this, const RuntimeMethod* method);
+// System.String System.Uri::get_AbsolutePath()
+extern "C" IL2CPP_METHOD_ATTR String_t* Uri_get_AbsolutePath_m590948575 (Uri_t100236324 * __this, const RuntimeMethod* method);
+// System.Boolean System.String::Contains(System.String)
+extern "C" IL2CPP_METHOD_ATTR bool String_Contains_m1147431944 (String_t* __this, String_t* p0, const RuntimeMethod* method);
+// System.String UnityEngineInternal.WebRequestUtils::URLDecode(System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestUtils_URLDecode_m2727298221 (RuntimeObject * __this /* static, unused */, String_t* ___encoded0, const RuntimeMethod* method);
+// System.Int32 System.String::get_Length()
+extern "C" IL2CPP_METHOD_ATTR int32_t String_get_Length_m3847582255 (String_t* __this, const RuntimeMethod* method);
+// System.String System.String::Concat(System.Object,System.Object)
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m904156431 (RuntimeObject * __this /* static, unused */, RuntimeObject * p0, RuntimeObject * p1, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m3937257545 (RuntimeObject * __this /* static, unused */, String_t* p0, String_t* p1, const RuntimeMethod* method);
+// System.Void System.Text.StringBuilder::.ctor(System.String,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void StringBuilder__ctor_m2502310956 (StringBuilder_t * __this, String_t* p0, int32_t p1, const RuntimeMethod* method);
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.Char)
+extern "C" IL2CPP_METHOD_ATTR StringBuilder_t * StringBuilder_Append_m2383614642 (StringBuilder_t * __this, Il2CppChar p0, const RuntimeMethod* method);
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
+extern "C" IL2CPP_METHOD_ATTR StringBuilder_t * StringBuilder_Append_m1965104174 (StringBuilder_t * __this, String_t* p0, const RuntimeMethod* method);
+// System.String System.Uri::get_PathAndQuery()
+extern "C" IL2CPP_METHOD_ATTR String_t* Uri_get_PathAndQuery_m2396197970 (Uri_t100236324 * __this, const RuntimeMethod* method);
+// System.String System.Uri::get_Fragment()
+extern "C" IL2CPP_METHOD_ATTR String_t* Uri_get_Fragment_m575158891 (Uri_t100236324 * __this, const RuntimeMethod* method);
+// System.Byte[] UnityEngine.WWWTranscoder::URLDecode(System.Byte[])
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* WWWTranscoder_URLDecode_m3587034544 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___toEncode0, const RuntimeMethod* method);
 // System.Void System.Text.RegularExpressions.Regex::.ctor(System.String)
-extern "C"  void Regex__ctor_m3948448025 (Regex_t3657309853 * __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C" IL2CPP_METHOD_ATTR void Regex__ctor_m897876424 (Regex_t3657309853 * __this, String_t* p0, const RuntimeMethod* method);
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Conversion methods for marshalling of: UnityEngine.Networking.CertificateHandler
+extern "C" void CertificateHandler_t2739891000_marshal_pinvoke(const CertificateHandler_t2739891000& unmarshaled, CertificateHandler_t2739891000_marshaled_pinvoke& marshaled)
+{
+	marshaled.___m_Ptr_0 = unmarshaled.get_m_Ptr_0();
+}
+extern "C" void CertificateHandler_t2739891000_marshal_pinvoke_back(const CertificateHandler_t2739891000_marshaled_pinvoke& marshaled, CertificateHandler_t2739891000& unmarshaled)
+{
+	intptr_t unmarshaled_m_Ptr_temp_0;
+	memset(&unmarshaled_m_Ptr_temp_0, 0, sizeof(unmarshaled_m_Ptr_temp_0));
+	unmarshaled_m_Ptr_temp_0 = marshaled.___m_Ptr_0;
+	unmarshaled.set_m_Ptr_0(unmarshaled_m_Ptr_temp_0);
+}
+// Conversion method for clean up from marshalling of: UnityEngine.Networking.CertificateHandler
+extern "C" void CertificateHandler_t2739891000_marshal_pinvoke_cleanup(CertificateHandler_t2739891000_marshaled_pinvoke& marshaled)
+{
+}
+// Conversion methods for marshalling of: UnityEngine.Networking.CertificateHandler
+extern "C" void CertificateHandler_t2739891000_marshal_com(const CertificateHandler_t2739891000& unmarshaled, CertificateHandler_t2739891000_marshaled_com& marshaled)
+{
+	marshaled.___m_Ptr_0 = unmarshaled.get_m_Ptr_0();
+}
+extern "C" void CertificateHandler_t2739891000_marshal_com_back(const CertificateHandler_t2739891000_marshaled_com& marshaled, CertificateHandler_t2739891000& unmarshaled)
+{
+	intptr_t unmarshaled_m_Ptr_temp_0;
+	memset(&unmarshaled_m_Ptr_temp_0, 0, sizeof(unmarshaled_m_Ptr_temp_0));
+	unmarshaled_m_Ptr_temp_0 = marshaled.___m_Ptr_0;
+	unmarshaled.set_m_Ptr_0(unmarshaled_m_Ptr_temp_0);
+}
+// Conversion method for clean up from marshalling of: UnityEngine.Networking.CertificateHandler
+extern "C" void CertificateHandler_t2739891000_marshal_com_cleanup(CertificateHandler_t2739891000_marshaled_com& marshaled)
+{
+}
+// System.Void UnityEngine.Networking.CertificateHandler::Release()
+extern "C" IL2CPP_METHOD_ATTR void CertificateHandler_Release_m648790222 (CertificateHandler_t2739891000 * __this, const RuntimeMethod* method)
+{
+	typedef void (*CertificateHandler_Release_m648790222_ftn) (CertificateHandler_t2739891000 *);
+	static CertificateHandler_Release_m648790222_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (CertificateHandler_Release_m648790222_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Networking.CertificateHandler::Release()");
+	_il2cpp_icall_func(__this);
+}
+// System.Void UnityEngine.Networking.CertificateHandler::Finalize()
+extern "C" IL2CPP_METHOD_ATTR void CertificateHandler_Finalize_m2289088740 (CertificateHandler_t2739891000 * __this, const RuntimeMethod* method)
+{
+	Exception_t * __last_unhandled_exception = 0;
+	NO_UNUSED_WARNING (__last_unhandled_exception);
+	Exception_t * __exception_local = 0;
+	NO_UNUSED_WARNING (__exception_local);
+	int32_t __leave_target = -1;
+	NO_UNUSED_WARNING (__leave_target);
+	{
+	}
+
+IL_0001:
+	try
+	{ // begin try (depth: 1)
+		CertificateHandler_Dispose_m2100863831(__this, /*hidden argument*/NULL);
+		IL2CPP_LEAVE(0x13, FINALLY_000c);
+	} // end try (depth: 1)
+	catch(Il2CppExceptionWrapper& e)
+	{
+		__last_unhandled_exception = (Exception_t *)e.ex;
+		goto FINALLY_000c;
+	}
+
+FINALLY_000c:
+	{ // begin finally (depth: 1)
+		Object_Finalize_m3076187857(__this, /*hidden argument*/NULL);
+		IL2CPP_END_FINALLY(12)
+	} // end finally (depth: 1)
+	IL2CPP_CLEANUP(12)
+	{
+		IL2CPP_JUMP_TBL(0x13, IL_0013)
+		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
+	}
+
+IL_0013:
+	{
+		return;
+	}
+}
+// System.Boolean UnityEngine.Networking.CertificateHandler::ValidateCertificate(System.Byte[])
+extern "C" IL2CPP_METHOD_ATTR bool CertificateHandler_ValidateCertificate_m937187171 (CertificateHandler_t2739891000 * __this, ByteU5BU5D_t4116647657* ___certificateData0, const RuntimeMethod* method)
+{
+	bool V_0 = false;
+	{
+		V_0 = (bool)0;
+		goto IL_0008;
+	}
+
+IL_0008:
+	{
+		bool L_0 = V_0;
+		return L_0;
+	}
+}
+// System.Boolean UnityEngine.Networking.CertificateHandler::ValidateCertificateNative(System.Byte[])
+extern "C" IL2CPP_METHOD_ATTR bool CertificateHandler_ValidateCertificateNative_m2315002656 (CertificateHandler_t2739891000 * __this, ByteU5BU5D_t4116647657* ___certificateData0, const RuntimeMethod* method)
+{
+	bool V_0 = false;
+	{
+		ByteU5BU5D_t4116647657* L_0 = ___certificateData0;
+		bool L_1 = VirtFuncInvoker1< bool, ByteU5BU5D_t4116647657* >::Invoke(5 /* System.Boolean UnityEngine.Networking.CertificateHandler::ValidateCertificate(System.Byte[]) */, __this, L_0);
+		V_0 = L_1;
+		goto IL_000e;
+	}
+
+IL_000e:
+	{
+		bool L_2 = V_0;
+		return L_2;
+	}
+}
+// System.Void UnityEngine.Networking.CertificateHandler::Dispose()
+extern "C" IL2CPP_METHOD_ATTR void CertificateHandler_Dispose_m2100863831 (CertificateHandler_t2739891000 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (CertificateHandler_Dispose_m2100863831_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		intptr_t L_0 = __this->get_m_Ptr_0();
+		bool L_1 = IntPtr_op_Inequality_m3063970704(NULL /*static, unused*/, L_0, (intptr_t)(0), /*hidden argument*/NULL);
+		if (!L_1)
+		{
+			goto IL_0029;
+		}
+	}
+	{
+		CertificateHandler_Release_m648790222(__this, /*hidden argument*/NULL);
+		__this->set_m_Ptr_0((intptr_t)(0));
+	}
+
+IL_0029:
+	{
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -3144,7 +3588,7 @@ extern "C" void DownloadHandler_t2937767557_marshal_com_cleanup(DownloadHandler_
 {
 }
 // System.Void UnityEngine.Networking.DownloadHandler::.ctor()
-extern "C"  void DownloadHandler__ctor_m2126376377 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandler__ctor_m2126376377 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	{
 		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
@@ -3152,7 +3596,7 @@ extern "C"  void DownloadHandler__ctor_m2126376377 (DownloadHandler_t2937767557 
 	}
 }
 // System.Void UnityEngine.Networking.DownloadHandler::Release()
-extern "C"  void DownloadHandler_Release_m3024555697 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandler_Release_m3024555697 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	typedef void (*DownloadHandler_Release_m3024555697_ftn) (DownloadHandler_t2937767557 *);
 	static DownloadHandler_Release_m3024555697_ftn _il2cpp_icall_func;
@@ -3161,13 +3605,13 @@ extern "C"  void DownloadHandler_Release_m3024555697 (DownloadHandler_t293776755
 	_il2cpp_icall_func(__this);
 }
 // System.Void UnityEngine.Networking.DownloadHandler::Finalize()
-extern "C"  void DownloadHandler_Finalize_m3135872287 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandler_Finalize_m3135872287 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	int32_t __leave_target = 0;
+	int32_t __leave_target = -1;
 	NO_UNUSED_WARNING (__leave_target);
 	{
 	}
@@ -3201,7 +3645,7 @@ IL_0013:
 	}
 }
 // System.Void UnityEngine.Networking.DownloadHandler::Dispose()
-extern "C"  void DownloadHandler_Dispose_m2747726581 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandler_Dispose_m2747726581 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -3228,7 +3672,7 @@ IL_0029:
 	}
 }
 // System.String UnityEngine.Networking.DownloadHandler::get_text()
-extern "C"  String_t* DownloadHandler_get_text_m2427232382 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* DownloadHandler_get_text_m2427232382 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	String_t* V_0 = NULL;
 	{
@@ -3244,7 +3688,7 @@ IL_000d:
 	}
 }
 // System.Byte[] UnityEngine.Networking.DownloadHandler::GetData()
-extern "C"  ByteU5BU5D_t4116647657* DownloadHandler_GetData_m364367605 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* DownloadHandler_GetData_m364367605 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	ByteU5BU5D_t4116647657* V_0 = NULL;
 	{
@@ -3259,7 +3703,7 @@ IL_0008:
 	}
 }
 // System.String UnityEngine.Networking.DownloadHandler::GetText()
-extern "C"  String_t* DownloadHandler_GetText_m600283602 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* DownloadHandler_GetText_m600283602 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -3310,7 +3754,7 @@ IL_003a:
 	}
 }
 // System.Text.Encoding UnityEngine.Networking.DownloadHandler::GetTextEncoder()
-extern "C"  Encoding_t1523322056 * DownloadHandler_GetTextEncoder_m3244408468 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR Encoding_t1523322056 * DownloadHandler_GetTextEncoder_m3244408468 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -3329,7 +3773,7 @@ extern "C"  Encoding_t1523322056 * DownloadHandler_GetTextEncoder_m3244408468 (D
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	int32_t __leave_target = 0;
+	int32_t __leave_target = -1;
 	NO_UNUSED_WARNING (__leave_target);
 	{
 		String_t* L_0 = DownloadHandler_GetContentType_m4249877960(__this, /*hidden argument*/NULL);
@@ -3372,42 +3816,43 @@ extern "C"  Encoding_t1523322056 * DownloadHandler_GetTextEncoder_m3244408468 (D
 		String_t* L_12 = String_Substring_m2848979100(L_10, ((int32_t)il2cpp_codegen_add((int32_t)L_11, (int32_t)1)), /*hidden argument*/NULL);
 		NullCheck(L_12);
 		String_t* L_13 = String_Trim_m923598732(L_12, /*hidden argument*/NULL);
-		CharU5BU5D_t3528271667* L_14 = ((CharU5BU5D_t3528271667*)SZArrayNew(CharU5BU5D_t3528271667_il2cpp_TypeInfo_var, (uint32_t)2));
-		NullCheck(L_14);
-		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(0), (Il2CppChar)((int32_t)39));
+		CharU5BU5D_t3528271667* L_14 = (CharU5BU5D_t3528271667*)SZArrayNew(CharU5BU5D_t3528271667_il2cpp_TypeInfo_var, (uint32_t)2);
 		CharU5BU5D_t3528271667* L_15 = L_14;
 		NullCheck(L_15);
-		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(1), (Il2CppChar)((int32_t)34));
-		NullCheck(L_13);
-		String_t* L_16 = String_Trim_m3384720403(L_13, L_15, /*hidden argument*/NULL);
+		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(0), (Il2CppChar)((int32_t)39));
+		CharU5BU5D_t3528271667* L_16 = L_15;
 		NullCheck(L_16);
-		String_t* L_17 = String_Trim_m923598732(L_16, /*hidden argument*/NULL);
-		V_3 = L_17;
-		String_t* L_18 = V_3;
-		NullCheck(L_18);
-		int32_t L_19 = String_IndexOf_m363431711(L_18, ((int32_t)59), /*hidden argument*/NULL);
-		V_4 = L_19;
-		int32_t L_20 = V_4;
-		if ((((int32_t)L_20) <= ((int32_t)(-1))))
+		(L_16)->SetAt(static_cast<il2cpp_array_size_t>(1), (Il2CppChar)((int32_t)34));
+		NullCheck(L_13);
+		String_t* L_17 = String_Trim_m3384720403(L_13, L_16, /*hidden argument*/NULL);
+		NullCheck(L_17);
+		String_t* L_18 = String_Trim_m923598732(L_17, /*hidden argument*/NULL);
+		V_3 = L_18;
+		String_t* L_19 = V_3;
+		NullCheck(L_19);
+		int32_t L_20 = String_IndexOf_m363431711(L_19, ((int32_t)59), /*hidden argument*/NULL);
+		V_4 = L_20;
+		int32_t L_21 = V_4;
+		if ((((int32_t)L_21) <= ((int32_t)(-1))))
 		{
 			goto IL_0080;
 		}
 	}
 	{
-		String_t* L_21 = V_3;
-		int32_t L_22 = V_4;
-		NullCheck(L_21);
-		String_t* L_23 = String_Substring_m1610150815(L_21, 0, L_22, /*hidden argument*/NULL);
-		V_3 = L_23;
+		String_t* L_22 = V_3;
+		int32_t L_23 = V_4;
+		NullCheck(L_22);
+		String_t* L_24 = String_Substring_m1610150815(L_22, 0, L_23, /*hidden argument*/NULL);
+		V_3 = L_24;
 	}
 
 IL_0080:
 	try
 	{ // begin try (depth: 1)
-		String_t* L_24 = V_3;
+		String_t* L_25 = V_3;
 		IL2CPP_RUNTIME_CLASS_INIT(Encoding_t1523322056_il2cpp_TypeInfo_var);
-		Encoding_t1523322056 * L_25 = Encoding_GetEncoding_m2599798446(NULL /*static, unused*/, L_24, /*hidden argument*/NULL);
-		V_5 = L_25;
+		Encoding_t1523322056 * L_26 = Encoding_GetEncoding_m2599798446(NULL /*static, unused*/, L_25, /*hidden argument*/NULL);
+		V_5 = L_26;
 		goto IL_00bd;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -3421,14 +3866,14 @@ IL_0080:
 CATCH_008e:
 	{ // begin catch(System.ArgumentException)
 		V_6 = ((ArgumentException_t132251570 *)__exception_local);
-		String_t* L_26 = V_3;
-		ArgumentException_t132251570 * L_27 = V_6;
-		NullCheck(L_27);
-		String_t* L_28 = VirtFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_27);
+		String_t* L_27 = V_3;
+		ArgumentException_t132251570 * L_28 = V_6;
+		NullCheck(L_28);
+		String_t* L_29 = VirtFuncInvoker0< String_t* >::Invoke(6 /* System.String System.Exception::get_Message() */, L_28);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_29 = String_Format_m2556382932(NULL /*static, unused*/, _stringLiteral463295005, L_26, L_28, /*hidden argument*/NULL);
+		String_t* L_30 = String_Format_m2556382932(NULL /*static, unused*/, _stringLiteral463295005, L_27, L_29, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
-		Debug_LogWarning_m3752629331(NULL /*static, unused*/, L_29, /*hidden argument*/NULL);
+		Debug_LogWarning_m3752629331(NULL /*static, unused*/, L_30, /*hidden argument*/NULL);
 		goto IL_00ae;
 	} // end catch (depth: 1)
 
@@ -3447,19 +3892,19 @@ IL_00b0:
 IL_00b1:
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(Encoding_t1523322056_il2cpp_TypeInfo_var);
-		Encoding_t1523322056 * L_30 = Encoding_get_UTF8_m1008486739(NULL /*static, unused*/, /*hidden argument*/NULL);
-		V_5 = L_30;
+		Encoding_t1523322056 * L_31 = Encoding_get_UTF8_m1008486739(NULL /*static, unused*/, /*hidden argument*/NULL);
+		V_5 = L_31;
 		goto IL_00bd;
 	}
 
 IL_00bd:
 	{
-		Encoding_t1523322056 * L_31 = V_5;
-		return L_31;
+		Encoding_t1523322056 * L_32 = V_5;
+		return L_32;
 	}
 }
 // System.String UnityEngine.Networking.DownloadHandler::GetContentType()
-extern "C"  String_t* DownloadHandler_GetContentType_m4249877960 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* DownloadHandler_GetContentType_m4249877960 (DownloadHandler_t2937767557 * __this, const RuntimeMethod* method)
 {
 	typedef String_t* (*DownloadHandler_GetContentType_m4249877960_ftn) (DownloadHandler_t2937767557 *);
 	static DownloadHandler_GetContentType_m4249877960_ftn _il2cpp_icall_func;
@@ -3469,7 +3914,7 @@ extern "C"  String_t* DownloadHandler_GetContentType_m4249877960 (DownloadHandle
 	return retVal;
 }
 // System.Byte[] UnityEngine.Networking.DownloadHandler::InternalGetByteArray(UnityEngine.Networking.DownloadHandler)
-extern "C"  ByteU5BU5D_t4116647657* DownloadHandler_InternalGetByteArray_m4277508027 (RuntimeObject * __this /* static, unused */, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* DownloadHandler_InternalGetByteArray_m4277508027 (RuntimeObject * __this /* static, unused */, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method)
 {
 	typedef ByteU5BU5D_t4116647657* (*DownloadHandler_InternalGetByteArray_m4277508027_ftn) (DownloadHandler_t2937767557 *);
 	static DownloadHandler_InternalGetByteArray_m4277508027_ftn _il2cpp_icall_func;
@@ -3519,7 +3964,7 @@ extern "C" void DownloadHandlerBuffer_t2928496527_marshal_com_cleanup(DownloadHa
 {
 }
 // System.Void UnityEngine.Networking.DownloadHandlerBuffer::.ctor()
-extern "C"  void DownloadHandlerBuffer__ctor_m914761499 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandlerBuffer__ctor_m914761499 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
 {
 	{
 		DownloadHandler__ctor_m2126376377(__this, /*hidden argument*/NULL);
@@ -3528,7 +3973,7 @@ extern "C"  void DownloadHandlerBuffer__ctor_m914761499 (DownloadHandlerBuffer_t
 	}
 }
 // System.IntPtr UnityEngine.Networking.DownloadHandlerBuffer::Create(UnityEngine.Networking.DownloadHandlerBuffer)
-extern "C"  intptr_t DownloadHandlerBuffer_Create_m1196797347 (RuntimeObject * __this /* static, unused */, DownloadHandlerBuffer_t2928496527 * ___obj0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR intptr_t DownloadHandlerBuffer_Create_m1196797347 (RuntimeObject * __this /* static, unused */, DownloadHandlerBuffer_t2928496527 * ___obj0, const RuntimeMethod* method)
 {
 	typedef intptr_t (*DownloadHandlerBuffer_Create_m1196797347_ftn) (DownloadHandlerBuffer_t2928496527 *);
 	static DownloadHandlerBuffer_Create_m1196797347_ftn _il2cpp_icall_func;
@@ -3538,7 +3983,7 @@ extern "C"  intptr_t DownloadHandlerBuffer_Create_m1196797347 (RuntimeObject * _
 	return retVal;
 }
 // System.Void UnityEngine.Networking.DownloadHandlerBuffer::InternalCreateBuffer()
-extern "C"  void DownloadHandlerBuffer_InternalCreateBuffer_m301356089 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void DownloadHandlerBuffer_InternalCreateBuffer_m301356089 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
 {
 	{
 		intptr_t L_0 = DownloadHandlerBuffer_Create_m1196797347(NULL /*static, unused*/, __this, /*hidden argument*/NULL);
@@ -3547,7 +3992,7 @@ extern "C"  void DownloadHandlerBuffer_InternalCreateBuffer_m301356089 (Download
 	}
 }
 // System.Byte[] UnityEngine.Networking.DownloadHandlerBuffer::GetData()
-extern "C"  ByteU5BU5D_t4116647657* DownloadHandlerBuffer_GetData_m752341367 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* DownloadHandlerBuffer_GetData_m752341367 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
 {
 	ByteU5BU5D_t4116647657* V_0 = NULL;
 	{
@@ -3563,7 +4008,7 @@ IL_000d:
 	}
 }
 // System.Byte[] UnityEngine.Networking.DownloadHandlerBuffer::InternalGetData()
-extern "C"  ByteU5BU5D_t4116647657* DownloadHandlerBuffer_InternalGetData_m3771716959 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* DownloadHandlerBuffer_InternalGetData_m3771716959 (DownloadHandlerBuffer_t2928496527 * __this, const RuntimeMethod* method)
 {
 	ByteU5BU5D_t4116647657* V_0 = NULL;
 	{
@@ -3590,46 +4035,25 @@ IL_000d:
 
 
 
+
+
 // Conversion methods for marshalling of: UnityEngine.Networking.UnityWebRequest
 extern "C" void UnityWebRequest_t463507806_marshal_pinvoke(const UnityWebRequest_t463507806& unmarshaled, UnityWebRequest_t463507806_marshaled_pinvoke& marshaled)
 {
-	marshaled.___m_Ptr_0 = unmarshaled.get_m_Ptr_0();
-	if (unmarshaled.get_m_DownloadHandler_1() != NULL) DownloadHandler_t2937767557_marshal_pinvoke(*unmarshaled.get_m_DownloadHandler_1(), marshaled.___m_DownloadHandler_1);
-	if (unmarshaled.get_m_UploadHandler_2() != NULL) UploadHandler_t2993558019_marshal_pinvoke(*unmarshaled.get_m_UploadHandler_2(), marshaled.___m_UploadHandler_2);
-	marshaled.___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9 = static_cast<int32_t>(unmarshaled.get_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9());
-	marshaled.___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10 = static_cast<int32_t>(unmarshaled.get_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10());
+	Exception_t* ___m_Uri_4Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Uri' of type 'UnityWebRequest': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Uri_4Exception, NULL, NULL);
 }
 extern "C" void UnityWebRequest_t463507806_marshal_pinvoke_back(const UnityWebRequest_t463507806_marshaled_pinvoke& marshaled, UnityWebRequest_t463507806& unmarshaled)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (UnityWebRequest_t463507806_pinvoke_FromNativeMethodDefinition_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	intptr_t unmarshaled_m_Ptr_temp_0;
-	memset(&unmarshaled_m_Ptr_temp_0, 0, sizeof(unmarshaled_m_Ptr_temp_0));
-	unmarshaled_m_Ptr_temp_0 = marshaled.___m_Ptr_0;
-	unmarshaled.set_m_Ptr_0(unmarshaled_m_Ptr_temp_0);
-	unmarshaled.set_m_DownloadHandler_1((DownloadHandler_t2937767557 *)il2cpp_codegen_object_new(DownloadHandler_t2937767557_il2cpp_TypeInfo_var));
-	DownloadHandler__ctor_m2126376377(unmarshaled.get_m_DownloadHandler_1(), NULL);
-	DownloadHandler_t2937767557_marshal_pinvoke_back(marshaled.___m_DownloadHandler_1, *unmarshaled.get_m_DownloadHandler_1());
-	unmarshaled.set_m_UploadHandler_2((UploadHandler_t2993558019 *)il2cpp_codegen_object_new(UploadHandler_t2993558019_il2cpp_TypeInfo_var));
-	UploadHandler__ctor_m1351468229(unmarshaled.get_m_UploadHandler_2(), NULL);
-	UploadHandler_t2993558019_marshal_pinvoke_back(marshaled.___m_UploadHandler_2, *unmarshaled.get_m_UploadHandler_2());
-	bool unmarshaled_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_temp_3 = false;
-	unmarshaled_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_temp_3 = static_cast<bool>(marshaled.___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9);
-	unmarshaled.set_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9(unmarshaled_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_temp_3);
-	bool unmarshaled_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_temp_4 = false;
-	unmarshaled_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_temp_4 = static_cast<bool>(marshaled.___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10);
-	unmarshaled.set_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10(unmarshaled_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_temp_4);
+	Exception_t* ___m_Uri_4Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Uri' of type 'UnityWebRequest': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Uri_4Exception, NULL, NULL);
 }
 // Conversion method for clean up from marshalling of: UnityEngine.Networking.UnityWebRequest
 extern "C" void UnityWebRequest_t463507806_marshal_pinvoke_cleanup(UnityWebRequest_t463507806_marshaled_pinvoke& marshaled)
 {
-	DownloadHandler_t2937767557_marshal_pinvoke_cleanup(marshaled.___m_DownloadHandler_1);
-	UploadHandler_t2993558019_marshal_pinvoke_cleanup(marshaled.___m_UploadHandler_2);
 }
+
+
 
 
 
@@ -3637,43 +4061,20 @@ extern "C" void UnityWebRequest_t463507806_marshal_pinvoke_cleanup(UnityWebReque
 // Conversion methods for marshalling of: UnityEngine.Networking.UnityWebRequest
 extern "C" void UnityWebRequest_t463507806_marshal_com(const UnityWebRequest_t463507806& unmarshaled, UnityWebRequest_t463507806_marshaled_com& marshaled)
 {
-	marshaled.___m_Ptr_0 = unmarshaled.get_m_Ptr_0();
-	if (unmarshaled.get_m_DownloadHandler_1() != NULL) DownloadHandler_t2937767557_marshal_com(*unmarshaled.get_m_DownloadHandler_1(), *marshaled.___m_DownloadHandler_1);
-	if (unmarshaled.get_m_UploadHandler_2() != NULL) UploadHandler_t2993558019_marshal_com(*unmarshaled.get_m_UploadHandler_2(), *marshaled.___m_UploadHandler_2);
-	marshaled.___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9 = static_cast<int32_t>(unmarshaled.get_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9());
-	marshaled.___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10 = static_cast<int32_t>(unmarshaled.get_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10());
+	Exception_t* ___m_Uri_4Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Uri' of type 'UnityWebRequest': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Uri_4Exception, NULL, NULL);
 }
 extern "C" void UnityWebRequest_t463507806_marshal_com_back(const UnityWebRequest_t463507806_marshaled_com& marshaled, UnityWebRequest_t463507806& unmarshaled)
 {
-	intptr_t unmarshaled_m_Ptr_temp_0;
-	memset(&unmarshaled_m_Ptr_temp_0, 0, sizeof(unmarshaled_m_Ptr_temp_0));
-	unmarshaled_m_Ptr_temp_0 = marshaled.___m_Ptr_0;
-	unmarshaled.set_m_Ptr_0(unmarshaled_m_Ptr_temp_0);
-	if (unmarshaled.get_m_DownloadHandler_1() != NULL)
-	{
-		DownloadHandler__ctor_m2126376377(unmarshaled.get_m_DownloadHandler_1(), NULL);
-		DownloadHandler_t2937767557_marshal_com_back(*marshaled.___m_DownloadHandler_1, *unmarshaled.get_m_DownloadHandler_1());
-	}
-	if (unmarshaled.get_m_UploadHandler_2() != NULL)
-	{
-		UploadHandler__ctor_m1351468229(unmarshaled.get_m_UploadHandler_2(), NULL);
-		UploadHandler_t2993558019_marshal_com_back(*marshaled.___m_UploadHandler_2, *unmarshaled.get_m_UploadHandler_2());
-	}
-	bool unmarshaled_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_temp_3 = false;
-	unmarshaled_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_temp_3 = static_cast<bool>(marshaled.___U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9);
-	unmarshaled.set_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9(unmarshaled_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_temp_3);
-	bool unmarshaled_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_temp_4 = false;
-	unmarshaled_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_temp_4 = static_cast<bool>(marshaled.___U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10);
-	unmarshaled.set_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10(unmarshaled_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_temp_4);
+	Exception_t* ___m_Uri_4Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Uri' of type 'UnityWebRequest': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Uri_4Exception, NULL, NULL);
 }
 // Conversion method for clean up from marshalling of: UnityEngine.Networking.UnityWebRequest
 extern "C" void UnityWebRequest_t463507806_marshal_com_cleanup(UnityWebRequest_t463507806_marshaled_com& marshaled)
 {
-	if (&(*marshaled.___m_DownloadHandler_1) != NULL) DownloadHandler_t2937767557_marshal_com_cleanup(*marshaled.___m_DownloadHandler_1);
-	if (&(*marshaled.___m_UploadHandler_2) != NULL) UploadHandler_t2993558019_marshal_com_cleanup(*marshaled.___m_UploadHandler_2);
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::.ctor(System.String,System.String)
-extern "C"  void UnityWebRequest__ctor_m2386773268 (UnityWebRequest_t463507806 * __this, String_t* ___url0, String_t* ___method1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest__ctor_m2386773268 (UnityWebRequest_t463507806 * __this, String_t* ___url0, String_t* ___method1, const RuntimeMethod* method)
 {
 	{
 		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
@@ -3688,7 +4089,7 @@ extern "C"  void UnityWebRequest__ctor_m2386773268 (UnityWebRequest_t463507806 *
 	}
 }
 // System.String UnityEngine.Networking.UnityWebRequest::GetWebErrorString(UnityEngine.Networking.UnityWebRequest/UnityWebRequestError)
-extern "C"  String_t* UnityWebRequest_GetWebErrorString_m4076320575 (RuntimeObject * __this /* static, unused */, int32_t ___err0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* UnityWebRequest_GetWebErrorString_m4076320575 (RuntimeObject * __this /* static, unused */, int32_t ___err0, const RuntimeMethod* method)
 {
 	typedef String_t* (*UnityWebRequest_GetWebErrorString_m4076320575_ftn) (int32_t);
 	static UnityWebRequest_GetWebErrorString_m4076320575_ftn _il2cpp_icall_func;
@@ -3697,12 +4098,37 @@ extern "C"  String_t* UnityWebRequest_GetWebErrorString_m4076320575 (RuntimeObje
 	String_t* retVal = _il2cpp_icall_func(___err0);
 	return retVal;
 }
-// System.Boolean UnityEngine.Networking.UnityWebRequest::get_disposeDownloadHandlerOnDispose()
-extern "C"  bool UnityWebRequest_get_disposeDownloadHandlerOnDispose_m3413606992 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+// System.Boolean UnityEngine.Networking.UnityWebRequest::get_disposeCertificateHandlerOnDispose()
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_disposeCertificateHandlerOnDispose_m4051074453 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	bool V_0 = false;
 	{
-		bool L_0 = __this->get_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9();
+		bool L_0 = __this->get_U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11();
+		V_0 = L_0;
+		goto IL_000c;
+	}
+
+IL_000c:
+	{
+		bool L_1 = V_0;
+		return L_1;
+	}
+}
+// System.Void UnityEngine.Networking.UnityWebRequest::set_disposeCertificateHandlerOnDispose(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_disposeCertificateHandlerOnDispose_m4266558538 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method)
+{
+	{
+		bool L_0 = ___value0;
+		__this->set_U3CdisposeCertificateHandlerOnDisposeU3Ek__BackingField_11(L_0);
+		return;
+	}
+}
+// System.Boolean UnityEngine.Networking.UnityWebRequest::get_disposeDownloadHandlerOnDispose()
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_disposeDownloadHandlerOnDispose_m3413606992 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+{
+	bool V_0 = false;
+	{
+		bool L_0 = __this->get_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12();
 		V_0 = L_0;
 		goto IL_000c;
 	}
@@ -3714,20 +4140,20 @@ IL_000c:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::set_disposeDownloadHandlerOnDispose(System.Boolean)
-extern "C"  void UnityWebRequest_set_disposeDownloadHandlerOnDispose_m2026832119 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_disposeDownloadHandlerOnDispose_m2026832119 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method)
 {
 	{
 		bool L_0 = ___value0;
-		__this->set_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_9(L_0);
+		__this->set_U3CdisposeDownloadHandlerOnDisposeU3Ek__BackingField_12(L_0);
 		return;
 	}
 }
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_disposeUploadHandlerOnDispose()
-extern "C"  bool UnityWebRequest_get_disposeUploadHandlerOnDispose_m2375741633 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_disposeUploadHandlerOnDispose_m2375741633 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	bool V_0 = false;
 	{
-		bool L_0 = __this->get_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10();
+		bool L_0 = __this->get_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13();
 		V_0 = L_0;
 		goto IL_000c;
 	}
@@ -3739,16 +4165,16 @@ IL_000c:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::set_disposeUploadHandlerOnDispose(System.Boolean)
-extern "C"  void UnityWebRequest_set_disposeUploadHandlerOnDispose_m2753289015 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_disposeUploadHandlerOnDispose_m2753289015 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method)
 {
 	{
 		bool L_0 = ___value0;
-		__this->set_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_10(L_0);
+		__this->set_U3CdisposeUploadHandlerOnDisposeU3Ek__BackingField_13(L_0);
 		return;
 	}
 }
 // System.IntPtr UnityEngine.Networking.UnityWebRequest::Create()
-extern "C"  intptr_t UnityWebRequest_Create_m1328190473 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR intptr_t UnityWebRequest_Create_m1328190473 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
 {
 	typedef intptr_t (*UnityWebRequest_Create_m1328190473_ftn) ();
 	static UnityWebRequest_Create_m1328190473_ftn _il2cpp_icall_func;
@@ -3758,7 +4184,7 @@ extern "C"  intptr_t UnityWebRequest_Create_m1328190473 (RuntimeObject * __this 
 	return retVal;
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::Release()
-extern "C"  void UnityWebRequest_Release_m2347155176 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_Release_m2347155176 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef void (*UnityWebRequest_Release_m2347155176_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_Release_m2347155176_ftn _il2cpp_icall_func;
@@ -3767,7 +4193,7 @@ extern "C"  void UnityWebRequest_Release_m2347155176 (UnityWebRequest_t463507806
 	_il2cpp_icall_func(__this);
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalDestroy()
-extern "C"  void UnityWebRequest_InternalDestroy_m2954597795 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalDestroy_m2954597795 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -3795,22 +4221,23 @@ IL_002f:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetDefaults()
-extern "C"  void UnityWebRequest_InternalSetDefaults_m3669466854 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetDefaults_m3669466854 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	{
 		UnityWebRequest_set_disposeDownloadHandlerOnDispose_m2026832119(__this, (bool)1, /*hidden argument*/NULL);
 		UnityWebRequest_set_disposeUploadHandlerOnDispose_m2753289015(__this, (bool)1, /*hidden argument*/NULL);
+		UnityWebRequest_set_disposeCertificateHandlerOnDispose_m4266558538(__this, (bool)1, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::Finalize()
-extern "C"  void UnityWebRequest_Finalize_m2219008825 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_Finalize_m2219008825 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	int32_t __leave_target = 0;
+	int32_t __leave_target = -1;
 	NO_UNUSED_WARNING (__leave_target);
 	{
 	}
@@ -3845,7 +4272,7 @@ IL_0019:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::Dispose()
-extern "C"  void UnityWebRequest_Dispose_m3261105905 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_Dispose_m3261105905 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	{
 		UnityWebRequest_DisposeHandlers_m3575283268(__this, /*hidden argument*/NULL);
@@ -3855,10 +4282,11 @@ extern "C"  void UnityWebRequest_Dispose_m3261105905 (UnityWebRequest_t463507806
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::DisposeHandlers()
-extern "C"  void UnityWebRequest_DisposeHandlers_m3575283268 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_DisposeHandlers_m3575283268 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	DownloadHandler_t2937767557 * V_0 = NULL;
 	UploadHandler_t2993558019 * V_1 = NULL;
+	CertificateHandler_t2739891000 * V_2 = NULL;
 	{
 		bool L_0 = UnityWebRequest_get_disposeDownloadHandlerOnDispose_m3413606992(__this, /*hidden argument*/NULL);
 		if (!L_0)
@@ -3914,11 +4342,38 @@ IL_0044:
 
 IL_0045:
 	{
+		bool L_8 = UnityWebRequest_get_disposeCertificateHandlerOnDispose_m4051074453(__this, /*hidden argument*/NULL);
+		if (!L_8)
+		{
+			goto IL_0067;
+		}
+	}
+	{
+		CertificateHandler_t2739891000 * L_9 = UnityWebRequest_get_certificateHandler_m3453757623(__this, /*hidden argument*/NULL);
+		V_2 = L_9;
+		CertificateHandler_t2739891000 * L_10 = V_2;
+		if (!L_10)
+		{
+			goto IL_0066;
+		}
+	}
+	{
+		CertificateHandler_t2739891000 * L_11 = V_2;
+		NullCheck(L_11);
+		CertificateHandler_Dispose_m2100863831(L_11, /*hidden argument*/NULL);
+	}
+
+IL_0066:
+	{
+	}
+
+IL_0067:
+	{
 		return;
 	}
 }
 // UnityEngine.Networking.UnityWebRequestAsyncOperation UnityEngine.Networking.UnityWebRequest::BeginWebRequest()
-extern "C"  UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_BeginWebRequest_m464964044 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_BeginWebRequest_m464964044 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef UnityWebRequestAsyncOperation_t3852015985 * (*UnityWebRequest_BeginWebRequest_m464964044_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_BeginWebRequest_m464964044_ftn _il2cpp_icall_func;
@@ -3928,7 +4383,7 @@ extern "C"  UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_BeginWeb
 	return retVal;
 }
 // UnityEngine.Networking.UnityWebRequestAsyncOperation UnityEngine.Networking.UnityWebRequest::SendWebRequest()
-extern "C"  UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_SendWebRequest_m489860187 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_SendWebRequest_m489860187 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	UnityWebRequestAsyncOperation_t3852015985 * V_0 = NULL;
 	UnityWebRequestAsyncOperation_t3852015985 * V_1 = NULL;
@@ -3936,21 +4391,32 @@ extern "C"  UnityWebRequestAsyncOperation_t3852015985 * UnityWebRequest_SendWebR
 		UnityWebRequestAsyncOperation_t3852015985 * L_0 = UnityWebRequest_BeginWebRequest_m464964044(__this, /*hidden argument*/NULL);
 		V_0 = L_0;
 		UnityWebRequestAsyncOperation_t3852015985 * L_1 = V_0;
-		NullCheck(L_1);
-		UnityWebRequestAsyncOperation_set_webRequest_m3712663211(L_1, __this, /*hidden argument*/NULL);
+		if (!L_1)
+		{
+			goto IL_0015;
+		}
+	}
+	{
 		UnityWebRequestAsyncOperation_t3852015985 * L_2 = V_0;
-		V_1 = L_2;
-		goto IL_0016;
+		NullCheck(L_2);
+		UnityWebRequestAsyncOperation_set_webRequest_m3712663211(L_2, __this, /*hidden argument*/NULL);
 	}
 
-IL_0016:
+IL_0015:
 	{
-		UnityWebRequestAsyncOperation_t3852015985 * L_3 = V_1;
-		return L_3;
+		UnityWebRequestAsyncOperation_t3852015985 * L_3 = V_0;
+		V_1 = L_3;
+		goto IL_001c;
+	}
+
+IL_001c:
+	{
+		UnityWebRequestAsyncOperation_t3852015985 * L_4 = V_1;
+		return L_4;
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::Abort()
-extern "C"  void UnityWebRequest_Abort_m1490033122 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_Abort_m1490033122 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef void (*UnityWebRequest_Abort_m1490033122_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_Abort_m1490033122_ftn _il2cpp_icall_func;
@@ -3959,7 +4425,7 @@ extern "C"  void UnityWebRequest_Abort_m1490033122 (UnityWebRequest_t463507806 *
 	_il2cpp_icall_func(__this);
 }
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetMethod(UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod)
-extern "C"  int32_t UnityWebRequest_SetMethod_m3005196532 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetMethod_m3005196532 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method)
 {
 	typedef int32_t (*UnityWebRequest_SetMethod_m3005196532_ftn) (UnityWebRequest_t463507806 *, int32_t);
 	static UnityWebRequest_SetMethod_m3005196532_ftn _il2cpp_icall_func;
@@ -3969,7 +4435,7 @@ extern "C"  int32_t UnityWebRequest_SetMethod_m3005196532 (UnityWebRequest_t4635
 	return retVal;
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetMethod(UnityEngine.Networking.UnityWebRequest/UnityWebRequestMethod)
-extern "C"  void UnityWebRequest_InternalSetMethod_m287631745 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetMethod_m287631745 (UnityWebRequest_t463507806 * __this, int32_t ___methodType0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -3988,7 +4454,7 @@ extern "C"  void UnityWebRequest_InternalSetMethod_m287631745 (UnityWebRequest_t
 	{
 		InvalidOperationException_t56020091 * L_1 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_1, _stringLiteral2024966745, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, UnityWebRequest_InternalSetMethod_m287631745_RuntimeMethod_var);
 	}
 
 IL_0017:
@@ -4007,7 +4473,7 @@ IL_0017:
 		String_t* L_6 = UnityWebRequest_GetWebErrorString_m4076320575(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		InvalidOperationException_t56020091 * L_7 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_7, L_6, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, NULL, UnityWebRequest_InternalSetMethod_m287631745_RuntimeMethod_var);
 	}
 
 IL_0031:
@@ -4016,7 +4482,7 @@ IL_0031:
 	}
 }
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetCustomMethod(System.String)
-extern "C"  int32_t UnityWebRequest_SetCustomMethod_m305650395 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetCustomMethod_m305650395 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method)
 {
 	typedef int32_t (*UnityWebRequest_SetCustomMethod_m305650395_ftn) (UnityWebRequest_t463507806 *, String_t*);
 	static UnityWebRequest_SetCustomMethod_m305650395_ftn _il2cpp_icall_func;
@@ -4026,7 +4492,7 @@ extern "C"  int32_t UnityWebRequest_SetCustomMethod_m305650395 (UnityWebRequest_
 	return retVal;
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetCustomMethod(System.String)
-extern "C"  void UnityWebRequest_InternalSetCustomMethod_m3670745235 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetCustomMethod_m3670745235 (UnityWebRequest_t463507806 * __this, String_t* ___customMethodName0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4045,7 +4511,7 @@ extern "C"  void UnityWebRequest_InternalSetCustomMethod_m3670745235 (UnityWebRe
 	{
 		InvalidOperationException_t56020091 * L_1 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_1, _stringLiteral2024966745, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, UnityWebRequest_InternalSetCustomMethod_m3670745235_RuntimeMethod_var);
 	}
 
 IL_0017:
@@ -4064,7 +4530,7 @@ IL_0017:
 		String_t* L_6 = UnityWebRequest_GetWebErrorString_m4076320575(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		InvalidOperationException_t56020091 * L_7 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_7, L_6, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, NULL, UnityWebRequest_InternalSetCustomMethod_m3670745235_RuntimeMethod_var);
 	}
 
 IL_0031:
@@ -4073,7 +4539,7 @@ IL_0031:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::set_method(System.String)
-extern "C"  void UnityWebRequest_set_method_m3969249710 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_method_m3969249710 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4094,7 +4560,7 @@ extern "C"  void UnityWebRequest_set_method_m3969249710 (UnityWebRequest_t463507
 	{
 		ArgumentException_t132251570 * L_2 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m1312628991(L_2, _stringLiteral3514720613, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, UnityWebRequest_set_method_m3969249710_RuntimeMethod_var);
 	}
 
 IL_0018:
@@ -4188,7 +4654,7 @@ IL_00ab:
 	}
 }
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::GetError()
-extern "C"  int32_t UnityWebRequest_GetError_m1229724170 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_GetError_m1229724170 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef int32_t (*UnityWebRequest_GetError_m1229724170_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_GetError_m1229724170_ftn _il2cpp_icall_func;
@@ -4198,7 +4664,7 @@ extern "C"  int32_t UnityWebRequest_GetError_m1229724170 (UnityWebRequest_t46350
 	return retVal;
 }
 // System.String UnityEngine.Networking.UnityWebRequest::get_error()
-extern "C"  String_t* UnityWebRequest_get_error_m1613086199 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* UnityWebRequest_get_error_m1613086199 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	String_t* V_0 = NULL;
 	{
@@ -4235,7 +4701,7 @@ IL_002f:
 	}
 }
 // System.String UnityEngine.Networking.UnityWebRequest::get_url()
-extern "C"  String_t* UnityWebRequest_get_url_m2568598920 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* UnityWebRequest_get_url_m2568598920 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	String_t* V_0 = NULL;
 	{
@@ -4251,7 +4717,7 @@ IL_000d:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::set_url(System.String)
-extern "C"  void UnityWebRequest_set_url_m2541992937 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_url_m2541992937 (UnityWebRequest_t463507806 * __this, String_t* ___value0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4271,7 +4737,7 @@ extern "C"  void UnityWebRequest_set_url_m2541992937 (UnityWebRequest_t463507806
 	}
 }
 // System.String UnityEngine.Networking.UnityWebRequest::GetUrl()
-extern "C"  String_t* UnityWebRequest_GetUrl_m3419782119 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* UnityWebRequest_GetUrl_m3419782119 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef String_t* (*UnityWebRequest_GetUrl_m3419782119_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_GetUrl_m3419782119_ftn _il2cpp_icall_func;
@@ -4281,7 +4747,7 @@ extern "C"  String_t* UnityWebRequest_GetUrl_m3419782119 (UnityWebRequest_t46350
 	return retVal;
 }
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetUrl(System.String)
-extern "C"  int32_t UnityWebRequest_SetUrl_m4135786364 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetUrl_m4135786364 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method)
 {
 	typedef int32_t (*UnityWebRequest_SetUrl_m4135786364_ftn) (UnityWebRequest_t463507806 *, String_t*);
 	static UnityWebRequest_SetUrl_m4135786364_ftn _il2cpp_icall_func;
@@ -4291,7 +4757,7 @@ extern "C"  int32_t UnityWebRequest_SetUrl_m4135786364 (UnityWebRequest_t4635078
 	return retVal;
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::InternalSetUrl(System.String)
-extern "C"  void UnityWebRequest_InternalSetUrl_m1036291515 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_InternalSetUrl_m1036291515 (UnityWebRequest_t463507806 * __this, String_t* ___url0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4310,7 +4776,7 @@ extern "C"  void UnityWebRequest_InternalSetUrl_m1036291515 (UnityWebRequest_t46
 	{
 		InvalidOperationException_t56020091 * L_1 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_1, _stringLiteral314995292, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, UnityWebRequest_InternalSetUrl_m1036291515_RuntimeMethod_var);
 	}
 
 IL_0017:
@@ -4329,7 +4795,7 @@ IL_0017:
 		String_t* L_6 = UnityWebRequest_GetWebErrorString_m4076320575(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		InvalidOperationException_t56020091 * L_7 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_7, L_6, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, NULL, UnityWebRequest_InternalSetUrl_m1036291515_RuntimeMethod_var);
 	}
 
 IL_0031:
@@ -4338,7 +4804,7 @@ IL_0031:
 	}
 }
 // System.Int64 UnityEngine.Networking.UnityWebRequest::get_responseCode()
-extern "C"  int64_t UnityWebRequest_get_responseCode_m1090830473 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int64_t UnityWebRequest_get_responseCode_m1090830473 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef int64_t (*UnityWebRequest_get_responseCode_m1090830473_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_get_responseCode_m1090830473_ftn _il2cpp_icall_func;
@@ -4348,7 +4814,7 @@ extern "C"  int64_t UnityWebRequest_get_responseCode_m1090830473 (UnityWebReques
 	return retVal;
 }
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_isModifiable()
-extern "C"  bool UnityWebRequest_get_isModifiable_m4181352937 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_isModifiable_m4181352937 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef bool (*UnityWebRequest_get_isModifiable_m4181352937_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_get_isModifiable_m4181352937_ftn _il2cpp_icall_func;
@@ -4358,7 +4824,7 @@ extern "C"  bool UnityWebRequest_get_isModifiable_m4181352937 (UnityWebRequest_t
 	return retVal;
 }
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_isDone()
-extern "C"  bool UnityWebRequest_get_isDone_m1752128881 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_isDone_m1752128881 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef bool (*UnityWebRequest_get_isDone_m1752128881_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_get_isDone_m1752128881_ftn _il2cpp_icall_func;
@@ -4368,7 +4834,7 @@ extern "C"  bool UnityWebRequest_get_isDone_m1752128881 (UnityWebRequest_t463507
 	return retVal;
 }
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_isNetworkError()
-extern "C"  bool UnityWebRequest_get_isNetworkError_m1231611882 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_isNetworkError_m1231611882 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef bool (*UnityWebRequest_get_isNetworkError_m1231611882_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_get_isNetworkError_m1231611882_ftn _il2cpp_icall_func;
@@ -4378,7 +4844,7 @@ extern "C"  bool UnityWebRequest_get_isNetworkError_m1231611882 (UnityWebRequest
 	return retVal;
 }
 // System.Boolean UnityEngine.Networking.UnityWebRequest::get_isHttpError()
-extern "C"  bool UnityWebRequest_get_isHttpError_m797082501 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR bool UnityWebRequest_get_isHttpError_m797082501 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef bool (*UnityWebRequest_get_isHttpError_m797082501_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_get_isHttpError_m797082501_ftn _il2cpp_icall_func;
@@ -4388,7 +4854,7 @@ extern "C"  bool UnityWebRequest_get_isHttpError_m797082501 (UnityWebRequest_t46
 	return retVal;
 }
 // System.UInt64 UnityEngine.Networking.UnityWebRequest::get_downloadedBytes()
-extern "C"  uint64_t UnityWebRequest_get_downloadedBytes_m2811634265 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR uint64_t UnityWebRequest_get_downloadedBytes_m2811634265 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	typedef uint64_t (*UnityWebRequest_get_downloadedBytes_m2811634265_ftn) (UnityWebRequest_t463507806 *);
 	static UnityWebRequest_get_downloadedBytes_m2811634265_ftn _il2cpp_icall_func;
@@ -4397,8 +4863,65 @@ extern "C"  uint64_t UnityWebRequest_get_downloadedBytes_m2811634265 (UnityWebRe
 	uint64_t retVal = _il2cpp_icall_func(__this);
 	return retVal;
 }
+// UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetChunked(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetChunked_m2819118383 (UnityWebRequest_t463507806 * __this, bool ___chunked0, const RuntimeMethod* method)
+{
+	typedef int32_t (*UnityWebRequest_SetChunked_m2819118383_ftn) (UnityWebRequest_t463507806 *, bool);
+	static UnityWebRequest_SetChunked_m2819118383_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (UnityWebRequest_SetChunked_m2819118383_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Networking.UnityWebRequest::SetChunked(System.Boolean)");
+	int32_t retVal = _il2cpp_icall_func(__this, ___chunked0);
+	return retVal;
+}
+// System.Void UnityEngine.Networking.UnityWebRequest::set_chunkedTransfer(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_chunkedTransfer_m1735705240 (UnityWebRequest_t463507806 * __this, bool ___value0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (UnityWebRequest_set_chunkedTransfer_m1735705240_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		bool L_0 = UnityWebRequest_get_isModifiable_m4181352937(__this, /*hidden argument*/NULL);
+		if (L_0)
+		{
+			goto IL_0017;
+		}
+	}
+	{
+		InvalidOperationException_t56020091 * L_1 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
+		InvalidOperationException__ctor_m237278729(L_1, _stringLiteral1510198755, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, UnityWebRequest_set_chunkedTransfer_m1735705240_RuntimeMethod_var);
+	}
+
+IL_0017:
+	{
+		bool L_2 = ___value0;
+		int32_t L_3 = UnityWebRequest_SetChunked_m2819118383(__this, L_2, /*hidden argument*/NULL);
+		V_0 = L_3;
+		int32_t L_4 = V_0;
+		if (!L_4)
+		{
+			goto IL_0031;
+		}
+	}
+	{
+		int32_t L_5 = V_0;
+		String_t* L_6 = UnityWebRequest_GetWebErrorString_m4076320575(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
+		InvalidOperationException_t56020091 * L_7 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
+		InvalidOperationException__ctor_m237278729(L_7, L_6, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, NULL, UnityWebRequest_set_chunkedTransfer_m1735705240_RuntimeMethod_var);
+	}
+
+IL_0031:
+	{
+		return;
+	}
+}
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::InternalSetRequestHeader(System.String,System.String)
-extern "C"  int32_t UnityWebRequest_InternalSetRequestHeader_m2218760805 (UnityWebRequest_t463507806 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_InternalSetRequestHeader_m2218760805 (UnityWebRequest_t463507806 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
 {
 	typedef int32_t (*UnityWebRequest_InternalSetRequestHeader_m2218760805_ftn) (UnityWebRequest_t463507806 *, String_t*, String_t*);
 	static UnityWebRequest_InternalSetRequestHeader_m2218760805_ftn _il2cpp_icall_func;
@@ -4408,7 +4931,7 @@ extern "C"  int32_t UnityWebRequest_InternalSetRequestHeader_m2218760805 (UnityW
 	return retVal;
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::SetRequestHeader(System.String,System.String)
-extern "C"  void UnityWebRequest_SetRequestHeader_m2927335855 (UnityWebRequest_t463507806 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_SetRequestHeader_m2927335855 (UnityWebRequest_t463507806 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4429,7 +4952,7 @@ extern "C"  void UnityWebRequest_SetRequestHeader_m2927335855 (UnityWebRequest_t
 	{
 		ArgumentException_t132251570 * L_2 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m1312628991(L_2, _stringLiteral3272455574, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, UnityWebRequest_SetRequestHeader_m2927335855_RuntimeMethod_var);
 	}
 
 IL_0017:
@@ -4443,7 +4966,7 @@ IL_0017:
 	{
 		ArgumentException_t132251570 * L_4 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m1312628991(L_4, _stringLiteral1361828523, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, NULL, UnityWebRequest_SetRequestHeader_m2927335855_RuntimeMethod_var);
 	}
 
 IL_0028:
@@ -4457,7 +4980,7 @@ IL_0028:
 	{
 		InvalidOperationException_t56020091 * L_6 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_6, _stringLiteral3767907038, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_6);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_6, NULL, UnityWebRequest_SetRequestHeader_m2927335855_RuntimeMethod_var);
 	}
 
 IL_003e:
@@ -4477,7 +5000,7 @@ IL_003e:
 		String_t* L_12 = UnityWebRequest_GetWebErrorString_m4076320575(NULL /*static, unused*/, L_11, /*hidden argument*/NULL);
 		InvalidOperationException_t56020091 * L_13 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_13, L_12, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_13);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_13, NULL, UnityWebRequest_SetRequestHeader_m2927335855_RuntimeMethod_var);
 	}
 
 IL_0059:
@@ -4486,7 +5009,7 @@ IL_0059:
 	}
 }
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetUploadHandler(UnityEngine.Networking.UploadHandler)
-extern "C"  int32_t UnityWebRequest_SetUploadHandler_m2465141380 (UnityWebRequest_t463507806 * __this, UploadHandler_t2993558019 * ___uh0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetUploadHandler_m2465141380 (UnityWebRequest_t463507806 * __this, UploadHandler_t2993558019 * ___uh0, const RuntimeMethod* method)
 {
 	typedef int32_t (*UnityWebRequest_SetUploadHandler_m2465141380_ftn) (UnityWebRequest_t463507806 *, UploadHandler_t2993558019 *);
 	static UnityWebRequest_SetUploadHandler_m2465141380_ftn _il2cpp_icall_func;
@@ -4496,7 +5019,7 @@ extern "C"  int32_t UnityWebRequest_SetUploadHandler_m2465141380 (UnityWebReques
 	return retVal;
 }
 // UnityEngine.Networking.UploadHandler UnityEngine.Networking.UnityWebRequest::get_uploadHandler()
-extern "C"  UploadHandler_t2993558019 * UnityWebRequest_get_uploadHandler_m3692520788 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR UploadHandler_t2993558019 * UnityWebRequest_get_uploadHandler_m3692520788 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	UploadHandler_t2993558019 * V_0 = NULL;
 	{
@@ -4512,7 +5035,7 @@ IL_000d:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::set_uploadHandler(UnityEngine.Networking.UploadHandler)
-extern "C"  void UnityWebRequest_set_uploadHandler_m54574009 (UnityWebRequest_t463507806 * __this, UploadHandler_t2993558019 * ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_uploadHandler_m54574009 (UnityWebRequest_t463507806 * __this, UploadHandler_t2993558019 * ___value0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4531,7 +5054,7 @@ extern "C"  void UnityWebRequest_set_uploadHandler_m54574009 (UnityWebRequest_t4
 	{
 		InvalidOperationException_t56020091 * L_1 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_1, _stringLiteral3211556917, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, UnityWebRequest_set_uploadHandler_m54574009_RuntimeMethod_var);
 	}
 
 IL_0017:
@@ -4550,7 +5073,7 @@ IL_0017:
 		String_t* L_6 = UnityWebRequest_GetWebErrorString_m4076320575(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		InvalidOperationException_t56020091 * L_7 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_7, L_6, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, NULL, UnityWebRequest_set_uploadHandler_m54574009_RuntimeMethod_var);
 	}
 
 IL_0031:
@@ -4561,7 +5084,7 @@ IL_0031:
 	}
 }
 // UnityEngine.Networking.UnityWebRequest/UnityWebRequestError UnityEngine.Networking.UnityWebRequest::SetDownloadHandler(UnityEngine.Networking.DownloadHandler)
-extern "C"  int32_t UnityWebRequest_SetDownloadHandler_m2637095256 (UnityWebRequest_t463507806 * __this, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR int32_t UnityWebRequest_SetDownloadHandler_m2637095256 (UnityWebRequest_t463507806 * __this, DownloadHandler_t2937767557 * ___dh0, const RuntimeMethod* method)
 {
 	typedef int32_t (*UnityWebRequest_SetDownloadHandler_m2637095256_ftn) (UnityWebRequest_t463507806 *, DownloadHandler_t2937767557 *);
 	static UnityWebRequest_SetDownloadHandler_m2637095256_ftn _il2cpp_icall_func;
@@ -4571,7 +5094,7 @@ extern "C"  int32_t UnityWebRequest_SetDownloadHandler_m2637095256 (UnityWebRequ
 	return retVal;
 }
 // UnityEngine.Networking.DownloadHandler UnityEngine.Networking.UnityWebRequest::get_downloadHandler()
-extern "C"  DownloadHandler_t2937767557 * UnityWebRequest_get_downloadHandler_m534911913 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR DownloadHandler_t2937767557 * UnityWebRequest_get_downloadHandler_m534911913 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
 {
 	DownloadHandler_t2937767557 * V_0 = NULL;
 	{
@@ -4587,7 +5110,7 @@ IL_000d:
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequest::set_downloadHandler(UnityEngine.Networking.DownloadHandler)
-extern "C"  void UnityWebRequest_set_downloadHandler_m970510352 (UnityWebRequest_t463507806 * __this, DownloadHandler_t2937767557 * ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequest_set_downloadHandler_m970510352 (UnityWebRequest_t463507806 * __this, DownloadHandler_t2937767557 * ___value0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4606,7 +5129,7 @@ extern "C"  void UnityWebRequest_set_downloadHandler_m970510352 (UnityWebRequest
 	{
 		InvalidOperationException_t56020091 * L_1 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_1, _stringLiteral1287409439, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, UnityWebRequest_set_downloadHandler_m970510352_RuntimeMethod_var);
 	}
 
 IL_0017:
@@ -4625,7 +5148,7 @@ IL_0017:
 		String_t* L_6 = UnityWebRequest_GetWebErrorString_m4076320575(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		InvalidOperationException_t56020091 * L_7 = (InvalidOperationException_t56020091 *)il2cpp_codegen_object_new(InvalidOperationException_t56020091_il2cpp_TypeInfo_var);
 		InvalidOperationException__ctor_m237278729(L_7, L_6, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, NULL, UnityWebRequest_set_downloadHandler_m970510352_RuntimeMethod_var);
 	}
 
 IL_0031:
@@ -4633,6 +5156,22 @@ IL_0031:
 		DownloadHandler_t2937767557 * L_8 = ___value0;
 		__this->set_m_DownloadHandler_1(L_8);
 		return;
+	}
+}
+// UnityEngine.Networking.CertificateHandler UnityEngine.Networking.UnityWebRequest::get_certificateHandler()
+extern "C" IL2CPP_METHOD_ATTR CertificateHandler_t2739891000 * UnityWebRequest_get_certificateHandler_m3453757623 (UnityWebRequest_t463507806 * __this, const RuntimeMethod* method)
+{
+	CertificateHandler_t2739891000 * V_0 = NULL;
+	{
+		CertificateHandler_t2739891000 * L_0 = __this->get_m_CertificateHandler_3();
+		V_0 = L_0;
+		goto IL_000d;
+	}
+
+IL_000d:
+	{
+		CertificateHandler_t2739891000 * L_1 = V_0;
+		return L_1;
 	}
 }
 #ifdef __clang__
@@ -4664,67 +5203,37 @@ IL_0031:
 // Conversion methods for marshalling of: UnityEngine.Networking.UnityWebRequestAsyncOperation
 extern "C" void UnityWebRequestAsyncOperation_t3852015985_marshal_pinvoke(const UnityWebRequestAsyncOperation_t3852015985& unmarshaled, UnityWebRequestAsyncOperation_t3852015985_marshaled_pinvoke& marshaled)
 {
-	if (unmarshaled.get_U3CwebRequestU3Ek__BackingField_2() != NULL) UnityWebRequest_t463507806_marshal_pinvoke(*unmarshaled.get_U3CwebRequestU3Ek__BackingField_2(), marshaled.___U3CwebRequestU3Ek__BackingField_2);
-	marshaled.___m_Ptr_0 = unmarshaled.get_m_Ptr_0();
-	marshaled.___m_completeCallback_1 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.get_m_completeCallback_1()));
+	Exception_t* ___U3CwebRequestU3Ek__BackingField_2Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<webRequest>k__BackingField' of type 'UnityWebRequestAsyncOperation': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CwebRequestU3Ek__BackingField_2Exception, NULL, NULL);
 }
 extern "C" void UnityWebRequestAsyncOperation_t3852015985_marshal_pinvoke_back(const UnityWebRequestAsyncOperation_t3852015985_marshaled_pinvoke& marshaled, UnityWebRequestAsyncOperation_t3852015985& unmarshaled)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (UnityWebRequestAsyncOperation_t3852015985_pinvoke_FromNativeMethodDefinition_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	unmarshaled.set_U3CwebRequestU3Ek__BackingField_2((UnityWebRequest_t463507806 *)il2cpp_codegen_object_new(UnityWebRequest_t463507806_il2cpp_TypeInfo_var));
-	IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_missing_method_exception("A parameterless constructor is required for type 'UnityEngine.Networking.UnityWebRequest'."));
-	UnityWebRequest_t463507806_marshal_pinvoke_back(marshaled.___U3CwebRequestU3Ek__BackingField_2, *unmarshaled.get_U3CwebRequestU3Ek__BackingField_2());
-	intptr_t unmarshaled_m_Ptr_temp_1;
-	memset(&unmarshaled_m_Ptr_temp_1, 0, sizeof(unmarshaled_m_Ptr_temp_1));
-	unmarshaled_m_Ptr_temp_1 = marshaled.___m_Ptr_0;
-	unmarshaled.set_m_Ptr_0(unmarshaled_m_Ptr_temp_1);
-	unmarshaled.set_m_completeCallback_1(il2cpp_codegen_marshal_function_ptr_to_delegate<Action_1_t1617499438>(marshaled.___m_completeCallback_1, Action_1_t1617499438_il2cpp_TypeInfo_var));
+	Exception_t* ___U3CwebRequestU3Ek__BackingField_2Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<webRequest>k__BackingField' of type 'UnityWebRequestAsyncOperation': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CwebRequestU3Ek__BackingField_2Exception, NULL, NULL);
 }
 // Conversion method for clean up from marshalling of: UnityEngine.Networking.UnityWebRequestAsyncOperation
 extern "C" void UnityWebRequestAsyncOperation_t3852015985_marshal_pinvoke_cleanup(UnityWebRequestAsyncOperation_t3852015985_marshaled_pinvoke& marshaled)
 {
-	UnityWebRequest_t463507806_marshal_pinvoke_cleanup(marshaled.___U3CwebRequestU3Ek__BackingField_2);
 }
 
 
 // Conversion methods for marshalling of: UnityEngine.Networking.UnityWebRequestAsyncOperation
 extern "C" void UnityWebRequestAsyncOperation_t3852015985_marshal_com(const UnityWebRequestAsyncOperation_t3852015985& unmarshaled, UnityWebRequestAsyncOperation_t3852015985_marshaled_com& marshaled)
 {
-	if (unmarshaled.get_U3CwebRequestU3Ek__BackingField_2() != NULL) UnityWebRequest_t463507806_marshal_com(*unmarshaled.get_U3CwebRequestU3Ek__BackingField_2(), *marshaled.___U3CwebRequestU3Ek__BackingField_2);
-	marshaled.___m_Ptr_0 = unmarshaled.get_m_Ptr_0();
-	marshaled.___m_completeCallback_1 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.get_m_completeCallback_1()));
+	Exception_t* ___U3CwebRequestU3Ek__BackingField_2Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<webRequest>k__BackingField' of type 'UnityWebRequestAsyncOperation': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CwebRequestU3Ek__BackingField_2Exception, NULL, NULL);
 }
 extern "C" void UnityWebRequestAsyncOperation_t3852015985_marshal_com_back(const UnityWebRequestAsyncOperation_t3852015985_marshaled_com& marshaled, UnityWebRequestAsyncOperation_t3852015985& unmarshaled)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (UnityWebRequestAsyncOperation_t3852015985_com_FromNativeMethodDefinition_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	if (unmarshaled.get_U3CwebRequestU3Ek__BackingField_2() != NULL)
-	{
-		IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_missing_method_exception("A parameterless constructor is required for type 'UnityEngine.Networking.UnityWebRequest'."));
-		UnityWebRequest_t463507806_marshal_com_back(*marshaled.___U3CwebRequestU3Ek__BackingField_2, *unmarshaled.get_U3CwebRequestU3Ek__BackingField_2());
-	}
-	intptr_t unmarshaled_m_Ptr_temp_1;
-	memset(&unmarshaled_m_Ptr_temp_1, 0, sizeof(unmarshaled_m_Ptr_temp_1));
-	unmarshaled_m_Ptr_temp_1 = marshaled.___m_Ptr_0;
-	unmarshaled.set_m_Ptr_0(unmarshaled_m_Ptr_temp_1);
-	unmarshaled.set_m_completeCallback_1(il2cpp_codegen_marshal_function_ptr_to_delegate<Action_1_t1617499438>(marshaled.___m_completeCallback_1, Action_1_t1617499438_il2cpp_TypeInfo_var));
+	Exception_t* ___U3CwebRequestU3Ek__BackingField_2Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<webRequest>k__BackingField' of type 'UnityWebRequestAsyncOperation': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CwebRequestU3Ek__BackingField_2Exception, NULL, NULL);
 }
 // Conversion method for clean up from marshalling of: UnityEngine.Networking.UnityWebRequestAsyncOperation
 extern "C" void UnityWebRequestAsyncOperation_t3852015985_marshal_com_cleanup(UnityWebRequestAsyncOperation_t3852015985_marshaled_com& marshaled)
 {
-	if (&(*marshaled.___U3CwebRequestU3Ek__BackingField_2) != NULL) UnityWebRequest_t463507806_marshal_com_cleanup(*marshaled.___U3CwebRequestU3Ek__BackingField_2);
 }
 // System.Void UnityEngine.Networking.UnityWebRequestAsyncOperation::.ctor()
-extern "C"  void UnityWebRequestAsyncOperation__ctor_m1252495487 (UnityWebRequestAsyncOperation_t3852015985 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequestAsyncOperation__ctor_m1252495487 (UnityWebRequestAsyncOperation_t3852015985 * __this, const RuntimeMethod* method)
 {
 	{
 		AsyncOperation__ctor_m410195587(__this, /*hidden argument*/NULL);
@@ -4732,7 +5241,7 @@ extern "C"  void UnityWebRequestAsyncOperation__ctor_m1252495487 (UnityWebReques
 	}
 }
 // System.Void UnityEngine.Networking.UnityWebRequestAsyncOperation::set_webRequest(UnityEngine.Networking.UnityWebRequest)
-extern "C"  void UnityWebRequestAsyncOperation_set_webRequest_m3712663211 (UnityWebRequestAsyncOperation_t3852015985 * __this, UnityWebRequest_t463507806 * ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UnityWebRequestAsyncOperation_set_webRequest_m3712663211 (UnityWebRequestAsyncOperation_t3852015985 * __this, UnityWebRequest_t463507806 * ___value0, const RuntimeMethod* method)
 {
 	{
 		UnityWebRequest_t463507806 * L_0 = ___value0;
@@ -4781,7 +5290,7 @@ extern "C" void UploadHandler_t2993558019_marshal_com_cleanup(UploadHandler_t299
 {
 }
 // System.Void UnityEngine.Networking.UploadHandler::.ctor()
-extern "C"  void UploadHandler__ctor_m1351468229 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler__ctor_m1351468229 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
 {
 	{
 		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
@@ -4789,7 +5298,7 @@ extern "C"  void UploadHandler__ctor_m1351468229 (UploadHandler_t2993558019 * __
 	}
 }
 // System.Void UnityEngine.Networking.UploadHandler::Release()
-extern "C"  void UploadHandler_Release_m2289600429 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler_Release_m2289600429 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
 {
 	typedef void (*UploadHandler_Release_m2289600429_ftn) (UploadHandler_t2993558019 *);
 	static UploadHandler_Release_m2289600429_ftn _il2cpp_icall_func;
@@ -4798,13 +5307,13 @@ extern "C"  void UploadHandler_Release_m2289600429 (UploadHandler_t2993558019 * 
 	_il2cpp_icall_func(__this);
 }
 // System.Void UnityEngine.Networking.UploadHandler::Finalize()
-extern "C"  void UploadHandler_Finalize_m3322774190 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler_Finalize_m3322774190 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
 {
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	int32_t __leave_target = 0;
+	int32_t __leave_target = -1;
 	NO_UNUSED_WARNING (__leave_target);
 	{
 	}
@@ -4838,7 +5347,7 @@ IL_0013:
 	}
 }
 // System.Void UnityEngine.Networking.UploadHandler::Dispose()
-extern "C"  void UploadHandler_Dispose_m3057340132 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler_Dispose_m3057340132 (UploadHandler_t2993558019 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4865,7 +5374,7 @@ IL_0029:
 	}
 }
 // System.Void UnityEngine.Networking.UploadHandler::set_contentType(System.String)
-extern "C"  void UploadHandler_set_contentType_m2709466885 (UploadHandler_t2993558019 * __this, String_t* ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler_set_contentType_m2709466885 (UploadHandler_t2993558019 * __this, String_t* ___value0, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = ___value0;
@@ -4874,7 +5383,7 @@ extern "C"  void UploadHandler_set_contentType_m2709466885 (UploadHandler_t29935
 	}
 }
 // System.Void UnityEngine.Networking.UploadHandler::SetContentType(System.String)
-extern "C"  void UploadHandler_SetContentType_m411406960 (UploadHandler_t2993558019 * __this, String_t* ___newContentType0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandler_SetContentType_m411406960 (UploadHandler_t2993558019 * __this, String_t* ___newContentType0, const RuntimeMethod* method)
 {
 	{
 		return;
@@ -4921,7 +5430,7 @@ extern "C" void UploadHandlerRaw_t25761545_marshal_com_cleanup(UploadHandlerRaw_
 {
 }
 // System.Void UnityEngine.Networking.UploadHandlerRaw::.ctor(System.Byte[])
-extern "C"  void UploadHandlerRaw__ctor_m1397254157 (UploadHandlerRaw_t25761545 * __this, ByteU5BU5D_t4116647657* ___data0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandlerRaw__ctor_m1397254157 (UploadHandlerRaw_t25761545 * __this, ByteU5BU5D_t4116647657* ___data0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -4948,7 +5457,7 @@ extern "C"  void UploadHandlerRaw__ctor_m1397254157 (UploadHandlerRaw_t25761545 
 	{
 		ArgumentException_t132251570 * L_2 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m1312628991(L_2, _stringLiteral4274026319, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, UploadHandlerRaw__ctor_m1397254157_RuntimeMethod_var);
 	}
 
 IL_0020:
@@ -4960,7 +5469,7 @@ IL_0020:
 	}
 }
 // System.IntPtr UnityEngine.Networking.UploadHandlerRaw::Create(UnityEngine.Networking.UploadHandlerRaw,System.Byte[])
-extern "C"  intptr_t UploadHandlerRaw_Create_m2571854625 (RuntimeObject * __this /* static, unused */, UploadHandlerRaw_t25761545 * ___self0, ByteU5BU5D_t4116647657* ___data1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR intptr_t UploadHandlerRaw_Create_m2571854625 (RuntimeObject * __this /* static, unused */, UploadHandlerRaw_t25761545 * ___self0, ByteU5BU5D_t4116647657* ___data1, const RuntimeMethod* method)
 {
 	typedef intptr_t (*UploadHandlerRaw_Create_m2571854625_ftn) (UploadHandlerRaw_t25761545 *, ByteU5BU5D_t4116647657*);
 	static UploadHandlerRaw_Create_m2571854625_ftn _il2cpp_icall_func;
@@ -4970,7 +5479,7 @@ extern "C"  intptr_t UploadHandlerRaw_Create_m2571854625 (RuntimeObject * __this
 	return retVal;
 }
 // System.Void UnityEngine.Networking.UploadHandlerRaw::InternalSetContentType(System.String)
-extern "C"  void UploadHandlerRaw_InternalSetContentType_m1631554169 (UploadHandlerRaw_t25761545 * __this, String_t* ___newContentType0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandlerRaw_InternalSetContentType_m1631554169 (UploadHandlerRaw_t25761545 * __this, String_t* ___newContentType0, const RuntimeMethod* method)
 {
 	typedef void (*UploadHandlerRaw_InternalSetContentType_m1631554169_ftn) (UploadHandlerRaw_t25761545 *, String_t*);
 	static UploadHandlerRaw_InternalSetContentType_m1631554169_ftn _il2cpp_icall_func;
@@ -4979,7 +5488,7 @@ extern "C"  void UploadHandlerRaw_InternalSetContentType_m1631554169 (UploadHand
 	_il2cpp_icall_func(__this, ___newContentType0);
 }
 // System.Void UnityEngine.Networking.UploadHandlerRaw::SetContentType(System.String)
-extern "C"  void UploadHandlerRaw_SetContentType_m888678374 (UploadHandlerRaw_t25761545 * __this, String_t* ___newContentType0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void UploadHandlerRaw_SetContentType_m888678374 (UploadHandlerRaw_t25761545 * __this, String_t* ___newContentType0, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = ___newContentType0;
@@ -4996,7 +5505,7 @@ extern "C"  void UploadHandlerRaw_SetContentType_m888678374 (UploadHandlerRaw_t2
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Text.Encoding UnityEngine.WWWForm::get_DefaultEncoding()
-extern "C"  Encoding_t1523322056 * WWWForm_get_DefaultEncoding_m4131957975 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR Encoding_t1523322056 * WWWForm_get_DefaultEncoding_m4131957975 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -5027,7 +5536,7 @@ IL_000c:
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Byte UnityEngine.WWWTranscoder::Hex2Byte(System.Byte[],System.Int32)
-extern "C"  uint8_t WWWTranscoder_Hex2Byte_m4102152163 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___b0, int32_t ___offset1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR uint8_t WWWTranscoder_Hex2Byte_m4102152163 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___b0, int32_t ___offset1, const RuntimeMethod* method)
 {
 	uint8_t V_0 = 0x0;
 	int32_t V_1 = 0;
@@ -5153,45 +5662,34 @@ IL_008a:
 		return L_22;
 	}
 }
-// System.String UnityEngine.WWWTranscoder::URLDecode(System.String,System.Text.Encoding)
-extern "C"  String_t* WWWTranscoder_URLDecode_m3140444198 (RuntimeObject * __this /* static, unused */, String_t* ___toEncode0, Encoding_t1523322056 * ___e1, const RuntimeMethod* method)
+// System.Byte[] UnityEngine.WWWTranscoder::URLDecode(System.Byte[])
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* WWWTranscoder_URLDecode_m3587034544 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___toEncode0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (WWWTranscoder_URLDecode_m3140444198_MetadataUsageId);
+		il2cpp_codegen_initialize_method (WWWTranscoder_URLDecode_m3587034544_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	ByteU5BU5D_t4116647657* V_0 = NULL;
-	String_t* V_1 = NULL;
 	{
-		Encoding_t1523322056 * L_0 = WWWForm_get_DefaultEncoding_m4131957975(NULL /*static, unused*/, /*hidden argument*/NULL);
-		String_t* L_1 = ___toEncode0;
-		NullCheck(L_0);
-		ByteU5BU5D_t4116647657* L_2 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_0, L_1);
+		ByteU5BU5D_t4116647657* L_0 = ___toEncode0;
 		IL2CPP_RUNTIME_CLASS_INIT(WWWTranscoder_t272523958_il2cpp_TypeInfo_var);
-		uint8_t L_3 = ((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->get_urlEscapeChar_2();
-		ByteU5BU5D_t4116647657* L_4 = ((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->get_urlSpace_3();
-		ByteU5BU5D_t4116647657* L_5 = WWWTranscoder_Decode_m157051313(NULL /*static, unused*/, L_2, L_3, L_4, /*hidden argument*/NULL);
-		V_0 = L_5;
-		Encoding_t1523322056 * L_6 = ___e1;
-		ByteU5BU5D_t4116647657* L_7 = V_0;
-		ByteU5BU5D_t4116647657* L_8 = V_0;
-		NullCheck(L_8);
-		NullCheck(L_6);
-		String_t* L_9 = VirtFuncInvoker3< String_t*, ByteU5BU5D_t4116647657*, int32_t, int32_t >::Invoke(21 /* System.String System.Text.Encoding::GetString(System.Byte[],System.Int32,System.Int32) */, L_6, L_7, 0, (((int32_t)((int32_t)(((RuntimeArray *)L_8)->max_length)))));
-		V_1 = L_9;
-		goto IL_002d;
+		uint8_t L_1 = ((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->get_urlEscapeChar_2();
+		ByteU5BU5D_t4116647657* L_2 = ((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->get_urlSpace_3();
+		ByteU5BU5D_t4116647657* L_3 = WWWTranscoder_Decode_m157051313(NULL /*static, unused*/, L_0, L_1, L_2, /*hidden argument*/NULL);
+		V_0 = L_3;
+		goto IL_0017;
 	}
 
-IL_002d:
+IL_0017:
 	{
-		String_t* L_10 = V_1;
-		return L_10;
+		ByteU5BU5D_t4116647657* L_4 = V_0;
+		return L_4;
 	}
 }
 // System.Boolean UnityEngine.WWWTranscoder::ByteSubArrayEquals(System.Byte[],System.Int32,System.Byte[])
-extern "C"  bool WWWTranscoder_ByteSubArrayEquals_m2163464440 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___array0, int32_t ___index1, ByteU5BU5D_t4116647657* ___comperand2, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR bool WWWTranscoder_ByteSubArrayEquals_m2163464440 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___array0, int32_t ___index1, ByteU5BU5D_t4116647657* ___comperand2, const RuntimeMethod* method)
 {
 	bool V_0 = false;
 	int32_t V_1 = 0;
@@ -5268,7 +5766,7 @@ IL_0044:
 	}
 }
 // System.Byte[] UnityEngine.WWWTranscoder::Decode(System.Byte[],System.Byte,System.Byte[])
-extern "C"  ByteU5BU5D_t4116647657* WWWTranscoder_Decode_m157051313 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___input0, uint8_t ___escapeChar1, ByteU5BU5D_t4116647657* ___space2, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_t4116647657* WWWTranscoder_Decode_m157051313 (RuntimeObject * __this /* static, unused */, ByteU5BU5D_t4116647657* ___input0, uint8_t ___escapeChar1, ByteU5BU5D_t4116647657* ___space2, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -5283,7 +5781,7 @@ extern "C"  ByteU5BU5D_t4116647657* WWWTranscoder_Decode_m157051313 (RuntimeObje
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	int32_t __leave_target = 0;
+	int32_t __leave_target = -1;
 	NO_UNUSED_WARNING (__leave_target);
 	{
 		ByteU5BU5D_t4116647657* L_0 = ___input0;
@@ -5400,7 +5898,7 @@ IL_0080:
 		{
 			MemoryStream_t94973147 * L_30 = V_0;
 			NullCheck(L_30);
-			ByteU5BU5D_t4116647657* L_31 = VirtFuncInvoker0< ByteU5BU5D_t4116647657* >::Invoke(25 /* System.Byte[] System.IO.MemoryStream::ToArray() */, L_30);
+			ByteU5BU5D_t4116647657* L_31 = VirtFuncInvoker0< ByteU5BU5D_t4116647657* >::Invoke(26 /* System.Byte[] System.IO.MemoryStream::ToArray() */, L_30);
 			V_2 = L_31;
 			IL2CPP_LEAVE(0x99, FINALLY_008c);
 		}
@@ -5446,7 +5944,7 @@ IL_0099:
 	}
 }
 // System.Void UnityEngine.WWWTranscoder::.cctor()
-extern "C"  void WWWTranscoder__cctor_m1887474915 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void WWWTranscoder__cctor_m1887474915 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -5464,27 +5962,29 @@ extern "C"  void WWWTranscoder__cctor_m1887474915 (RuntimeObject * __this /* sta
 		ByteU5BU5D_t4116647657* L_3 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_2, _stringLiteral3445932352);
 		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_lcHexChars_1(L_3);
 		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_urlEscapeChar_2((uint8_t)((int32_t)37));
-		ByteU5BU5D_t4116647657* L_4 = ((ByteU5BU5D_t4116647657*)SZArrayNew(ByteU5BU5D_t4116647657_il2cpp_TypeInfo_var, (uint32_t)1));
-		NullCheck(L_4);
-		(L_4)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)((int32_t)43));
-		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_urlSpace_3(L_4);
-		Encoding_t1523322056 * L_5 = WWWForm_get_DefaultEncoding_m4131957975(NULL /*static, unused*/, /*hidden argument*/NULL);
+		ByteU5BU5D_t4116647657* L_4 = (ByteU5BU5D_t4116647657*)SZArrayNew(ByteU5BU5D_t4116647657_il2cpp_TypeInfo_var, (uint32_t)1);
+		ByteU5BU5D_t4116647657* L_5 = L_4;
 		NullCheck(L_5);
-		ByteU5BU5D_t4116647657* L_6 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_5, _stringLiteral3074512661);
-		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_dataSpace_4(L_6);
-		Encoding_t1523322056 * L_7 = WWWForm_get_DefaultEncoding_m4131957975(NULL /*static, unused*/, /*hidden argument*/NULL);
-		NullCheck(L_7);
-		ByteU5BU5D_t4116647657* L_8 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_7, _stringLiteral1153672764);
-		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_urlForbidden_5(L_8);
+		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)((int32_t)43));
+		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_urlSpace_3(L_5);
+		Encoding_t1523322056 * L_6 = WWWForm_get_DefaultEncoding_m4131957975(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_6);
+		ByteU5BU5D_t4116647657* L_7 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_6, _stringLiteral3074512661);
+		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_dataSpace_4(L_7);
+		Encoding_t1523322056 * L_8 = WWWForm_get_DefaultEncoding_m4131957975(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_8);
+		ByteU5BU5D_t4116647657* L_9 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_8, _stringLiteral1153672764);
+		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_urlForbidden_5(L_9);
 		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_qpEscapeChar_6((uint8_t)((int32_t)61));
-		ByteU5BU5D_t4116647657* L_9 = ((ByteU5BU5D_t4116647657*)SZArrayNew(ByteU5BU5D_t4116647657_il2cpp_TypeInfo_var, (uint32_t)1));
-		NullCheck(L_9);
-		(L_9)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)((int32_t)95));
-		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_qpSpace_7(L_9);
-		Encoding_t1523322056 * L_10 = WWWForm_get_DefaultEncoding_m4131957975(NULL /*static, unused*/, /*hidden argument*/NULL);
-		NullCheck(L_10);
-		ByteU5BU5D_t4116647657* L_11 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_10, _stringLiteral3256060902);
-		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_qpForbidden_8(L_11);
+		ByteU5BU5D_t4116647657* L_10 = (ByteU5BU5D_t4116647657*)SZArrayNew(ByteU5BU5D_t4116647657_il2cpp_TypeInfo_var, (uint32_t)1);
+		ByteU5BU5D_t4116647657* L_11 = L_10;
+		NullCheck(L_11);
+		(L_11)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)((int32_t)95));
+		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_qpSpace_7(L_11);
+		Encoding_t1523322056 * L_12 = WWWForm_get_DefaultEncoding_m4131957975(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_12);
+		ByteU5BU5D_t4116647657* L_13 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_12, _stringLiteral3256060902);
+		((WWWTranscoder_t272523958_StaticFields*)il2cpp_codegen_static_fields_for(WWWTranscoder_t272523958_il2cpp_TypeInfo_var))->set_qpForbidden_8(L_13);
 		return;
 	}
 }
@@ -5497,7 +5997,7 @@ extern "C"  void WWWTranscoder__cctor_m1887474915 (RuntimeObject * __this /* sta
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.String UnityEngineInternal.WebRequestUtils::RedirectTo(System.String,System.String)
-extern "C"  String_t* WebRequestUtils_RedirectTo_m55747000 (RuntimeObject * __this /* static, unused */, String_t* ___baseUri0, String_t* ___redirectUri1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestUtils_RedirectTo_m55747000 (RuntimeObject * __this /* static, unused */, String_t* ___baseUri0, String_t* ___redirectUri1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -5577,7 +6077,7 @@ IL_0057:
 	}
 }
 // System.String UnityEngineInternal.WebRequestUtils::MakeInitialUrl(System.String,System.String)
-extern "C"  String_t* WebRequestUtils_MakeInitialUrl_m973728695 (RuntimeObject * __this /* static, unused */, String_t* ___targetUrl0, String_t* ___localUrl1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestUtils_MakeInitialUrl_m973728695 (RuntimeObject * __this /* static, unused */, String_t* ___targetUrl0, String_t* ___localUrl1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -5586,277 +6086,478 @@ extern "C"  String_t* WebRequestUtils_MakeInitialUrl_m973728695 (RuntimeObject *
 		s_Il2CppMethodInitialized = true;
 	}
 	String_t* V_0 = NULL;
-	Uri_t100236324 * V_1 = NULL;
+	bool V_1 = false;
 	Uri_t100236324 * V_2 = NULL;
-	FormatException_t154580423 * V_3 = NULL;
+	Uri_t100236324 * V_3 = NULL;
 	FormatException_t154580423 * V_4 = NULL;
+	FormatException_t154580423 * V_5 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	int32_t __leave_target = 0;
+	int32_t __leave_target = -1;
 	NO_UNUSED_WARNING (__leave_target);
-	String_t* G_B22_0 = NULL;
-	String_t* G_B26_0 = NULL;
 	{
 		String_t* L_0 = ___targetUrl0;
-		NullCheck(L_0);
-		bool L_1 = String_StartsWith_m1759067526(L_0, _stringLiteral182697711, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_1 = String_IsNullOrEmpty_m2969720369(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		if (!L_1)
 		{
-			goto IL_0018;
+			goto IL_0017;
 		}
 	}
 	{
-		String_t* L_2 = ___targetUrl0;
-		V_0 = L_2;
-		goto IL_0135;
+		V_0 = _stringLiteral757602046;
+		goto IL_00d7;
 	}
 
-IL_0018:
+IL_0017:
 	{
-		String_t* L_3 = ___targetUrl0;
-		NullCheck(L_3);
-		bool L_4 = String_StartsWith_m1759067526(L_3, _stringLiteral3378749104, /*hidden argument*/NULL);
-		if (!L_4)
+		V_1 = (bool)0;
+		String_t* L_2 = ___localUrl1;
+		Uri_t100236324 * L_3 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
+		Uri__ctor_m800430703(L_3, L_2, /*hidden argument*/NULL);
+		V_2 = L_3;
+		V_3 = (Uri_t100236324 *)NULL;
+		String_t* L_4 = ___targetUrl0;
+		NullCheck(L_4);
+		Il2CppChar L_5 = String_get_Chars_m2986988803(L_4, 0, /*hidden argument*/NULL);
+		if ((!(((uint32_t)L_5) == ((uint32_t)((int32_t)47)))))
 		{
-			goto IL_002f;
+			goto IL_003c;
 		}
 	}
 	{
-		String_t* L_5 = ___targetUrl0;
-		V_0 = L_5;
-		goto IL_0135;
+		Uri_t100236324 * L_6 = V_2;
+		String_t* L_7 = ___targetUrl0;
+		Uri_t100236324 * L_8 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
+		Uri__ctor_m4293005803(L_8, L_6, L_7, /*hidden argument*/NULL);
+		V_3 = L_8;
+		V_1 = (bool)1;
 	}
 
-IL_002f:
+IL_003c:
 	{
-		String_t* L_6 = ___localUrl1;
-		Uri_t100236324 * L_7 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
-		Uri__ctor_m800430703(L_7, L_6, /*hidden argument*/NULL);
-		V_1 = L_7;
-		V_2 = (Uri_t100236324 *)NULL;
-		String_t* L_8 = ___targetUrl0;
-		NullCheck(L_8);
-		Il2CppChar L_9 = String_get_Chars_m2986988803(L_8, 0, /*hidden argument*/NULL);
-		if ((!(((uint32_t)L_9) == ((uint32_t)((int32_t)47)))))
-		{
-			goto IL_0050;
-		}
-	}
-	{
-		Uri_t100236324 * L_10 = V_1;
-		String_t* L_11 = ___targetUrl0;
-		Uri_t100236324 * L_12 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
-		Uri__ctor_m4293005803(L_12, L_10, L_11, /*hidden argument*/NULL);
-		V_2 = L_12;
-	}
-
-IL_0050:
-	{
-		Uri_t100236324 * L_13 = V_2;
+		Uri_t100236324 * L_9 = V_3;
 		IL2CPP_RUNTIME_CLASS_INIT(Uri_t100236324_il2cpp_TypeInfo_var);
-		bool L_14 = Uri_op_Equality_m685520154(NULL /*static, unused*/, L_13, (Uri_t100236324 *)NULL, /*hidden argument*/NULL);
-		if (!L_14)
+		bool L_10 = Uri_op_Equality_m685520154(NULL /*static, unused*/, L_9, (Uri_t100236324 *)NULL, /*hidden argument*/NULL);
+		if (!L_10)
 		{
-			goto IL_0081;
+			goto IL_006f;
 		}
 	}
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(WebRequestUtils_t3541624225_il2cpp_TypeInfo_var);
-		Regex_t3657309853 * L_15 = ((WebRequestUtils_t3541624225_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestUtils_t3541624225_il2cpp_TypeInfo_var))->get_domainRegex_0();
+		Regex_t3657309853 * L_11 = ((WebRequestUtils_t3541624225_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestUtils_t3541624225_il2cpp_TypeInfo_var))->get_domainRegex_0();
+		String_t* L_12 = ___targetUrl0;
+		NullCheck(L_11);
+		bool L_13 = Regex_IsMatch_m4067478295(L_11, L_12, /*hidden argument*/NULL);
+		if (!L_13)
+		{
+			goto IL_006f;
+		}
+	}
+	{
+		Uri_t100236324 * L_14 = V_2;
+		NullCheck(L_14);
+		String_t* L_15 = Uri_get_Scheme_m2109479391(L_14, /*hidden argument*/NULL);
 		String_t* L_16 = ___targetUrl0;
-		NullCheck(L_15);
-		bool L_17 = Regex_IsMatch_m4067478295(L_15, L_16, /*hidden argument*/NULL);
-		if (!L_17)
-		{
-			goto IL_0081;
-		}
-	}
-	{
-		Uri_t100236324 * L_18 = V_1;
-		NullCheck(L_18);
-		String_t* L_19 = Uri_get_Scheme_m2109479391(L_18, /*hidden argument*/NULL);
-		String_t* L_20 = ___targetUrl0;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_21 = String_Concat_m3755062657(NULL /*static, unused*/, L_19, _stringLiteral1057238085, L_20, /*hidden argument*/NULL);
-		___targetUrl0 = L_21;
+		String_t* L_17 = String_Concat_m3755062657(NULL /*static, unused*/, L_15, _stringLiteral1057238085, L_16, /*hidden argument*/NULL);
+		___targetUrl0 = L_17;
+		V_1 = (bool)1;
 	}
 
-IL_0081:
+IL_006f:
 	{
-		V_3 = (FormatException_t154580423 *)NULL;
+		V_4 = (FormatException_t154580423 *)NULL;
 	}
 
-IL_0083:
+IL_0072:
 	try
 	{ // begin try (depth: 1)
 		{
-			Uri_t100236324 * L_22 = V_2;
+			Uri_t100236324 * L_18 = V_3;
 			IL2CPP_RUNTIME_CLASS_INIT(Uri_t100236324_il2cpp_TypeInfo_var);
-			bool L_23 = Uri_op_Equality_m685520154(NULL /*static, unused*/, L_22, (Uri_t100236324 *)NULL, /*hidden argument*/NULL);
-			if (!L_23)
+			bool L_19 = Uri_op_Equality_m685520154(NULL /*static, unused*/, L_18, (Uri_t100236324 *)NULL, /*hidden argument*/NULL);
+			if (!L_19)
 			{
-				goto IL_00a5;
+				goto IL_0094;
 			}
 		}
 
-IL_0090:
+IL_007f:
 		{
-			String_t* L_24 = ___targetUrl0;
-			NullCheck(L_24);
-			Il2CppChar L_25 = String_get_Chars_m2986988803(L_24, 0, /*hidden argument*/NULL);
-			if ((((int32_t)L_25) == ((int32_t)((int32_t)46))))
+			String_t* L_20 = ___targetUrl0;
+			NullCheck(L_20);
+			Il2CppChar L_21 = String_get_Chars_m2986988803(L_20, 0, /*hidden argument*/NULL);
+			if ((((int32_t)L_21) == ((int32_t)((int32_t)46))))
 			{
-				goto IL_00a5;
+				goto IL_0094;
 			}
 		}
 
-IL_009e:
+IL_008d:
 		{
-			String_t* L_26 = ___targetUrl0;
-			Uri_t100236324 * L_27 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
-			Uri__ctor_m800430703(L_27, L_26, /*hidden argument*/NULL);
-			V_2 = L_27;
+			String_t* L_22 = ___targetUrl0;
+			Uri_t100236324 * L_23 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
+			Uri__ctor_m800430703(L_23, L_22, /*hidden argument*/NULL);
+			V_3 = L_23;
 		}
 
-IL_00a5:
+IL_0094:
 		{
-			goto IL_00b7;
+			goto IL_00a7;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (FormatException_t154580423_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_00ab;
+			goto CATCH_009a;
 		throw e;
 	}
 
-CATCH_00ab:
+CATCH_009a:
 	{ // begin catch(System.FormatException)
-		V_4 = ((FormatException_t154580423 *)__exception_local);
-		FormatException_t154580423 * L_28 = V_4;
-		V_3 = L_28;
-		goto IL_00b7;
+		V_5 = ((FormatException_t154580423 *)__exception_local);
+		FormatException_t154580423 * L_24 = V_5;
+		V_4 = L_24;
+		goto IL_00a7;
 	} // end catch (depth: 1)
 
-IL_00b7:
+IL_00a7:
 	{
-		Uri_t100236324 * L_29 = V_2;
+		Uri_t100236324 * L_25 = V_3;
 		IL2CPP_RUNTIME_CLASS_INIT(Uri_t100236324_il2cpp_TypeInfo_var);
-		bool L_30 = Uri_op_Equality_m685520154(NULL /*static, unused*/, L_29, (Uri_t100236324 *)NULL, /*hidden argument*/NULL);
-		if (!L_30)
+		bool L_26 = Uri_op_Equality_m685520154(NULL /*static, unused*/, L_25, (Uri_t100236324 *)NULL, /*hidden argument*/NULL);
+		if (!L_26)
 		{
-			goto IL_00d6;
+			goto IL_00c9;
 		}
 	}
 
-IL_00c3:
+IL_00b3:
 	try
 	{ // begin try (depth: 1)
-		Uri_t100236324 * L_31 = V_1;
-		String_t* L_32 = ___targetUrl0;
-		Uri_t100236324 * L_33 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
-		Uri__ctor_m4293005803(L_33, L_31, L_32, /*hidden argument*/NULL);
-		V_2 = L_33;
-		goto IL_00d6;
+		Uri_t100236324 * L_27 = V_2;
+		String_t* L_28 = ___targetUrl0;
+		Uri_t100236324 * L_29 = (Uri_t100236324 *)il2cpp_codegen_object_new(Uri_t100236324_il2cpp_TypeInfo_var);
+		Uri__ctor_m4293005803(L_29, L_27, L_28, /*hidden argument*/NULL);
+		V_3 = L_29;
+		V_1 = (bool)1;
+		goto IL_00c9;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (FormatException_t154580423_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_00d2;
+			goto CATCH_00c4;
 		throw e;
 	}
 
-CATCH_00d2:
+CATCH_00c4:
 	{ // begin catch(System.FormatException)
-		FormatException_t154580423 * L_34 = V_3;
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_34);
+		FormatException_t154580423 * L_30 = V_4;
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_30, NULL, WebRequestUtils_MakeInitialUrl_m973728695_RuntimeMethod_var);
 	} // end catch (depth: 1)
 
-IL_00d6:
+IL_00c9:
 	{
-		String_t* L_35 = ___targetUrl0;
-		NullCheck(L_35);
-		bool L_36 = String_StartsWith_m2640722675(L_35, _stringLiteral4054833267, 5, /*hidden argument*/NULL);
-		if (!L_36)
+		Uri_t100236324 * L_31 = V_3;
+		String_t* L_32 = ___targetUrl0;
+		bool L_33 = V_1;
+		IL2CPP_RUNTIME_CLASS_INIT(WebRequestUtils_t3541624225_il2cpp_TypeInfo_var);
+		String_t* L_34 = WebRequestUtils_MakeUriString_m291605890(NULL /*static, unused*/, L_31, L_32, L_33, /*hidden argument*/NULL);
+		V_0 = L_34;
+		goto IL_00d7;
+	}
+
+IL_00d7:
+	{
+		String_t* L_35 = V_0;
+		return L_35;
+	}
+}
+// System.String UnityEngineInternal.WebRequestUtils::MakeUriString(System.Uri,System.String,System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestUtils_MakeUriString_m291605890 (RuntimeObject * __this /* static, unused */, Uri_t100236324 * ___targetUri0, String_t* ___targetUrl1, bool ___prependProtocol2, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (WebRequestUtils_MakeUriString_m291605890_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	String_t* V_0 = NULL;
+	String_t* V_1 = NULL;
+	String_t* V_2 = NULL;
+	StringBuilder_t * V_3 = NULL;
+	String_t* V_4 = NULL;
+	{
+		Uri_t100236324 * L_0 = ___targetUri0;
+		NullCheck(L_0);
+		bool L_1 = Uri_get_IsFile_m2450018824(L_0, /*hidden argument*/NULL);
+		if (!L_1)
 		{
-			goto IL_010e;
+			goto IL_007b;
 		}
 	}
 	{
-		String_t* L_37 = ___targetUrl0;
-		NullCheck(L_37);
-		bool L_38 = String_Contains_m1147431944(L_37, _stringLiteral3452614523, /*hidden argument*/NULL);
-		if (!L_38)
+		Uri_t100236324 * L_2 = ___targetUri0;
+		NullCheck(L_2);
+		bool L_3 = Uri_get_IsLoopback_m2492530169(L_2, /*hidden argument*/NULL);
+		if (L_3)
 		{
-			goto IL_0107;
+			goto IL_0024;
 		}
 	}
 	{
-		String_t* L_39 = ___targetUrl0;
+		Uri_t100236324 * L_4 = ___targetUri0;
+		NullCheck(L_4);
+		String_t* L_5 = Uri_get_OriginalString_m3715995233(L_4, /*hidden argument*/NULL);
+		V_0 = L_5;
+		goto IL_015d;
+	}
+
+IL_0024:
+	{
+		Uri_t100236324 * L_6 = ___targetUri0;
+		NullCheck(L_6);
+		String_t* L_7 = Uri_get_AbsolutePath_m590948575(L_6, /*hidden argument*/NULL);
+		V_1 = L_7;
+		String_t* L_8 = V_1;
+		NullCheck(L_8);
+		bool L_9 = String_Contains_m1147431944(L_8, _stringLiteral3452614523, /*hidden argument*/NULL);
+		if (!L_9)
+		{
+			goto IL_0042;
+		}
+	}
+	{
+		String_t* L_10 = V_1;
+		IL2CPP_RUNTIME_CLASS_INIT(WebRequestUtils_t3541624225_il2cpp_TypeInfo_var);
+		String_t* L_11 = WebRequestUtils_URLDecode_m2727298221(NULL /*static, unused*/, L_10, /*hidden argument*/NULL);
+		V_1 = L_11;
+	}
+
+IL_0042:
+	{
+		String_t* L_12 = V_1;
+		NullCheck(L_12);
+		int32_t L_13 = String_get_Length_m3847582255(L_12, /*hidden argument*/NULL);
+		if ((((int32_t)L_13) <= ((int32_t)0)))
+		{
+			goto IL_006a;
+		}
+	}
+	{
+		String_t* L_14 = V_1;
+		NullCheck(L_14);
+		Il2CppChar L_15 = String_get_Chars_m2986988803(L_14, 0, /*hidden argument*/NULL);
+		if ((((int32_t)L_15) == ((int32_t)((int32_t)47))))
+		{
+			goto IL_006a;
+		}
+	}
+	{
+		Il2CppChar L_16 = ((Il2CppChar)((int32_t)47));
+		RuntimeObject * L_17 = Box(Char_t3634460470_il2cpp_TypeInfo_var, &L_16);
+		String_t* L_18 = V_1;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_19 = String_Concat_m904156431(NULL /*static, unused*/, L_17, L_18, /*hidden argument*/NULL);
+		V_1 = L_19;
+	}
+
+IL_006a:
+	{
+		String_t* L_20 = V_1;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_21 = String_Concat_m3937257545(NULL /*static, unused*/, _stringLiteral4054833267, L_20, /*hidden argument*/NULL);
+		V_0 = L_21;
+		goto IL_015d;
+	}
+
+IL_007b:
+	{
+		String_t* L_22 = ___targetUrl1;
+		NullCheck(L_22);
+		bool L_23 = String_Contains_m1147431944(L_22, _stringLiteral3452614523, /*hidden argument*/NULL);
+		if (!L_23)
+		{
+			goto IL_0097;
+		}
+	}
+	{
+		Uri_t100236324 * L_24 = ___targetUri0;
+		NullCheck(L_24);
+		String_t* L_25 = Uri_get_OriginalString_m3715995233(L_24, /*hidden argument*/NULL);
+		V_0 = L_25;
+		goto IL_015d;
+	}
+
+IL_0097:
+	{
+		Uri_t100236324 * L_26 = ___targetUri0;
+		NullCheck(L_26);
+		String_t* L_27 = Uri_get_Scheme_m2109479391(L_26, /*hidden argument*/NULL);
+		V_2 = L_27;
+		bool L_28 = ___prependProtocol2;
+		if (L_28)
+		{
+			goto IL_0151;
+		}
+	}
+	{
+		String_t* L_29 = ___targetUrl1;
+		NullCheck(L_29);
+		int32_t L_30 = String_get_Length_m3847582255(L_29, /*hidden argument*/NULL);
+		String_t* L_31 = V_2;
+		NullCheck(L_31);
+		int32_t L_32 = String_get_Length_m3847582255(L_31, /*hidden argument*/NULL);
+		if ((((int32_t)L_30) < ((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_32, (int32_t)2)))))
+		{
+			goto IL_0151;
+		}
+	}
+	{
+		String_t* L_33 = ___targetUrl1;
+		String_t* L_34 = V_2;
+		NullCheck(L_34);
+		int32_t L_35 = String_get_Length_m3847582255(L_34, /*hidden argument*/NULL);
+		NullCheck(L_33);
+		Il2CppChar L_36 = String_get_Chars_m2986988803(L_33, ((int32_t)il2cpp_codegen_add((int32_t)L_35, (int32_t)1)), /*hidden argument*/NULL);
+		if ((((int32_t)L_36) == ((int32_t)((int32_t)47))))
+		{
+			goto IL_0151;
+		}
+	}
+	{
+		String_t* L_37 = V_2;
+		String_t* L_38 = ___targetUrl1;
+		NullCheck(L_38);
+		int32_t L_39 = String_get_Length_m3847582255(L_38, /*hidden argument*/NULL);
+		StringBuilder_t * L_40 = (StringBuilder_t *)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
+		StringBuilder__ctor_m2502310956(L_40, L_37, L_39, /*hidden argument*/NULL);
+		V_3 = L_40;
+		StringBuilder_t * L_41 = V_3;
+		NullCheck(L_41);
+		StringBuilder_Append_m2383614642(L_41, ((int32_t)58), /*hidden argument*/NULL);
+		String_t* L_42 = V_2;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_43 = String_op_Equality_m920492651(NULL /*static, unused*/, L_42, _stringLiteral1390680534, /*hidden argument*/NULL);
+		if (!L_43)
+		{
+			goto IL_012b;
+		}
+	}
+	{
+		Uri_t100236324 * L_44 = ___targetUri0;
+		NullCheck(L_44);
+		String_t* L_45 = Uri_get_AbsolutePath_m590948575(L_44, /*hidden argument*/NULL);
+		V_4 = L_45;
+		String_t* L_46 = V_4;
+		NullCheck(L_46);
+		bool L_47 = String_Contains_m1147431944(L_46, _stringLiteral3452614523, /*hidden argument*/NULL);
+		if (!L_47)
+		{
+			goto IL_0116;
+		}
+	}
+	{
+		String_t* L_48 = V_4;
+		IL2CPP_RUNTIME_CLASS_INIT(WebRequestUtils_t3541624225_il2cpp_TypeInfo_var);
+		String_t* L_49 = WebRequestUtils_URLDecode_m2727298221(NULL /*static, unused*/, L_48, /*hidden argument*/NULL);
+		V_4 = L_49;
+	}
+
+IL_0116:
+	{
+		StringBuilder_t * L_50 = V_3;
+		String_t* L_51 = V_4;
+		NullCheck(L_50);
+		StringBuilder_Append_m1965104174(L_50, L_51, /*hidden argument*/NULL);
+		StringBuilder_t * L_52 = V_3;
+		NullCheck(L_52);
+		String_t* L_53 = VirtFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_52);
+		V_0 = L_53;
+		goto IL_015d;
+	}
+
+IL_012b:
+	{
+		StringBuilder_t * L_54 = V_3;
+		Uri_t100236324 * L_55 = ___targetUri0;
+		NullCheck(L_55);
+		String_t* L_56 = Uri_get_PathAndQuery_m2396197970(L_55, /*hidden argument*/NULL);
+		NullCheck(L_54);
+		StringBuilder_Append_m1965104174(L_54, L_56, /*hidden argument*/NULL);
+		StringBuilder_t * L_57 = V_3;
+		Uri_t100236324 * L_58 = ___targetUri0;
+		NullCheck(L_58);
+		String_t* L_59 = Uri_get_Fragment_m575158891(L_58, /*hidden argument*/NULL);
+		NullCheck(L_57);
+		StringBuilder_Append_m1965104174(L_57, L_59, /*hidden argument*/NULL);
+		StringBuilder_t * L_60 = V_3;
+		NullCheck(L_60);
+		String_t* L_61 = VirtFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_60);
+		V_0 = L_61;
+		goto IL_015d;
+	}
+
+IL_0151:
+	{
+		Uri_t100236324 * L_62 = ___targetUri0;
+		NullCheck(L_62);
+		String_t* L_63 = Uri_get_AbsoluteUri_m2582056986(L_62, /*hidden argument*/NULL);
+		V_0 = L_63;
+		goto IL_015d;
+	}
+
+IL_015d:
+	{
+		String_t* L_64 = V_0;
+		return L_64;
+	}
+}
+// System.String UnityEngineInternal.WebRequestUtils::URLDecode(System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestUtils_URLDecode_m2727298221 (RuntimeObject * __this /* static, unused */, String_t* ___encoded0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (WebRequestUtils_URLDecode_m2727298221_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	ByteU5BU5D_t4116647657* V_0 = NULL;
+	ByteU5BU5D_t4116647657* V_1 = NULL;
+	String_t* V_2 = NULL;
+	{
 		IL2CPP_RUNTIME_CLASS_INIT(Encoding_t1523322056_il2cpp_TypeInfo_var);
-		Encoding_t1523322056 * L_40 = Encoding_get_UTF8_m1008486739(NULL /*static, unused*/, /*hidden argument*/NULL);
+		Encoding_t1523322056 * L_0 = Encoding_get_UTF8_m1008486739(NULL /*static, unused*/, /*hidden argument*/NULL);
+		String_t* L_1 = ___encoded0;
+		NullCheck(L_0);
+		ByteU5BU5D_t4116647657* L_2 = VirtFuncInvoker1< ByteU5BU5D_t4116647657*, String_t* >::Invoke(10 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_0, L_1);
+		V_0 = L_2;
+		ByteU5BU5D_t4116647657* L_3 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(WWWTranscoder_t272523958_il2cpp_TypeInfo_var);
-		String_t* L_41 = WWWTranscoder_URLDecode_m3140444198(NULL /*static, unused*/, L_39, L_40, /*hidden argument*/NULL);
-		G_B22_0 = L_41;
-		goto IL_0108;
+		ByteU5BU5D_t4116647657* L_4 = WWWTranscoder_URLDecode_m3587034544(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
+		V_1 = L_4;
+		Encoding_t1523322056 * L_5 = Encoding_get_UTF8_m1008486739(NULL /*static, unused*/, /*hidden argument*/NULL);
+		ByteU5BU5D_t4116647657* L_6 = V_1;
+		NullCheck(L_5);
+		String_t* L_7 = VirtFuncInvoker1< String_t*, ByteU5BU5D_t4116647657* >::Invoke(22 /* System.String System.Text.Encoding::GetString(System.Byte[]) */, L_5, L_6);
+		V_2 = L_7;
+		goto IL_0025;
 	}
 
-IL_0107:
+IL_0025:
 	{
-		String_t* L_42 = ___targetUrl0;
-		G_B22_0 = L_42;
-	}
-
-IL_0108:
-	{
-		V_0 = G_B22_0;
-		goto IL_0135;
-	}
-
-IL_010e:
-	{
-		String_t* L_43 = ___targetUrl0;
-		NullCheck(L_43);
-		bool L_44 = String_Contains_m1147431944(L_43, _stringLiteral3452614523, /*hidden argument*/NULL);
-		if (!L_44)
-		{
-			goto IL_0129;
-		}
-	}
-	{
-		Uri_t100236324 * L_45 = V_2;
-		NullCheck(L_45);
-		String_t* L_46 = Uri_get_OriginalString_m3715995233(L_45, /*hidden argument*/NULL);
-		G_B26_0 = L_46;
-		goto IL_012f;
-	}
-
-IL_0129:
-	{
-		Uri_t100236324 * L_47 = V_2;
-		NullCheck(L_47);
-		String_t* L_48 = Uri_get_AbsoluteUri_m2582056986(L_47, /*hidden argument*/NULL);
-		G_B26_0 = L_48;
-	}
-
-IL_012f:
-	{
-		V_0 = G_B26_0;
-		goto IL_0135;
-	}
-
-IL_0135:
-	{
-		String_t* L_49 = V_0;
-		return L_49;
+		String_t* L_8 = V_2;
+		return L_8;
 	}
 }
 // System.Void UnityEngineInternal.WebRequestUtils::.cctor()
-extern "C"  void WebRequestUtils__cctor_m4190982137 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void WebRequestUtils__cctor_m4190982137 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -5866,7 +6567,7 @@ extern "C"  void WebRequestUtils__cctor_m4190982137 (RuntimeObject * __this /* s
 	}
 	{
 		Regex_t3657309853 * L_0 = (Regex_t3657309853 *)il2cpp_codegen_object_new(Regex_t3657309853_il2cpp_TypeInfo_var);
-		Regex__ctor_m3948448025(L_0, _stringLiteral97523668, /*hidden argument*/NULL);
+		Regex__ctor_m897876424(L_0, _stringLiteral97523668, /*hidden argument*/NULL);
 		((WebRequestUtils_t3541624225_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestUtils_t3541624225_il2cpp_TypeInfo_var))->set_domainRegex_0(L_0);
 		return;
 	}
