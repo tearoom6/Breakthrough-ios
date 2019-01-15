@@ -1,1 +1,1 @@
-Upgrade library versions.
+Add privacy policy link.
