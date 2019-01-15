@@ -1,5 +1,5 @@
 scheme 'Unity-iPhone'
-sdk 'iphoneos11.2'
+sdk 'iphoneos11.4'
 clean true
 output_directory './build'
 output_name 'Breakthrough'
